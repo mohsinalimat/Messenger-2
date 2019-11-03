@@ -7,23 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CBCEE915236F4345009E77B4 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCEE914236F4345009E77B4 /* SignUpVC.swift */; };
 		CBD5ECD2236E5C2200D24116 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD5ECD1236E5C2200D24116 /* AppDelegate.swift */; };
 		CBD5ECD4236E5C2200D24116 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD5ECD3236E5C2200D24116 /* SceneDelegate.swift */; };
-		CBD5ECD6236E5C2200D24116 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD5ECD5236E5C2200D24116 /* ViewController.swift */; };
+		CBD5ECD6236E5C2200D24116 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD5ECD5236E5C2200D24116 /* LoginVC.swift */; };
 		CBD5ECD9236E5C2200D24116 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBD5ECD7236E5C2200D24116 /* Main.storyboard */; };
 		CBD5ECDB236E5C2300D24116 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD5ECDA236E5C2300D24116 /* Assets.xcassets */; };
 		CBD5ECDE236E5C2300D24116 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBD5ECDC236E5C2300D24116 /* LaunchScreen.storyboard */; };
+		CBD5ECEA236E5D8300D24116 /* TextfieldVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD5ECE9236E5D8300D24116 /* TextfieldVC.swift */; };
+		CBD5ECEC236E5E1100D24116 /* ButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD5ECEB236E5E1100D24116 /* ButtonVC.swift */; };
+		CBD5ECEE236E5E4600D24116 /* BackgroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD5ECED236E5E4600D24116 /* BackgroundVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CBCEE914236F4345009E77B4 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		CBD5ECCE236E5C2200D24116 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD5ECD1236E5C2200D24116 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBD5ECD3236E5C2200D24116 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CBD5ECD5236E5C2200D24116 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CBD5ECD5236E5C2200D24116 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		CBD5ECD8236E5C2200D24116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CBD5ECDA236E5C2300D24116 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBD5ECDD236E5C2300D24116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBD5ECDF236E5C2300D24116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBD5ECE9236E5D8300D24116 /* TextfieldVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldVC.swift; sourceTree = "<group>"; };
+		CBD5ECEB236E5E1100D24116 /* ButtonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonVC.swift; sourceTree = "<group>"; };
+		CBD5ECED236E5E4600D24116 /* BackgroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +66,41 @@
 			children = (
 				CBD5ECD1236E5C2200D24116 /* AppDelegate.swift */,
 				CBD5ECD3236E5C2200D24116 /* SceneDelegate.swift */,
-				CBD5ECD5236E5C2200D24116 /* ViewController.swift */,
+				CBD5ECDF236E5C2300D24116 /* Info.plist */,
+				CBD5ECE6236E5D4E00D24116 /* Assets */,
+				CBD5ECE5236E5D4100D24116 /* Controllers */,
+			);
+			path = Messenger;
+			sourceTree = "<group>";
+		};
+		CBD5ECE5236E5D4100D24116 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CBD5ECD5236E5C2200D24116 /* LoginVC.swift */,
+				CBCEE914236F4345009E77B4 /* SignUpVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CBD5ECE6236E5D4E00D24116 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				CBD5ECE8236E5D7400D24116 /* Helper Recources */,
 				CBD5ECD7236E5C2200D24116 /* Main.storyboard */,
 				CBD5ECDA236E5C2300D24116 /* Assets.xcassets */,
 				CBD5ECDC236E5C2300D24116 /* LaunchScreen.storyboard */,
-				CBD5ECDF236E5C2300D24116 /* Info.plist */,
 			);
-			path = Messenger;
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		CBD5ECE8236E5D7400D24116 /* Helper Recources */ = {
+			isa = PBXGroup;
+			children = (
+				CBD5ECE9236E5D8300D24116 /* TextfieldVC.swift */,
+				CBD5ECEB236E5E1100D24116 /* ButtonVC.swift */,
+				CBD5ECED236E5E4600D24116 /* BackgroundVC.swift */,
+			);
+			path = "Helper Recources";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +174,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBD5ECD6236E5C2200D24116 /* ViewController.swift in Sources */,
+				CBCEE915236F4345009E77B4 /* SignUpVC.swift in Sources */,
+				CBD5ECD6236E5C2200D24116 /* LoginVC.swift in Sources */,
 				CBD5ECD2236E5C2200D24116 /* AppDelegate.swift in Sources */,
+				CBD5ECEA236E5D8300D24116 /* TextfieldVC.swift in Sources */,
+				CBD5ECEC236E5E1100D24116 /* ButtonVC.swift in Sources */,
+				CBD5ECEE236E5E4600D24116 /* BackgroundVC.swift in Sources */,
 				CBD5ECD4236E5C2200D24116 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +327,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X55KGS25BS;
 				INFOPLIST_FILE = Messenger/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,6 +346,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X55KGS25BS;
 				INFOPLIST_FILE = Messenger/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
