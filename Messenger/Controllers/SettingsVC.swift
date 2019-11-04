@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SettingsVC: UIViewController {
 
@@ -18,6 +19,18 @@ class SettingsVC: UIViewController {
     }
     
 
-
-
+    @IBAction func logoutButtonPressed(_ sender: Any) {
+        signOutHandler()
+    }
+    
+    func signOutHandler(){
+        do{
+            try Auth.auth().signOut()
+        }catch{
+            print("Error Logout: \(error.localizedDescription)")
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
 }

@@ -177,10 +177,10 @@
             </objects>
             <point key="canvasLocation" x="65" y="140"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Controllers Tab BarVC-->
         <scene sceneID="R9w-Tx-UaR">
             <objects>
-                <tabBarController storyboardIdentifier="ControllersTabBar" modalPresentationStyle="fullScreen" id="UVy-c4-oHK" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="ControllersTabBar" modalPresentationStyle="fullScreen" id="UVy-c4-oHK" customClass="ControllersTabBarVC" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="vhO-xX-12c"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jg6-t8-3z2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -369,7 +369,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kxa-xl-9I8"/>
                     </view>
-                    <navigationItem key="navigationItem" id="EgD-dm-B04"/>
+                    <navigationItem key="navigationItem" id="EgD-dm-B04">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="VPZ-KR-v0E">
+                            <connections>
+                                <action selector="logoutButtonPressed:" destination="4qx-5e-C8C" id="4z0-Bh-UEs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="4zI-Wt-hk7" id="UXx-1P-uJL"/>
                     </connections>
