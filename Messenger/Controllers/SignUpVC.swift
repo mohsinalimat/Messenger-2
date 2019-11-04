@@ -58,14 +58,20 @@ class SignUpVC: UIViewController {
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
                 if let error = error {
-                    self.showAlert(title: "Error", message: error.localizedDescription)
-                }else{
-                    let db = Firestore.firestore()
-                    db.collection("users").addDocument(data: ["name":name,"uid": result!.user.uid]) { (error) in
-                        if let error = error {
-                            print("Error saving user data: \(error.localizedDescription)")
-                        }
+                    self.showAlert(title: "Error happened!", message: error.localizedDescription)
+                    return
+                }
+                guard let uid = result?.user.uid else {
+                    return
+                }
+                let usersReference = Constants.FirebaseDB.ref.child("users").child(uid)
+                let values = ["name": name, "email": email]
+                usersReference.updateChildValues(values) { (error, reference) in
+                    if let error = error {
+                        self.showAlert(title: "Error", message: error.localizedDescription)
+                        return
                     }
+                    print("Saved user successfully into Firebase Db")
                     self.nextController()
                 }
             }

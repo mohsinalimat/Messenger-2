@@ -15,7 +15,10 @@ class SettingsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    
+        let uid = Auth.auth().currentUser?.uid
+        Database.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+            print(snapshot)
+        }, withCancel: nil)
     }
     
 
@@ -29,7 +32,9 @@ class SettingsVC: UIViewController {
         }catch{
             print("Error Logout: \(error.localizedDescription)")
         }
-        dismiss(animated: true, completion: nil)
+        let controller = storyboard?.instantiateViewController(identifier: "SignInVC") as! LoginVC
+        view.window?.rootViewController = controller
+        view.window?.makeKeyAndVisible()
     }
     
     
