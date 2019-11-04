@@ -12,6 +12,8 @@
 		CB5BD4F92370939500944E79 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BD4F82370939500944E79 /* SettingsVC.swift */; };
 		CB5BD4FB237093A100944E79 /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BD4FA237093A100944E79 /* ContactsVC.swift */; };
 		CB5BD4FD2370A05100944E79 /* ControllersTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BD4FC2370A05100944E79 /* ControllersTabBarVC.swift */; };
+		CB5BD4FF2370C58D00944E79 /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BD4FE2370C58D00944E79 /* ImageVC.swift */; };
+		CB5BD5022370CF2C00944E79 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BD5012370CF2C00944E79 /* UserInfoTableViewCell.swift */; };
 		CBCEE915236F4345009E77B4 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCEE914236F4345009E77B4 /* SignUpVC.swift */; };
 		CBD5ECD2236E5C2200D24116 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD5ECD1236E5C2200D24116 /* AppDelegate.swift */; };
 		CBD5ECD4236E5C2200D24116 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD5ECD3236E5C2200D24116 /* SceneDelegate.swift */; };
@@ -35,6 +37,8 @@
 		CB5BD4F82370939500944E79 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		CB5BD4FA237093A100944E79 /* ContactsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsVC.swift; sourceTree = "<group>"; };
 		CB5BD4FC2370A05100944E79 /* ControllersTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllersTabBarVC.swift; sourceTree = "<group>"; };
+		CB5BD4FE2370C58D00944E79 /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
+		CB5BD5012370CF2C00944E79 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
 		CBCEE914236F4345009E77B4 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		CBD5ECCE236E5C2200D24116 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD5ECD1236E5C2200D24116 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CB5BD5002370CF0600944E79 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CB5BD4F82370939500944E79 /* SettingsVC.swift */,
+				CB5BD5012370CF2C00944E79 /* UserInfoTableViewCell.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		CB5BD5042370CF4E00944E79 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				CB5BD4FA237093A100944E79 /* ContactsVC.swift */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		CB5BD5052370CF6D00944E79 /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				CB5BD4F62370936B00944E79 /* ChatsVC.swift */,
+			);
+			path = Chats;
+			sourceTree = "<group>";
+		};
 		CBD5ECC5236E5C2200D24116 = {
 			isa = PBXGroup;
 			children = (
@@ -116,11 +145,11 @@
 		CBD5ECE5236E5D4100D24116 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CB5BD5052370CF6D00944E79 /* Chats */,
+				CB5BD5042370CF4E00944E79 /* Contacts */,
+				CB5BD5002370CF0600944E79 /* Settings */,
 				CBD5ECD5236E5C2200D24116 /* LoginVC.swift */,
 				CBCEE914236F4345009E77B4 /* SignUpVC.swift */,
-				CB5BD4F62370936B00944E79 /* ChatsVC.swift */,
-				CB5BD4F82370939500944E79 /* SettingsVC.swift */,
-				CB5BD4FA237093A100944E79 /* ContactsVC.swift */,
 				CB5BD4FC2370A05100944E79 /* ControllersTabBarVC.swift */,
 			);
 			path = Controllers;
@@ -143,6 +172,7 @@
 				CBD5ECE9236E5D8300D24116 /* TextfieldVC.swift */,
 				CBD5ECEB236E5E1100D24116 /* ButtonVC.swift */,
 				CBD5ECED236E5E4600D24116 /* BackgroundVC.swift */,
+				CB5BD4FE2370C58D00944E79 /* ImageVC.swift */,
 			);
 			path = "Helper Recources";
 			sourceTree = "<group>";
@@ -282,6 +312,7 @@
 			files = (
 				CB5BD4F92370939500944E79 /* SettingsVC.swift in Sources */,
 				CB5BD4F72370936B00944E79 /* ChatsVC.swift in Sources */,
+				CB5BD4FF2370C58D00944E79 /* ImageVC.swift in Sources */,
 				CBE5222F236F82B300AEC790 /* Constants.swift in Sources */,
 				CBCEE915236F4345009E77B4 /* SignUpVC.swift in Sources */,
 				CBE5222D236F783600AEC790 /* Helpers.swift in Sources */,
@@ -289,6 +320,7 @@
 				CBD5ECD2236E5C2200D24116 /* AppDelegate.swift in Sources */,
 				CBD5ECEA236E5D8300D24116 /* TextfieldVC.swift in Sources */,
 				CBD5ECEC236E5E1100D24116 /* ButtonVC.swift in Sources */,
+				CB5BD5022370CF2C00944E79 /* UserInfoTableViewCell.swift in Sources */,
 				CBD5ECEE236E5E4600D24116 /* BackgroundVC.swift in Sources */,
 				CB5BD4FD2370A05100944E79 /* ControllersTabBarVC.swift in Sources */,
 				CBD5ECD4236E5C2200D24116 /* SceneDelegate.swift in Sources */,
