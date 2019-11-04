@@ -11,6 +11,6 @@ import Foundation
 class Constants {
     struct Storyboard {
         static let signUpVC = "SignUpVC"
-        static let listTableVC = "ListTableVC"
+        static let controllersTabBar = "ControllersTabBar"
     }
 }

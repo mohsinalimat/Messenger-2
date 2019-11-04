@@ -76,8 +76,7 @@ class SignUpVC: UIViewController {
     // This method gets triggered when the auth was successful
     
     func nextController(){
-        let controller = storyboard?.instantiateViewController(identifier: Constants.Storyboard.listTableVC) as! ListTableVC
-        show(controller, sender: nil)
+        performSegue(withIdentifier: Constants.Storyboard.controllersTabBar, sender: nil)
     }
     
     
