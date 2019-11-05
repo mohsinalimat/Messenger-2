@@ -23,6 +23,47 @@
             </objects>
             <point key="canvasLocation" x="-2350" y="115"/>
         </scene>
+        <!--Add New UserVC-->
+        <scene sceneID="Je9-ky-XW2">
+            <objects>
+                <viewController storyboardIdentifier="AddNewUserVC" id="7ue-ze-9hd" customClass="AddNewUserVC" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DGH-Dc-HFL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MFD-zb-0rw">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddNewUserCell" id="Mr6-63-qaQ">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mr6-63-qaQ" id="G7X-fQ-3Ru">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="MFD-zb-0rw" secondAttribute="bottom" id="3BC-Tx-6i0"/>
+                            <constraint firstItem="MFD-zb-0rw" firstAttribute="trailing" secondItem="FcX-KR-wFJ" secondAttribute="trailing" id="EUu-oG-M69"/>
+                            <constraint firstItem="MFD-zb-0rw" firstAttribute="leading" secondItem="FcX-KR-wFJ" secondAttribute="leading" id="HJQ-aC-IRJ"/>
+                            <constraint firstItem="MFD-zb-0rw" firstAttribute="top" secondItem="FcX-KR-wFJ" secondAttribute="top" id="fUG-AK-M0D"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FcX-KR-wFJ"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="MFD-zb-0rw" id="F97-Fh-sD5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ohg-xW-ybT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-955.07246376811599" y="-625.44642857142856"/>
+        </scene>
         <!--ContactsVC-->
         <scene sceneID="XjF-1c-ckH">
             <objects>

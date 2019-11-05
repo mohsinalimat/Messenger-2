@@ -20,7 +20,8 @@ class ContactsVC: UIViewController {
 
     @IBAction func addButtonPressed(_ sender: Any) {
     
-    
+        let controller = storyboard?.instantiateViewController(withIdentifier: "AddNewUserVC") as! AddNewUserVC
+        show(controller,sender: nil)
         
     }
     
