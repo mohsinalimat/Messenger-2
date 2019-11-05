@@ -14,6 +14,9 @@
 		CB5BD4FD2370A05100944E79 /* ControllersTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BD4FC2370A05100944E79 /* ControllersTabBarVC.swift */; };
 		CB5BD4FF2370C58D00944E79 /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BD4FE2370C58D00944E79 /* ImageVC.swift */; };
 		CB5BD5022370CF2C00944E79 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BD5012370CF2C00944E79 /* UserInfoTableViewCell.swift */; };
+		CB7898F12371075E00E5D44D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB7898F02371075E00E5D44D /* Settings.storyboard */; };
+		CB7898F323710BB000E5D44D /* Contacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB7898F223710BB000E5D44D /* Contacts.storyboard */; };
+		CB7898F523710BBD00E5D44D /* Chats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB7898F423710BBD00E5D44D /* Chats.storyboard */; };
 		CBCEE915236F4345009E77B4 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCEE914236F4345009E77B4 /* SignUpVC.swift */; };
 		CBD5ECD2236E5C2200D24116 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD5ECD1236E5C2200D24116 /* AppDelegate.swift */; };
 		CBD5ECD4236E5C2200D24116 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD5ECD3236E5C2200D24116 /* SceneDelegate.swift */; };
@@ -39,6 +42,9 @@
 		CB5BD4FC2370A05100944E79 /* ControllersTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllersTabBarVC.swift; sourceTree = "<group>"; };
 		CB5BD4FE2370C58D00944E79 /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
 		CB5BD5012370CF2C00944E79 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
+		CB7898F02371075E00E5D44D /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		CB7898F223710BB000E5D44D /* Contacts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contacts.storyboard; sourceTree = "<group>"; };
+		CB7898F423710BBD00E5D44D /* Chats.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chats.storyboard; sourceTree = "<group>"; };
 		CBCEE914236F4345009E77B4 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		CBD5ECCE236E5C2200D24116 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD5ECD1236E5C2200D24116 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +116,18 @@
 			path = Chats;
 			sourceTree = "<group>";
 		};
+		CB5BD506237106E100944E79 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CBD5ECD7236E5C2200D24116 /* Main.storyboard */,
+				CB7898F223710BB000E5D44D /* Contacts.storyboard */,
+				CB7898F423710BBD00E5D44D /* Chats.storyboard */,
+				CB7898F02371075E00E5D44D /* Settings.storyboard */,
+				CBD5ECDC236E5C2300D24116 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		CBD5ECC5236E5C2200D24116 = {
 			isa = PBXGroup;
 			children = (
@@ -158,10 +176,9 @@
 		CBD5ECE6236E5D4E00D24116 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				CB5BD506237106E100944E79 /* Storyboards */,
 				CBD5ECE8236E5D7400D24116 /* Helper Recources */,
-				CBD5ECD7236E5C2200D24116 /* Main.storyboard */,
 				CBD5ECDA236E5C2300D24116 /* Assets.xcassets */,
-				CBD5ECDC236E5C2300D24116 /* LaunchScreen.storyboard */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -257,7 +274,10 @@
 				CBD5ECDE236E5C2300D24116 /* LaunchScreen.storyboard in Resources */,
 				CBD5ECDB236E5C2300D24116 /* Assets.xcassets in Resources */,
 				CBE52225236F64CC00AEC790 /* GoogleService-Info.plist in Resources */,
+				CB7898F323710BB000E5D44D /* Contacts.storyboard in Resources */,
+				CB7898F523710BBD00E5D44D /* Chats.storyboard in Resources */,
 				CBD5ECD9236E5C2200D24116 /* Main.storyboard in Resources */,
+				CB7898F12371075E00E5D44D /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

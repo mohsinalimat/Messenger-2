@@ -19,7 +19,6 @@ class SettingsVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        getUserInfo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,11 +47,11 @@ class SettingsVC: UIViewController {
         }catch{
             print("Error Logout: \(error.localizedDescription)")
         }
-        let controller = storyboard?.instantiateViewController(identifier: "SignInVC") as! LoginVC
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = mainStoryboard.instantiateViewController(identifier: "SignInVC") as! LoginVC
         view.window?.rootViewController = controller
         view.window?.makeKeyAndVisible()
     }
-    
     
 }
 
