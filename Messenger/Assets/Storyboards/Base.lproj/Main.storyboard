@@ -336,7 +336,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vY7-nY-yv8" customClass="BackgroundView" customModule="Messenger" customModuleProvider="target">
-                                <rect key="frame" x="53" y="156" width="270" height="398"/>
+                                <rect key="frame" x="53" y="156" width="270" height="400"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KA-8s-dDX">
                                         <rect key="frame" x="20" y="82" width="230" height="31"/>
@@ -446,7 +446,7 @@
                                     <constraint firstItem="8KA-8s-dDX" firstAttribute="leading" secondItem="vY7-nY-yv8" secondAttribute="leading" constant="20" symbolic="YES" id="IG0-L4-alk"/>
                                     <constraint firstItem="yFe-VX-eel" firstAttribute="leading" secondItem="vY7-nY-yv8" secondAttribute="leading" constant="20" id="QNA-w8-WXT"/>
                                     <constraint firstItem="KfM-lG-GDV" firstAttribute="top" secondItem="8KA-8s-dDX" secondAttribute="bottom" constant="23" id="Sfi-o8-oqJ"/>
-                                    <constraint firstAttribute="height" constant="398" id="To4-LW-gDp"/>
+                                    <constraint firstAttribute="height" constant="400" id="To4-LW-gDp"/>
                                     <constraint firstAttribute="trailing" secondItem="KfM-lG-GDV" secondAttribute="trailing" constant="20" symbolic="YES" id="WI8-Tu-BNh"/>
                                     <constraint firstAttribute="trailing" secondItem="8KA-8s-dDX" secondAttribute="trailing" constant="20" symbolic="YES" id="Wm8-ZP-Emu"/>
                                     <constraint firstItem="KfM-lG-GDV" firstAttribute="leading" secondItem="vY7-nY-yv8" secondAttribute="leading" constant="20" symbolic="YES" id="geu-Fd-75q"/>
@@ -494,15 +494,157 @@
                         <outlet property="nameTextField" destination="KfM-lG-GDV" id="CtQ-Rr-PDm"/>
                         <outlet property="passwordTextField" destination="aU2-fb-dpw" id="l09-dz-iNM"/>
                         <outlet property="signUpButton" destination="yFe-VX-eel" id="S31-eR-HkU"/>
-                        <segue destination="UVy-c4-oHK" kind="show" identifier="ControllersTabBar" id="MJ0-CU-7Oq"/>
+                        <segue destination="zUm-tb-tjS" kind="show" identifier="SignUpAddImageVC" id="A2y-xM-dSf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3W-0v-eZU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="65" y="-626"/>
+            <point key="canvasLocation" x="-559" y="-622"/>
+        </scene>
+        <!--Sign Up Add ImageVC-->
+        <scene sceneID="m9c-k3-GgS">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="zUm-tb-tjS" customClass="SignUpAddImageVC" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a1z-ig-qye">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginbackground-1" translatesAutoresizingMaskIntoConstraints="NO" id="LmG-d3-0YK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TeG-rJ-1MV" customClass="BackgroundView" customModule="Messenger" customModuleProvider="target">
+                                <rect key="frame" x="52.666666666666657" y="156" width="270" height="400"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserDefaultIcon" translatesAutoresizingMaskIntoConstraints="NO" id="sms-Fo-PKd" customClass="ImageVC" customModule="Messenger" customModuleProvider="target">
+                                        <rect key="frame" x="85" y="44" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="1nN-Ze-UV3"/>
+                                            <constraint firstAttribute="width" constant="100" id="O12-xm-B2D"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                <real key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jq2-5s-tvU" customClass="ButtonVC" customModule="Messenger" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="182" width="230" height="36"/>
+                                        <color key="backgroundColor" red="0.1215686275" green="0.19215686269999999" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="20"/>
+                                        <state key="normal" title="Add Image">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" red="0.58823529409999997" green="0.23529411759999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="addImagePressed:" destination="zUm-tb-tjS" eventType="touchUpInside" id="brd-Ua-1Ze"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your profile image:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wM-ms-Lbz">
+                                        <rect key="frame" x="20" y="153" width="230" height="18"/>
+                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcd-rC-mNK" customClass="ButtonVC" customModule="Messenger" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="236" width="230" height="36"/>
+                                        <color key="backgroundColor" red="0.1215686275" green="0.19215686269999999" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="20"/>
+                                        <state key="normal" title="Continue">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" red="0.58823529409999997" green="0.23529411759999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="continuePressed:" destination="zUm-tb-tjS" eventType="touchUpInside" id="Ox7-r4-tDQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="Rcd-rC-mNK" firstAttribute="top" secondItem="jq2-5s-tvU" secondAttribute="bottom" constant="18" id="0Al-1H-wbW"/>
+                                    <constraint firstItem="1wM-ms-Lbz" firstAttribute="leading" secondItem="TeG-rJ-1MV" secondAttribute="leading" constant="20" symbolic="YES" id="84E-qg-CCl"/>
+                                    <constraint firstItem="jq2-5s-tvU" firstAttribute="leading" secondItem="TeG-rJ-1MV" secondAttribute="leading" constant="20" symbolic="YES" id="POI-kW-NW2"/>
+                                    <constraint firstItem="1wM-ms-Lbz" firstAttribute="top" secondItem="sms-Fo-PKd" secondAttribute="bottom" constant="9" id="TR1-Vr-8Pj"/>
+                                    <constraint firstAttribute="height" constant="400" id="Taq-PA-R0c"/>
+                                    <constraint firstAttribute="trailing" secondItem="jq2-5s-tvU" secondAttribute="trailing" constant="20" symbolic="YES" id="cYf-Di-YCa"/>
+                                    <constraint firstItem="Rcd-rC-mNK" firstAttribute="leading" secondItem="TeG-rJ-1MV" secondAttribute="leading" constant="20" symbolic="YES" id="ceq-7a-9x6"/>
+                                    <constraint firstAttribute="trailing" secondItem="1wM-ms-Lbz" secondAttribute="trailing" constant="20" symbolic="YES" id="gSa-a6-HOo"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rcd-rC-mNK" secondAttribute="trailing" constant="20" symbolic="YES" id="hMg-Gu-nSB"/>
+                                    <constraint firstItem="jq2-5s-tvU" firstAttribute="top" secondItem="1wM-ms-Lbz" secondAttribute="bottom" constant="11" id="iPx-5R-Duv"/>
+                                    <constraint firstItem="sms-Fo-PKd" firstAttribute="top" secondItem="TeG-rJ-1MV" secondAttribute="top" constant="44" id="pnD-kM-cFP"/>
+                                    <constraint firstItem="sms-Fo-PKd" firstAttribute="centerX" secondItem="TeG-rJ-1MV" secondAttribute="centerX" id="y57-vP-CiS"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.58823529409999997" green="0.23529411759999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="TeG-rJ-1MV" firstAttribute="leading" secondItem="dGH-5B-qxy" secondAttribute="leading" constant="52.670000000000002" id="AoW-MZ-6sq"/>
+                            <constraint firstItem="LmG-d3-0YK" firstAttribute="leading" secondItem="dGH-5B-qxy" secondAttribute="leading" id="Uog-EI-y5T"/>
+                            <constraint firstItem="dGH-5B-qxy" firstAttribute="trailing" secondItem="TeG-rJ-1MV" secondAttribute="trailing" constant="52.329999999999998" id="fPZ-q7-tPE"/>
+                            <constraint firstAttribute="bottom" secondItem="LmG-d3-0YK" secondAttribute="bottom" id="hPy-0g-G3u"/>
+                            <constraint firstItem="LmG-d3-0YK" firstAttribute="trailing" secondItem="dGH-5B-qxy" secondAttribute="trailing" id="wNr-Qu-Hde"/>
+                            <constraint firstItem="TeG-rJ-1MV" firstAttribute="top" secondItem="dGH-5B-qxy" secondAttribute="top" constant="112" id="xVQ-7F-nlW"/>
+                            <constraint firstItem="LmG-d3-0YK" firstAttribute="top" secondItem="a1z-ig-qye" secondAttribute="top" id="xXG-UQ-oHe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dGH-5B-qxy"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="n1W-Cc-Idh"/>
+                    <connections>
+                        <outlet property="addButton" destination="jq2-5s-tvU" id="7GJ-Rm-Q0y"/>
+                        <outlet property="continueButton" destination="Rcd-rC-mNK" id="PHP-qI-ssV"/>
+                        <outlet property="profileImage" destination="sms-Fo-PKd" id="XYu-Ve-cNg"/>
+                        <segue destination="UVy-c4-oHK" kind="show" identifier="ControllersTabBar" id="qvv-w5-AQw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0jw-Cg-DgA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="413.60000000000002" y="-622.16748768472905"/>
         </scene>
     </scenes>
     <resources>
+        <image name="UserDefaultIcon" width="640" height="640"/>
         <image name="chatsIcon" width="32" height="32"/>
         <image name="chevron.left" catalog="system" width="48" height="64"/>
         <image name="lock" width="50" height="50"/>
@@ -512,6 +654,6 @@
         <image name="user" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kTf-yb-Nf5"/>
+        <segue reference="qvv-w5-AQw"/>
     </inferredMetricsTieBreakers>
 </document>

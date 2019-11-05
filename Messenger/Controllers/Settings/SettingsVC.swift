@@ -48,7 +48,7 @@ class SettingsVC: UIViewController {
             print("Error Logout: \(error.localizedDescription)")
         }
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = mainStoryboard.instantiateViewController(identifier: "SignInVC") as! LoginVC
+        let controller = mainStoryboard.instantiateViewController(identifier: "SignInVC") as! SignInVC
         view.window?.rootViewController = controller
         view.window?.makeKeyAndVisible()
     }

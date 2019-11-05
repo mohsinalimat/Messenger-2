@@ -10,6 +10,7 @@
 		4E1551BFA942AF99B1983E95 /* Pods_Messenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1532C2CB8E5881C8D73E1AF7 /* Pods_Messenger.framework */; };
 		CB34A0592372155E007E8659 /* AddNewUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34A0582372155E007E8659 /* AddNewUserVC.swift */; };
 		CB34A05B23721BCE007E8659 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34A05A23721BCE007E8659 /* UserInformation.swift */; };
+		CB34A05E237231BE007E8659 /* SignUpAddImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34A05D237231BE007E8659 /* SignUpAddImageVC.swift */; };
 		CB5BD4F72370936B00944E79 /* ChatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BD4F62370936B00944E79 /* ChatsVC.swift */; };
 		CB5BD4F92370939500944E79 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BD4F82370939500944E79 /* SettingsVC.swift */; };
 		CB5BD4FB237093A100944E79 /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BD4FA237093A100944E79 /* ContactsVC.swift */; };
@@ -22,7 +23,7 @@
 		CBCEE915236F4345009E77B4 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCEE914236F4345009E77B4 /* SignUpVC.swift */; };
 		CBD5ECD2236E5C2200D24116 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD5ECD1236E5C2200D24116 /* AppDelegate.swift */; };
 		CBD5ECD4236E5C2200D24116 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD5ECD3236E5C2200D24116 /* SceneDelegate.swift */; };
-		CBD5ECD6236E5C2200D24116 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD5ECD5236E5C2200D24116 /* LoginVC.swift */; };
+		CBD5ECD6236E5C2200D24116 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD5ECD5236E5C2200D24116 /* SignInVC.swift */; };
 		CBD5ECD9236E5C2200D24116 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBD5ECD7236E5C2200D24116 /* Main.storyboard */; };
 		CBD5ECDB236E5C2300D24116 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD5ECDA236E5C2300D24116 /* Assets.xcassets */; };
 		CBD5ECDE236E5C2300D24116 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBD5ECDC236E5C2300D24116 /* LaunchScreen.storyboard */; };
@@ -40,6 +41,7 @@
 		8C884FD4336E37FFAD963EC1 /* Pods-Messenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.debug.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.debug.xcconfig"; sourceTree = "<group>"; };
 		CB34A0582372155E007E8659 /* AddNewUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewUserVC.swift; sourceTree = "<group>"; };
 		CB34A05A23721BCE007E8659 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
+		CB34A05D237231BE007E8659 /* SignUpAddImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAddImageVC.swift; sourceTree = "<group>"; };
 		CB5BD4F62370936B00944E79 /* ChatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsVC.swift; sourceTree = "<group>"; };
 		CB5BD4F82370939500944E79 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		CB5BD4FA237093A100944E79 /* ContactsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsVC.swift; sourceTree = "<group>"; };
@@ -53,7 +55,7 @@
 		CBD5ECCE236E5C2200D24116 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD5ECD1236E5C2200D24116 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBD5ECD3236E5C2200D24116 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CBD5ECD5236E5C2200D24116 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		CBD5ECD5236E5C2200D24116 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		CBD5ECD8236E5C2200D24116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CBD5ECDA236E5C2300D24116 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBD5ECDD236E5C2300D24116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -93,6 +95,16 @@
 				041670A7C2C138598A21749C /* Pods-Messenger.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		CB34A05C23722760007E8659 /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				CBD5ECD5236E5C2200D24116 /* SignInVC.swift */,
+				CBCEE914236F4345009E77B4 /* SignUpVC.swift */,
+				CB34A05D237231BE007E8659 /* SignUpAddImageVC.swift */,
+			);
+			path = LoginVC;
 			sourceTree = "<group>";
 		};
 		CB5BD5002370CF0600944E79 /* Settings */ = {
@@ -168,11 +180,10 @@
 		CBD5ECE5236E5D4100D24116 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CB34A05C23722760007E8659 /* LoginVC */,
 				CB5BD5052370CF6D00944E79 /* Chats */,
 				CB5BD5042370CF4E00944E79 /* Contacts */,
 				CB5BD5002370CF0600944E79 /* Settings */,
-				CBD5ECD5236E5C2200D24116 /* LoginVC.swift */,
-				CBCEE914236F4345009E77B4 /* SignUpVC.swift */,
 				CB5BD4FC2370A05100944E79 /* ControllersTabBarVC.swift */,
 			);
 			path = Controllers;
@@ -340,9 +351,10 @@
 				CB5BD4F72370936B00944E79 /* ChatsVC.swift in Sources */,
 				CB5BD4FF2370C58D00944E79 /* ImageVC.swift in Sources */,
 				CBE5222F236F82B300AEC790 /* Constants.swift in Sources */,
+				CB34A05E237231BE007E8659 /* SignUpAddImageVC.swift in Sources */,
 				CBCEE915236F4345009E77B4 /* SignUpVC.swift in Sources */,
 				CBE5222D236F783600AEC790 /* Helpers.swift in Sources */,
-				CBD5ECD6236E5C2200D24116 /* LoginVC.swift in Sources */,
+				CBD5ECD6236E5C2200D24116 /* SignInVC.swift in Sources */,
 				CBD5ECD2236E5C2200D24116 /* AppDelegate.swift in Sources */,
 				CB34A0592372155E007E8659 /* AddNewUserVC.swift in Sources */,
 				CBD5ECEA236E5D8300D24116 /* TextfieldVC.swift in Sources */,

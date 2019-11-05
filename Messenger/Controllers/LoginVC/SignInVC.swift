@@ -1,5 +1,5 @@
 //
-//  LoginVC.swift
+//  SignInVC.swift
 //  Messenger
 //
 //  Created by Vitaliy Paliy on 11/2/19.
@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class LoginVC: UIViewController {
+class SignInVC: UIViewController {
     
     @IBOutlet weak var usernameTextField: TextFieldVC!
     @IBOutlet weak var passwordTextField: TextFieldVC!
