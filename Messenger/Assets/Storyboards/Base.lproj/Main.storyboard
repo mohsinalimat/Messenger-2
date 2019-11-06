@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--LoginVC-->
+        <!--Sign InVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="SignInVC" id="BYZ-38-t0r" customClass="LoginVC" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInVC" id="BYZ-38-t0r" customClass="SignInVC" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -293,11 +293,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3KK-TU-pUE" customClass="ButtonVC" customModule="Messenger" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="58" width="22" height="23"/>
+                                        <rect key="frame" x="8" y="58" width="22" height="22"/>
                                         <color key="backgroundColor" red="0.1215686275" green="0.19215686269999999" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="22" id="dgI-pV-hbZ"/>
-                                            <constraint firstAttribute="height" constant="23" id="uaf-l4-lh3"/>
+                                            <constraint firstAttribute="height" constant="22" id="uaf-l4-lh3"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="chevron.left" catalog="system"/>
@@ -321,7 +321,7 @@
                                 <constraints>
                                     <constraint firstItem="3KK-TU-pUE" firstAttribute="leading" secondItem="yGn-0F-2KB" secondAttribute="leading" constant="8" id="FfM-VT-i3Y"/>
                                     <constraint firstAttribute="height" constant="84" id="Yd1-Q4-04Q"/>
-                                    <constraint firstAttribute="bottom" secondItem="3KK-TU-pUE" secondAttribute="bottom" constant="3" id="l4u-Dz-rl3"/>
+                                    <constraint firstAttribute="bottom" secondItem="3KK-TU-pUE" secondAttribute="bottom" constant="4" id="l4u-Dz-rl3"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="radius">
@@ -494,7 +494,6 @@
                         <outlet property="nameTextField" destination="KfM-lG-GDV" id="CtQ-Rr-PDm"/>
                         <outlet property="passwordTextField" destination="aU2-fb-dpw" id="l09-dz-iNM"/>
                         <outlet property="signUpButton" destination="yFe-VX-eel" id="S31-eR-HkU"/>
-                        <segue destination="zUm-tb-tjS" kind="show" identifier="SignUpAddImageVC" id="A2y-xM-dSf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3W-0v-eZU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -504,7 +503,7 @@
         <!--Sign Up Add ImageVC-->
         <scene sceneID="m9c-k3-GgS">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="zUm-tb-tjS" customClass="SignUpAddImageVC" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpAddImageVC" modalPresentationStyle="fullScreen" id="zUm-tb-tjS" customClass="SignUpAddImageVC" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a1z-ig-qye">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -513,7 +512,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TeG-rJ-1MV" customClass="BackgroundView" customModule="Messenger" customModuleProvider="target">
-                                <rect key="frame" x="52.666666666666657" y="156" width="270" height="400"/>
+                                <rect key="frame" x="52.666666666666657" y="153" width="270" height="400"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserDefaultIcon" translatesAutoresizingMaskIntoConstraints="NO" id="sms-Fo-PKd" customClass="ImageVC" customModule="Messenger" customModuleProvider="target">
                                         <rect key="frame" x="85" y="44" width="100" height="100"/>
@@ -624,8 +623,8 @@
                             <constraint firstItem="LmG-d3-0YK" firstAttribute="leading" secondItem="dGH-5B-qxy" secondAttribute="leading" id="Uog-EI-y5T"/>
                             <constraint firstItem="dGH-5B-qxy" firstAttribute="trailing" secondItem="TeG-rJ-1MV" secondAttribute="trailing" constant="52.329999999999998" id="fPZ-q7-tPE"/>
                             <constraint firstAttribute="bottom" secondItem="LmG-d3-0YK" secondAttribute="bottom" id="hPy-0g-G3u"/>
+                            <constraint firstItem="TeG-rJ-1MV" firstAttribute="top" secondItem="dGH-5B-qxy" secondAttribute="top" constant="109" id="q0j-d5-Bio"/>
                             <constraint firstItem="LmG-d3-0YK" firstAttribute="trailing" secondItem="dGH-5B-qxy" secondAttribute="trailing" id="wNr-Qu-Hde"/>
-                            <constraint firstItem="TeG-rJ-1MV" firstAttribute="top" secondItem="dGH-5B-qxy" secondAttribute="top" constant="112" id="xVQ-7F-nlW"/>
                             <constraint firstItem="LmG-d3-0YK" firstAttribute="top" secondItem="a1z-ig-qye" secondAttribute="top" id="xXG-UQ-oHe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dGH-5B-qxy"/>
@@ -640,7 +639,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0jw-Cg-DgA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="413.60000000000002" y="-622.16748768472905"/>
+            <point key="canvasLocation" x="316" y="-622.16748768472905"/>
         </scene>
     </scenes>
     <resources>

@@ -57,23 +57,15 @@ class SignUpVC: UIViewController {
             let name = nameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
-                if let error = error {
-                    self.showAlert(title: "Error happened!", message: error.localizedDescription)
-                    return
-                }
-                guard let uid = result?.user.uid else {
-                    return
-                }
-                let usersReference = Constants.FirebaseDB.ref.child("users").child(uid)
-                let values = ["name": name, "email": email]
-                usersReference.updateChildValues(values) { (error, reference) in
-                    if let error = error {
-                        self.showAlert(title: "Error", message: error.localizedDescription)
-                        return
-                    }
-                    print("Saved user successfully into Firebase Db")
-                    self.nextController()
-                }
+            if let error = error {
+                self.showAlert(title: "Error happened!", message: error.localizedDescription)
+                return
+            }
+            guard let uid = result?.user.uid else {
+                return
+            
+            }
+                self.nextController(email: email, password: password, name: name, uid: uid)
             }
         }
         
@@ -81,8 +73,13 @@ class SignUpVC: UIViewController {
     
     // This method gets triggered when the auth was successful
     
-    func nextController(){
-        performSegue(withIdentifier: Constants.Storyboard.controllersTabBar, sender: nil)
+    func nextController(email: String, password: String, name: String, uid: String){
+        let controller = storyboard?.instantiateViewController(identifier: "SignUpAddImageVC") as! SignUpAddImageVC
+        controller.email = email
+        controller.password = password
+        controller.name = name
+        controller.uid = uid
+        show(controller, sender: nil)
     }
     
     
