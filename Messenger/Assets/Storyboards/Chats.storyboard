@@ -79,7 +79,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rJY-gm-nyk">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rJY-gm-nyk">
                                 <rect key="frame" x="0.0" y="88" width="375" height="670"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
@@ -98,6 +98,9 @@
                                             <constraint firstAttribute="width" constant="25" id="yVY-pA-Fus"/>
                                         </constraints>
                                         <state key="normal" image="sendButton"/>
+                                        <connections>
+                                            <action selector="sendButtonPressed:" destination="Xmj-ad-Fpv" eventType="touchUpInside" id="NnT-u9-ts1"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YpX-lO-3kL">
                                         <rect key="frame" x="10" y="12" width="25" height="25"/>
@@ -106,6 +109,9 @@
                                             <constraint firstAttribute="width" constant="25" id="zFx-gG-qya"/>
                                         </constraints>
                                         <state key="normal" image="photoLibrary"/>
+                                        <connections>
+                                            <action selector="photoLibraryPressed:" destination="Xmj-ad-Fpv" eventType="touchUpInside" id="YZR-ap-uSZ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
@@ -153,6 +159,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="chatNavigation" destination="3XG-ht-9to" id="k7e-e3-dj7"/>
+                        <outlet property="messageTextfield" destination="zT8-lq-Ymp" id="qn1-CF-0sZ"/>
+                        <outlet property="photoLibrary" destination="YpX-lO-3kL" id="ngc-l0-tKc"/>
+                        <outlet property="sendButton" destination="CUl-C4-Z2Z" id="DVQ-df-UBQ"/>
                         <outlet property="tableView" destination="rJY-gm-nyk" id="lTi-4y-qd4"/>
                     </connections>
                 </viewController>
