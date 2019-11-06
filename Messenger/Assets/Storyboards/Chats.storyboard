@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="-1243" y="76"/>
         </scene>
-        <!--ChatsVC-->
+        <!--Messages-->
         <scene sceneID="Pld-J3-Lp2">
             <objects>
                 <viewController storyboardIdentifier="ChatsVC" id="bCA-8u-Yj3" customClass="ChatsVC" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,7 +50,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="P7J-Oc-0BR"/>
                     </view>
-                    <navigationItem key="navigationItem" id="EI2-aS-KtW"/>
+                    <navigationItem key="navigationItem" title="Messages" id="EI2-aS-KtW"/>
                     <connections>
                         <outlet property="tableView" destination="R0i-l6-3A8" id="QIt-9q-oyw"/>
                     </connections>

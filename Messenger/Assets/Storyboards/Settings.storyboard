@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="-1310" y="169"/>
         </scene>
-        <!--SettingsVC-->
+        <!--Settings-->
         <scene sceneID="olK-CC-VxY">
             <objects>
                 <viewController storyboardIdentifier="SettingsVC" id="kAI-Qv-8XL" customClass="SettingsVC" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
@@ -94,7 +94,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zep-CR-SLL"/>
                     </view>
-                    <navigationItem key="navigationItem" id="H9N-eQ-QHa">
+                    <navigationItem key="navigationItem" title="Settings" id="H9N-eQ-QHa">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="7Z0-8M-fD3">
                             <connections>
                                 <action selector="logoutButtonPressed:" destination="kAI-Qv-8XL" id="DaX-9s-alr"/>

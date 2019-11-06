@@ -6,9 +6,9 @@
 //  Copyright © 2019 PALIY. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
+let imgCache = NSCache<AnyObject, AnyObject>()
 
 extension UIViewController {
     func showAlert(title: String, message: String?) {
@@ -16,10 +16,20 @@ extension UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         show(alert, sender: nil)
     }
-    
-    func downloadImages(url: String, completion: @escaping (Data?, Error?) -> Void){
         
-        let url = URL(string: url)
+}
+
+
+extension UIImageView {
+    func loadImageCacheWithUrlString(imageUrl: String){
+        
+        self.image = nil
+        
+        if let cachedImages = imgCache.object(forKey: imageUrl as NSString) as? UIImage{
+            self.image = cachedImages
+            return
+        }
+        let url = URL(string: imageUrl)
         if url == nil {
             print("error")
             return
@@ -27,12 +37,15 @@ extension UIViewController {
         let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
             guard let data = data else {
                 print("Error while trying to download images from Firebase.")
-                completion(nil, error)
                 return
             }
-            completion(data, nil)
+            DispatchQueue.main.async {
+                if let downloadedImage = UIImage(data: data){
+                    imgCache.setObject(downloadedImage, forKey: imageUrl as NSString)
+                    self.image = downloadedImage
+                }
+            }
         }
         task.resume()
     }
-
 }

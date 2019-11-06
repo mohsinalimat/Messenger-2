@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4E1551BFA942AF99B1983E95 /* Pods_Messenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1532C2CB8E5881C8D73E1AF7 /* Pods_Messenger.framework */; };
 		CB34A0592372155E007E8659 /* AddNewUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34A0582372155E007E8659 /* AddNewUserVC.swift */; };
-		CB34A05B23721BCE007E8659 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34A05A23721BCE007E8659 /* UserInformation.swift */; };
+		CB34A05B23721BCE007E8659 /* UserInformation + CurrentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34A05A23721BCE007E8659 /* UserInformation + CurrentInformation.swift */; };
 		CB34A05E237231BE007E8659 /* SignUpAddImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34A05D237231BE007E8659 /* SignUpAddImageVC.swift */; };
 		CB34A06023725BE6007E8659 /* AddNewUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34A05F23725BE6007E8659 /* AddNewUserCell.swift */; };
 		CB5BD4F72370936B00944E79 /* ChatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BD4F62370936B00944E79 /* ChatsVC.swift */; };
@@ -41,7 +41,7 @@
 		1532C2CB8E5881C8D73E1AF7 /* Pods_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C884FD4336E37FFAD963EC1 /* Pods-Messenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.debug.xcconfig"; path = "Target Support Files/Pods-Messenger/Pods-Messenger.debug.xcconfig"; sourceTree = "<group>"; };
 		CB34A0582372155E007E8659 /* AddNewUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewUserVC.swift; sourceTree = "<group>"; };
-		CB34A05A23721BCE007E8659 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
+		CB34A05A23721BCE007E8659 /* UserInformation + CurrentInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInformation + CurrentInformation.swift"; sourceTree = "<group>"; };
 		CB34A05D237231BE007E8659 /* SignUpAddImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAddImageVC.swift; sourceTree = "<group>"; };
 		CB34A05F23725BE6007E8659 /* AddNewUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewUserCell.swift; sourceTree = "<group>"; };
 		CB5BD4F62370936B00944E79 /* ChatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsVC.swift; sourceTree = "<group>"; };
@@ -218,7 +218,7 @@
 			children = (
 				CBE5222B236F782B00AEC790 /* Helpers */,
 				CBE5222E236F82B300AEC790 /* Constants.swift */,
-				CB34A05A23721BCE007E8659 /* UserInformation.swift */,
+				CB34A05A23721BCE007E8659 /* UserInformation + CurrentInformation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -365,7 +365,7 @@
 				CBD5ECEC236E5E1100D24116 /* ButtonVC.swift in Sources */,
 				CB5BD5022370CF2C00944E79 /* UserInfoTableViewCell.swift in Sources */,
 				CBD5ECEE236E5E4600D24116 /* BackgroundVC.swift in Sources */,
-				CB34A05B23721BCE007E8659 /* UserInformation.swift in Sources */,
+				CB34A05B23721BCE007E8659 /* UserInformation + CurrentInformation.swift in Sources */,
 				CB5BD4FD2370A05100944E79 /* ControllersTabBarVC.swift in Sources */,
 				CBD5ECD4236E5C2200D24116 /* SceneDelegate.swift in Sources */,
 				CB5BD4FB237093A100944E79 /* ContactsVC.swift in Sources */,

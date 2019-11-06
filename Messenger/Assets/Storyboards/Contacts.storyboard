@@ -103,7 +103,7 @@
             </objects>
             <point key="canvasLocation" x="-955.07246376811599" y="-625.44642857142856"/>
         </scene>
-        <!--ContactsVC-->
+        <!--Contacts-->
         <scene sceneID="XjF-1c-ckH">
             <objects>
                 <viewController storyboardIdentifier="ContactsVC" id="mbW-fq-GxW" customClass="ContactsVC" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
@@ -131,7 +131,7 @@
                         <viewLayoutGuide key="safeArea" id="nHe-aR-EzZ"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="1Sr-DK-Flf">
+                    <navigationItem key="navigationItem" title="Contacts" id="1Sr-DK-Flf">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="Yg0-cv-0Yl">
                             <connections>
                                 <action selector="addButtonPressed:" destination="mbW-fq-GxW" id="f9w-qB-pFG"/>

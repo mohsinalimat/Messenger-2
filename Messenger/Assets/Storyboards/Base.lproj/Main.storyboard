@@ -197,11 +197,11 @@
             </objects>
             <point key="canvasLocation" x="1486" y="-383"/>
         </scene>
-        <!--Contacts-->
+        <!--Navigation Controller-->
         <scene sceneID="wXm-Kk-g6p">
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" navigationBarHidden="YES" id="dQG-vi-urq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Contacts" image="person" catalog="system" id="ZOc-GO-1Nx"/>
+                    <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="ZOc-GO-1Nx"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OTP-Z6-qPC">
                         <autoresizingMask key="autoresizingMask"/>
@@ -224,11 +224,11 @@
             </objects>
             <point key="canvasLocation" x="3402" y="-1018"/>
         </scene>
-        <!--Chats-->
+        <!--Navigation Controller-->
         <scene sceneID="gV1-Ys-5Nt">
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" navigationBarHidden="YES" id="FkI-Ig-AtE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chats" image="chatsIcon" id="MOl-Gn-Bnu"/>
+                    <tabBarItem key="tabBarItem" title="" image="message.fill" catalog="system" id="MOl-Gn-Bnu"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="E2L-Xl-XFC">
                         <autoresizingMask key="autoresizingMask"/>
@@ -251,11 +251,11 @@
             </objects>
             <point key="canvasLocation" x="3331" y="-266"/>
         </scene>
-        <!--Settings-->
+        <!--Navigation Controller-->
         <scene sceneID="71S-be-yoH">
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" navigationBarHidden="YES" id="Kik-jE-e2b" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="settingsIcon" id="d0R-Ki-TxX"/>
+                    <tabBarItem key="tabBarItem" title="" image="gear" catalog="system" id="d0R-Ki-TxX"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tFR-HE-hAD">
                         <autoresizingMask key="autoresizingMask"/>
@@ -644,12 +644,12 @@
     </scenes>
     <resources>
         <image name="UserDefaultIcon" width="640" height="640"/>
-        <image name="chatsIcon" width="32" height="32"/>
         <image name="chevron.left" catalog="system" width="48" height="64"/>
+        <image name="gear" catalog="system" width="64" height="58"/>
         <image name="lock" width="50" height="50"/>
         <image name="loginbackground-1" width="3456" height="5184"/>
+        <image name="message.fill" catalog="system" width="64" height="56"/>
         <image name="person" catalog="system" width="64" height="58"/>
-        <image name="settingsIcon" width="30" height="30"/>
         <image name="user" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>

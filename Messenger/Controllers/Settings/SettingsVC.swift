@@ -17,7 +17,7 @@ class SettingsVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
-        
+    
     @IBAction func logoutButtonPressed(_ sender: Any) {
         signOutHandler()
     }
@@ -45,22 +45,11 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell") as! UserInfoTableViewCell
         cell.nameLabel.text = CurrentUserInformation.name
         cell.emailLabel.text = CurrentUserInformation.email
-        downloadImages(url: CurrentUserInformation.profileImage) { (data, error) in
-            if let error = error {
-                print("Failed while trying to download user's avatar: \(error.localizedDescription)")
-                return
-            }
-            if let data = data {
-                let image = UIImage(data: data)
-                DispatchQueue.main.async {
-                    cell.userPhoto.image = image
-                    cell.setNeedsLayout()
-                }
-            }
-        }
-            tableView.rowHeight = 100
-            return cell
-        }
+        cell.userPhoto.loadImageCacheWithUrlString(imageUrl: CurrentUserInformation.profileImage)
+        cell.setNeedsLayout()
+        tableView.rowHeight = 100
+        return cell
+    }
     
-        
+    
 }

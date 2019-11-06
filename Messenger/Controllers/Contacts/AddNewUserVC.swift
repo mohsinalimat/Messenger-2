@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class AddNewUserVC: UIViewController {
-
+    
     var usersInformation = [UserInformation]()
     
     @IBOutlet weak var tableView: UITableView!
@@ -48,7 +48,7 @@ class AddNewUserVC: UIViewController {
         super.viewWillDisappear(animated)
         tabBarController?.tabBar.isHidden = false
     }
-
+    
 }
 
 extension AddNewUserVC: UITableViewDelegate, UITableViewDataSource {
@@ -62,27 +62,8 @@ extension AddNewUserVC: UITableViewDelegate, UITableViewDataSource {
         cell.emailLabel.text = user.email
         cell.nameLabel.text = user.name
         tableView.rowHeight = 100
-        if let profileImageUrl = user.profileImage {
-            downloadImages(url: profileImageUrl) { (data, error) in
-                if let error = error {
-                    print(error.localizedDescription)
-                    return
-                }
-                if let data = data {
-                    let image = UIImage(data: data)
-                    DispatchQueue.main.async {
-                        cell.profileImage.image = image
-                        cell.setNeedsLayout()
-                    }
-                }
-                
-            }
-        }
-        
+        cell.profileImage.loadImageCacheWithUrlString(imageUrl: user.profileImage!)
         return cell
     }
-    
-    
-    
     
 }
