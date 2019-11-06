@@ -35,29 +35,52 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddNewUserCell" textLabel="lQf-B7-HXt" detailTextLabel="Dn2-ak-9am" rowHeight="45" style="IBUITableViewCellStyleValue2" id="Mr6-63-qaQ">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="45"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddNewUserCell" rowHeight="100" id="Mr6-63-qaQ" customClass="AddNewUserCell" customModule="Messenger" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mr6-63-qaQ" id="G7X-fQ-3Ru">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lQf-B7-HXt">
-                                                    <rect key="frame" x="20" y="15" width="91" height="16"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserDefaultIcon" translatesAutoresizingMaskIntoConstraints="NO" id="R1V-Jw-i6o" customClass="ImageVC" customModule="Messenger" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="11" width="78" height="78"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="78" id="qoJ-D5-1bB"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                            <real key="value" value="40"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User's name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcO-Ch-omZ">
+                                                    <rect key="frame" x="106" y="11" width="107" height="24"/>
+                                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dn2-ak-9am">
-                                                    <rect key="frame" x="117" y="15" width="35" height="16"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDr-pJ-xG8">
+                                                    <rect key="frame" x="106" y="35" width="44" height="22"/>
+                                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
+                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wcO-Ch-omZ" firstAttribute="top" secondItem="G7X-fQ-3Ru" secondAttribute="topMargin" id="5Uc-jF-DaR"/>
+                                                <constraint firstItem="R1V-Jw-i6o" firstAttribute="bottom" secondItem="G7X-fQ-3Ru" secondAttribute="bottomMargin" id="6fD-fv-XMz"/>
+                                                <constraint firstItem="R1V-Jw-i6o" firstAttribute="top" secondItem="G7X-fQ-3Ru" secondAttribute="topMargin" id="a1b-tU-Tz6"/>
+                                                <constraint firstItem="KDr-pJ-xG8" firstAttribute="top" secondItem="wcO-Ch-omZ" secondAttribute="bottom" id="cJ7-sf-iOh"/>
+                                                <constraint firstItem="wcO-Ch-omZ" firstAttribute="leading" secondItem="R1V-Jw-i6o" secondAttribute="trailing" constant="8" id="kOT-O3-pHI"/>
+                                                <constraint firstItem="R1V-Jw-i6o" firstAttribute="leading" secondItem="G7X-fQ-3Ru" secondAttribute="leadingMargin" id="pUv-bg-5ey"/>
+                                                <constraint firstItem="KDr-pJ-xG8" firstAttribute="leading" secondItem="R1V-Jw-i6o" secondAttribute="trailing" constant="8" id="yCl-w3-HIf"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="emailLabel" destination="KDr-pJ-xG8" id="Gaq-n2-ggx"/>
+                                            <outlet property="nameLabel" destination="wcO-Ch-omZ" id="xWW-XB-Vau"/>
+                                            <outlet property="profileImage" destination="R1V-Jw-i6o" id="TXf-hJ-lgo"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -126,6 +149,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="UserDefaultIcon" width="640" height="640"/>
         <image name="plus" catalog="system" width="64" height="56"/>
     </resources>
 </document>

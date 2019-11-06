@@ -29,6 +29,7 @@ class AddNewUserVC: UIViewController {
                 let user = UserInformation()
                 user.name = snapshot["name"] as? String
                 user.email = snapshot["email"] as? String
+                user.profileImage = snapshot["profileImage"] as? String
                 self.usersInformation.append(user)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -56,11 +57,29 @@ extension AddNewUserVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AddNewUserCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AddNewUserCell") as! AddNewUserCell
         let user = usersInformation[indexPath.row]
-        cell?.textLabel?.text = user.name
-        cell?.detailTextLabel?.text = user.email
-        return cell!
+        cell.emailLabel.text = user.email
+        cell.nameLabel.text = user.name
+        tableView.rowHeight = 100
+        if let profileImageUrl = user.profileImage {
+            downloadImages(url: profileImageUrl) { (data, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+                if let data = data {
+                    let image = UIImage(data: data)
+                    DispatchQueue.main.async {
+                        cell.profileImage.image = image
+                        cell.setNeedsLayout()
+                    }
+                }
+                
+            }
+        }
+        
+        return cell
     }
     
     

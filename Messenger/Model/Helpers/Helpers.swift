@@ -17,5 +17,22 @@ extension UIViewController {
         show(alert, sender: nil)
     }
     
-    
+    func downloadImages(url: String, completion: @escaping (Data?, Error?) -> Void){
+        
+        let url = URL(string: url)
+        if url == nil {
+            print("error")
+            return
+        }
+        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            guard let data = data else {
+                print("Error while trying to download images from Firebase.")
+                completion(nil, error)
+                return
+            }
+            completion(data, nil)
+        }
+        task.resume()
+    }
+
 }

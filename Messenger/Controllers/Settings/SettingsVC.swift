@@ -10,33 +10,14 @@ import UIKit
 import Firebase
 
 class SettingsVC: UIViewController {
-
-    var userName = String()
-    var userEmail = String()
-
+    
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        getUserInfo()
-    }
-    
-    func getUserInfo() {
-        let uid = Auth.auth().currentUser?.uid
-        Database.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
-            if let snapshot = snapshot.value as? [String: AnyObject]{
-                self.userName = snapshot["name"] as! String
-                self.userEmail = snapshot["email"] as! String
-                self.tableView.reloadData()
-            }
-        }, withCancel: nil)
-    }
-
+        
     @IBAction func logoutButtonPressed(_ sender: Any) {
         signOutHandler()
     }
@@ -62,11 +43,24 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell") as! UserInfoTableViewCell
-        cell.nameLabel.text = userName
-        cell.emailLabel.text = userEmail
-        tableView.rowHeight = 100
-        return cell
-    }
-
+        cell.nameLabel.text = CurrentUserInformation.name
+        cell.emailLabel.text = CurrentUserInformation.email
+        downloadImages(url: CurrentUserInformation.profileImage) { (data, error) in
+            if let error = error {
+                print("Failed while trying to download user's avatar: \(error.localizedDescription)")
+                return
+            }
+            if let data = data {
+                let image = UIImage(data: data)
+                DispatchQueue.main.async {
+                    cell.userPhoto.image = image
+                    cell.setNeedsLayout()
+                }
+            }
+        }
+            tableView.rowHeight = 100
+            return cell
+        }
     
+        
 }

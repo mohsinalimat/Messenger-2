@@ -9,8 +9,13 @@
 import Foundation
 
 class UserInformation{
-    
     var name: String?
     var email: String?
-    
+    var profileImage: String?
+}
+
+class CurrentUserInformation{
+    static var name: String!
+    static var email: String!
+    static var profileImage: String!
 }
