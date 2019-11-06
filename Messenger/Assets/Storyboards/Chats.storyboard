@@ -80,16 +80,67 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rJY-gm-nyk">
-                                <rect key="frame" x="0.0" y="88" width="375" height="723"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="670"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r0t-2T-83i" customClass="BackgroundView" customModule="Messenger" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="758" width="375" height="55"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a message..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zT8-lq-Ymp">
+                                        <rect key="frame" x="41" y="8" width="295" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUl-C4-Z2Z">
+                                        <rect key="frame" x="340" y="13" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="9Oi-ry-Ult"/>
+                                            <constraint firstAttribute="width" constant="25" id="yVY-pA-Fus"/>
+                                        </constraints>
+                                        <state key="normal" image="sendButton"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YpX-lO-3kL">
+                                        <rect key="frame" x="10" y="12" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="QVx-a2-3Zu"/>
+                                            <constraint firstAttribute="width" constant="25" id="zFx-gG-qya"/>
+                                        </constraints>
+                                        <state key="normal" image="photoLibrary"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="YpX-lO-3kL" firstAttribute="top" secondItem="r0t-2T-83i" secondAttribute="top" constant="12" id="AgM-bX-7lw"/>
+                                    <constraint firstAttribute="height" constant="55" id="DeQ-T7-U1s"/>
+                                    <constraint firstItem="YpX-lO-3kL" firstAttribute="leading" secondItem="r0t-2T-83i" secondAttribute="leading" constant="10" id="Ra8-HA-Diq"/>
+                                    <constraint firstItem="zT8-lq-Ymp" firstAttribute="leading" secondItem="YpX-lO-3kL" secondAttribute="trailing" constant="6" id="hBh-J4-3Eu"/>
+                                    <constraint firstAttribute="trailing" secondItem="CUl-C4-Z2Z" secondAttribute="trailing" constant="10" id="hWG-LI-Qyr"/>
+                                    <constraint firstItem="CUl-C4-Z2Z" firstAttribute="top" secondItem="r0t-2T-83i" secondAttribute="top" constant="13" id="ila-57-KLx"/>
+                                    <constraint firstItem="CUl-C4-Z2Z" firstAttribute="leading" secondItem="zT8-lq-Ymp" secondAttribute="trailing" constant="4" id="rWG-l3-JHf"/>
+                                    <constraint firstItem="zT8-lq-Ymp" firstAttribute="top" secondItem="r0t-2T-83i" secondAttribute="top" constant="8" id="ztk-l2-xfd"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" cocoaTouchSystemColor="lightTextColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="rJY-gm-nyk" firstAttribute="top" secondItem="SOU-Qg-pcP" secondAttribute="top" id="GMz-Ey-ZJU"/>
-                            <constraint firstItem="rJY-gm-nyk" firstAttribute="leading" secondItem="SOU-Qg-pcP" secondAttribute="leading" id="HbD-9y-0Z2"/>
-                            <constraint firstItem="rJY-gm-nyk" firstAttribute="trailing" secondItem="SOU-Qg-pcP" secondAttribute="trailing" id="IDW-Yb-DyR"/>
-                            <constraint firstAttribute="bottom" secondItem="rJY-gm-nyk" secondAttribute="bottom" constant="1" id="fVk-wZ-YuL"/>
+                            <constraint firstAttribute="bottom" secondItem="r0t-2T-83i" secondAttribute="bottom" constant="-1" id="6tn-7Y-ULM"/>
+                            <constraint firstItem="r0t-2T-83i" firstAttribute="top" secondItem="rJY-gm-nyk" secondAttribute="bottom" id="MGc-pj-ibv"/>
+                            <constraint firstItem="rJY-gm-nyk" firstAttribute="trailing" secondItem="SOU-Qg-pcP" secondAttribute="trailing" id="XTq-2j-fc9"/>
+                            <constraint firstItem="rJY-gm-nyk" firstAttribute="top" secondItem="SOU-Qg-pcP" secondAttribute="top" id="i57-GE-O24"/>
+                            <constraint firstItem="rJY-gm-nyk" firstAttribute="leading" secondItem="SOU-Qg-pcP" secondAttribute="leading" id="jda-bO-Bt0"/>
+                            <constraint firstItem="r0t-2T-83i" firstAttribute="trailing" secondItem="SOU-Qg-pcP" secondAttribute="trailing" id="sy8-Re-hft"/>
+                            <constraint firstItem="r0t-2T-83i" firstAttribute="leading" secondItem="SOU-Qg-pcP" secondAttribute="leading" id="yOt-LM-gar"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SOU-Qg-pcP"/>
                     </view>
@@ -112,6 +163,8 @@
     </scenes>
     <resources>
         <image name="info.circle" catalog="system" width="64" height="60"/>
+        <image name="photoLibrary" width="64" height="64"/>
         <image name="plus" catalog="system" width="64" height="56"/>
+        <image name="sendButton" width="64" height="64"/>
     </resources>
 </document>
