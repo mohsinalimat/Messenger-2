@@ -60,9 +60,8 @@ class SignUpAddImageVC: UIViewController, UIImagePickerControllerDelegate, UINav
             selectedImage = UIImage(named: "UserDefaultIcon")
         }
         
-        let storageRef = Storage.storage().reference().child("Images").child("\(self.uniqueName).png")
-        
-        if let uploadData = self.selectedImage?.pngData() {
+        let storageRef = Storage.storage().reference().child("Images").child("\(self.uniqueName).jpg")
+        if let uploadData = self.selectedImage?.jpegData(compressionQuality: 0.1) {
             storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
                 if let error = error {
                     self.showAlert(title: "Error", message: error.localizedDescription)

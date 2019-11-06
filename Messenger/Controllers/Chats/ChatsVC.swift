@@ -16,5 +16,10 @@ class ChatsVC: UIViewController {
         
     }
     
-
+    @IBAction func addButtonPressed(_ sender: Any) {
+    
+        performSegue(withIdentifier: "GoToMessages", sender: nil)
+        
+    }
+    
 }

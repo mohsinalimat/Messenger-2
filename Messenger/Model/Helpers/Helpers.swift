@@ -11,12 +11,15 @@ import UIKit
 let imgCache = NSCache<AnyObject, AnyObject>()
 
 extension UIViewController {
+    
     func showAlert(title: String, message: String?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         show(alert, sender: nil)
     }
-        
+    func hideTabBar(status: Bool){
+        tabBarController?.tabBar.isHidden = status
+    }
 }
 
 

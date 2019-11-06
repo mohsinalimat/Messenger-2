@@ -18,6 +18,8 @@
 		CB5BD4FD2370A05100944E79 /* ControllersTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BD4FC2370A05100944E79 /* ControllersTabBarVC.swift */; };
 		CB5BD4FF2370C58D00944E79 /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BD4FE2370C58D00944E79 /* ImageVC.swift */; };
 		CB5BD5022370CF2C00944E79 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BD5012370CF2C00944E79 /* UserInfoTableViewCell.swift */; };
+		CB74C8612373464C00E4AF94 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74C8602373464C00E4AF94 /* Message.swift */; };
+		CB74C863237347ED00E4AF94 /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74C862237347ED00E4AF94 /* MessagesVC.swift */; };
 		CB7898F12371075E00E5D44D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB7898F02371075E00E5D44D /* Settings.storyboard */; };
 		CB7898F323710BB000E5D44D /* Contacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB7898F223710BB000E5D44D /* Contacts.storyboard */; };
 		CB7898F523710BBD00E5D44D /* Chats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB7898F423710BBD00E5D44D /* Chats.storyboard */; };
@@ -50,6 +52,8 @@
 		CB5BD4FC2370A05100944E79 /* ControllersTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllersTabBarVC.swift; sourceTree = "<group>"; };
 		CB5BD4FE2370C58D00944E79 /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
 		CB5BD5012370CF2C00944E79 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
+		CB74C8602373464C00E4AF94 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		CB74C862237347ED00E4AF94 /* MessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
 		CB7898F02371075E00E5D44D /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		CB7898F223710BB000E5D44D /* Contacts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contacts.storyboard; sourceTree = "<group>"; };
 		CB7898F423710BBD00E5D44D /* Chats.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chats.storyboard; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				CB5BD4F62370936B00944E79 /* ChatsVC.swift */,
+				CB74C862237347ED00E4AF94 /* MessagesVC.swift */,
 			);
 			path = Chats;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 				CBE5222B236F782B00AEC790 /* Helpers */,
 				CBE5222E236F82B300AEC790 /* Constants.swift */,
 				CB34A05A23721BCE007E8659 /* UserInformation + CurrentInformation.swift */,
+				CB74C8602373464C00E4AF94 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -356,6 +362,7 @@
 				CBE5222F236F82B300AEC790 /* Constants.swift in Sources */,
 				CB34A05E237231BE007E8659 /* SignUpAddImageVC.swift in Sources */,
 				CB34A06023725BE6007E8659 /* AddNewUserCell.swift in Sources */,
+				CB74C863237347ED00E4AF94 /* MessagesVC.swift in Sources */,
 				CBCEE915236F4345009E77B4 /* SignUpVC.swift in Sources */,
 				CBE5222D236F783600AEC790 /* Helpers.swift in Sources */,
 				CBD5ECD6236E5C2200D24116 /* SignInVC.swift in Sources */,
@@ -367,6 +374,7 @@
 				CBD5ECEE236E5E4600D24116 /* BackgroundVC.swift in Sources */,
 				CB34A05B23721BCE007E8659 /* UserInformation + CurrentInformation.swift in Sources */,
 				CB5BD4FD2370A05100944E79 /* ControllersTabBarVC.swift in Sources */,
+				CB74C8612373464C00E4AF94 /* Message.swift in Sources */,
 				CBD5ECD4236E5C2200D24116 /* SceneDelegate.swift in Sources */,
 				CB5BD4FB237093A100944E79 /* ContactsVC.swift in Sources */,
 			);

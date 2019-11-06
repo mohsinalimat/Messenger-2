@@ -227,7 +227,7 @@
         <!--Navigation Controller-->
         <scene sceneID="gV1-Ys-5Nt">
             <objects>
-                <navigationController modalPresentationStyle="fullScreen" navigationBarHidden="YES" id="FkI-Ig-AtE" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ChatsMainNavigationController" modalPresentationStyle="fullScreen" navigationBarHidden="YES" id="FkI-Ig-AtE" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="message.fill" catalog="system" id="MOl-Gn-Bnu"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="E2L-Xl-XFC">
