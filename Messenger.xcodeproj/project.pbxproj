@@ -27,6 +27,7 @@
 		CB7898F12371075E00E5D44D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB7898F02371075E00E5D44D /* Settings.storyboard */; };
 		CB7898F323710BB000E5D44D /* Contacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB7898F223710BB000E5D44D /* Contacts.storyboard */; };
 		CB7898F523710BBD00E5D44D /* Chats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB7898F423710BBD00E5D44D /* Chats.storyboard */; };
+		CBC4C5E82374C7A400BCB8F6 /* ContactsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC4C5E72374C7A400BCB8F6 /* ContactsCell.swift */; };
 		CBCEE915236F4345009E77B4 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCEE914236F4345009E77B4 /* SignUpVC.swift */; };
 		CBD5ECD2236E5C2200D24116 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD5ECD1236E5C2200D24116 /* AppDelegate.swift */; };
 		CBD5ECD4236E5C2200D24116 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD5ECD3236E5C2200D24116 /* SceneDelegate.swift */; };
@@ -65,6 +66,7 @@
 		CB7898F02371075E00E5D44D /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		CB7898F223710BB000E5D44D /* Contacts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contacts.storyboard; sourceTree = "<group>"; };
 		CB7898F423710BBD00E5D44D /* Chats.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chats.storyboard; sourceTree = "<group>"; };
+		CBC4C5E72374C7A400BCB8F6 /* ContactsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCell.swift; sourceTree = "<group>"; };
 		CBCEE914236F4345009E77B4 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		CBD5ECCE236E5C2200D24116 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD5ECD1236E5C2200D24116 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				CB5BD4FA237093A100944E79 /* ContactsVC.swift */,
+				CBC4C5E72374C7A400BCB8F6 /* ContactsCell.swift */,
 				CB34A0582372155E007E8659 /* UserListVC.swift */,
 				CB34A05F23725BE6007E8659 /* UserListCell.swift */,
 				CB74C86C2373AB4200E4AF94 /* AddNewFriendVC.swift */,
@@ -376,6 +379,7 @@
 				CB5BD4FF2370C58D00944E79 /* ImageVC.swift in Sources */,
 				CBE5222F236F82B300AEC790 /* Constants.swift in Sources */,
 				CB34A05E237231BE007E8659 /* SignUpAddImageVC.swift in Sources */,
+				CBC4C5E82374C7A400BCB8F6 /* ContactsCell.swift in Sources */,
 				CB34A06023725BE6007E8659 /* UserListCell.swift in Sources */,
 				CB74C863237347ED00E4AF94 /* MessagesVC.swift in Sources */,
 				CB74C868237363BF00E4AF94 /* MessagesCell.swift in Sources */,

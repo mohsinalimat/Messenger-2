@@ -67,10 +67,16 @@ extension ContactsVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactsVC")
-        let contact = contacts[indexPath.row]
-        cell?.textLabel?.text = contact.email
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactsCell") as! ContactsCell
+        let friend = contacts[indexPath.row]
+        cell.emailLabel.text = friend.email
+        cell.userLabel.text = friend.name
+        if let url = friend.profileImage {
+            cell.profileImage.loadImageCacheWithUrlString(imageUrl: url)
+            cell.setNeedsLayout()
+        }
+        tableView.rowHeight = 100
+        return cell
     }
     
     

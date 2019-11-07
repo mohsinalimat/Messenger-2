@@ -11,6 +11,8 @@ import Firebase
 
 class AddNewFriendVC: UIViewController {
     
+//    TODO: Change the condintion of the Add button if users interact with it.
+    
     var name: String!
     var email: String!
     var profileImageUrl: String!
@@ -53,14 +55,11 @@ class AddNewFriendVC: UIViewController {
             let ref = db.reference().child("users")
             let currentFriendsRef = ref.child(CurrentUserInformation.uid).child("friends")
             currentFriendsRef.child(friendId).setValue(true)
-            print("completed")
             let newFriendRef = ref.child(friendId).child("friends")
             newFriendRef.child(CurrentUserInformation.uid).setValue(true)
+            showAlert(title: "Success", message: "This user was added as your friend.")
         }else{
-            print("this")
-            let alert = UIAlertController(title: "Error", message: "This user is already in your friends list", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
+            showAlert(title: "OK", message: "This user is already in your friends list.")
         }
     }
     

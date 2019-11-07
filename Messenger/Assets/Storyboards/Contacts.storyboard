@@ -35,11 +35,11 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="768"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserListCell" rowHeight="100" id="Mr6-63-qaQ" customClass="UserListCell" customModule="Messenger" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="UserListCell" rowHeight="100" id="Mr6-63-qaQ" customClass="UserListCell" customModule="Messenger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mr6-63-qaQ" id="G7X-fQ-3Ru">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserDefaultIcon" translatesAutoresizingMaskIntoConstraints="NO" id="R1V-Jw-i6o" customClass="ImageVC" customModule="Messenger" customModuleProvider="target">
@@ -273,13 +273,52 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactsVC" id="bQl-qp-9yo">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactsCell" rowHeight="100" id="bQl-qp-9yo" customClass="ContactsCell" customModule="Messenger" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bQl-qp-9yo" id="4dC-LN-Qqf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserDefaultIcon" translatesAutoresizingMaskIntoConstraints="NO" id="NeW-Q0-kSI" customClass="ImageVC" customModule="Messenger" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="11" width="78" height="78"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="78" id="Het-1o-XJ7"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                            <real key="value" value="40"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User's Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTI-qc-EqF">
+                                                    <rect key="frame" x="101" y="11" width="106" height="24"/>
+                                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCr-H3-DEh">
+                                                    <rect key="frame" x="101" y="35" width="44" height="22"/>
+                                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
+                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="lCr-H3-DEh" firstAttribute="top" secondItem="dTI-qc-EqF" secondAttribute="bottom" id="CDk-bd-ZsD"/>
+                                                <constraint firstItem="dTI-qc-EqF" firstAttribute="top" secondItem="4dC-LN-Qqf" secondAttribute="topMargin" id="KDD-IX-3TO"/>
+                                                <constraint firstItem="NeW-Q0-kSI" firstAttribute="top" secondItem="4dC-LN-Qqf" secondAttribute="topMargin" id="PK9-Db-3GP"/>
+                                                <constraint firstItem="dTI-qc-EqF" firstAttribute="leading" secondItem="NeW-Q0-kSI" secondAttribute="trailing" constant="8" id="TWX-eS-Mgx"/>
+                                                <constraint firstItem="NeW-Q0-kSI" firstAttribute="bottom" secondItem="4dC-LN-Qqf" secondAttribute="bottomMargin" id="b2w-6e-vpU"/>
+                                                <constraint firstItem="NeW-Q0-kSI" firstAttribute="leading" secondItem="4dC-LN-Qqf" secondAttribute="leadingMargin" id="eXR-Ib-bre"/>
+                                                <constraint firstItem="lCr-H3-DEh" firstAttribute="leading" secondItem="NeW-Q0-kSI" secondAttribute="trailing" constant="8" id="fzO-Oa-zAf"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="emailLabel" destination="lCr-H3-DEh" id="6ZS-47-9H1"/>
+                                            <outlet property="profileImage" destination="NeW-Q0-kSI" id="EBn-dT-5St"/>
+                                            <outlet property="userLabel" destination="dTI-qc-EqF" id="cqf-kt-iTM"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -308,7 +347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sr4-TO-ic1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-955.07246376811599" y="114.50892857142857"/>
+            <point key="canvasLocation" x="-956" y="113.79310344827587"/>
         </scene>
     </scenes>
     <resources>
