@@ -7,19 +7,75 @@
 //
 
 import UIKit
-class ChatsVC: UIViewController {
+import Firebase
 
+class ChatsVC: UIViewController {
+    
+    var chats = [UserInformation]()
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
-    @IBAction func addButtonPressed(_ sender: Any) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadChats()
+    }
     
-        performSegue(withIdentifier: "GoToMessages", sender: nil)
-        
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        chats = []
+    }
+    
+    func loadChats(){
+        Constants.FirebaseDB.db.reference().child("users").observe(.childAdded) { (data) in
+            guard let snapshot = data.value as? [String: Any] else { return }
+            let user = UserInformation()
+            user.name = snapshot["name"] as? String
+            user.email = snapshot["email"] as? String
+            user.profileImage = snapshot["profileImage"] as? String
+            user.id = data.key
+            guard let dict = snapshot["friends"] as? [String:Int] else { return }
+            if dict[CurrentUserInformation.uid] == 1 {
+                user.friend = true
+                DispatchQueue.main.async {
+                    self.chats.append(user)
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    
+}
+
+extension ChatsVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return chats.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell") as! ChatCell
+        let chat = chats[indexPath.row]
+        cell.nameLabel.text = chat.name
+        if let url = chat.profileImage {
+            cell.profileImage.loadImageCacheWithUrlString(imageUrl: url)
+            cell.setNeedsLayout()
+        }
+        tableView.rowHeight = 100
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let friend = chats[indexPath.row]
+        let controller = storyboard?.instantiateViewController(identifier: "MessagesVC") as! MessagesVC
+        controller.friendId = friend.id
+        controller.friendName = friend.name
+        controller.friendPhoto = friend.profileImage
+        controller.friendEmail = friend.email
+        show(controller, sender: nil)
     }
     
 }

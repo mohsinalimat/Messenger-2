@@ -86,7 +86,7 @@ class SignUpAddImageVC: UIViewController, UIImagePickerControllerDelegate, UINav
     
     func registerUserHandler(uid: String, values: [String: Any]){
         
-        let usersReference = Constants.FirebaseDB.ref.child("users").child(uid)
+        let usersReference = Constants.FirebaseDB.db.reference(fromURL: "https://messenger-9eb2f.firebaseio.com/").child("users").child(uid)
         
         usersReference.updateChildValues(values) { (error, reference) in
             if let error = error {

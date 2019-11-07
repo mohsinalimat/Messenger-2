@@ -9,7 +9,8 @@
 import Foundation
 
 struct Message {
-    let message: String
-    let sender: String
-    let time: NSNumber
+    var message: String!
+    var sender: String!
+    var time: NSNumber!
+    var friend: String!
 }

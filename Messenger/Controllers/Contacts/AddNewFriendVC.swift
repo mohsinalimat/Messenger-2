@@ -18,9 +18,7 @@ class AddNewFriendVC: UIViewController {
     var profileImageUrl: String!
     var friendId: String!
     var isYourFriend: Bool!
-    
-    let db = Database.database()
-    
+        
     @IBOutlet weak var profileImage: ImageVC!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
@@ -52,7 +50,7 @@ class AddNewFriendVC: UIViewController {
     
     func addFriendHandler(){
         if !isYourFriend {
-            let ref = db.reference().child("users")
+            let ref = Constants.FirebaseDB.db.reference().child("users")
             let currentFriendsRef = ref.child(CurrentUserInformation.uid).child("friends")
             currentFriendsRef.child(friendId).setValue(true)
             let newFriendRef = ref.child(friendId).child("friends")

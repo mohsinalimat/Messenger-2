@@ -9,11 +9,17 @@
 import UIKit
 import Firebase
 
-class MessagesVC: UIViewController {
+class MessagesVC: UIViewController, UITextFieldDelegate {
+    
+    // User outlets
+    
+    var friendPhoto: String!
+    var friendName: String!
+    var friendId: String!
+    var friendEmail: String!
     
     // Message Outlets
     var messages: [Message] = []
-    let db = Firestore.firestore()
         
     @IBOutlet weak var messageTextfield: UITextField!
     @IBOutlet weak var photoLibrary: UIButton!
@@ -27,6 +33,7 @@ class MessagesVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        messageTextfield.delegate = self
         tableView.register(UINib(nibName: "MessagesCell", bundle: nil), forCellReuseIdentifier: "MessagesCell")
     }
     
@@ -48,57 +55,54 @@ class MessagesVC: UIViewController {
     @IBAction func sendButtonPressed(_ sender: Any) {
         if self.messageTextfield.text?.count == 0 { return }
         if let message = messageTextfield.text, let sender = Auth.auth().currentUser?.uid {
-            sendButton.isEnabled = true
             sendMessagesHandler(message, sender)
-            
         }
     }
     
     func sendMessagesHandler(_ message: String,_ sender: String){
         // TODO: Add the person who will recieve this.
-        let values = ["message":message, "sender": sender, "date": Date().timeIntervalSince1970] as [String : Any]
-        db.collection("messages").addDocument(data: values) { (error) in
-            if let error = error {
-                self.showAlert(title: "Error", message: error.localizedDescription)
-                return
-            }
-            print("Data was saved")
-        }
+        guard let friendId = friendId else { return }
+        let values = ["message":message, "sender": sender, "date": Date().timeIntervalSince1970, "friend": friendId] as [String : Any]
+        let reference = Constants.FirebaseDB.db.reference().child("messages")
+        let ref = reference.childByAutoId()
+        ref.updateChildValues(values)
+        messageTextfield.text = ""
     }
     
     func getMessagesHandler(){
         
-        db.collection("messages").order(by: "date").addSnapshotListener { (snapshot, error) in
-            if let error = error {
-                print(error.localizedDescription)
-                return
+        let reference = Constants.FirebaseDB.db.reference().child("messages")
+        reference.observe(.childAdded) { (snapshot) in
+            guard let values = snapshot.value as? [String: AnyObject] else { return }
+            var message = Message()
+            message.message = values["message"] as? String
+            message.sender = values["sender"] as? String
+            message.time = values["date"] as? NSNumber
+            message.friend = values["friend"] as? String
+            DispatchQueue.main.async {
+                self.messages.append(message)
+                self.tableView.reloadData()
             }
-            guard let snapshot = snapshot else {
-                print("Snapshot is nil")
-                return
-            }
-            self.messages = []
-            for values in snapshot.documents {
-                let data = values.data()
-                if let sender = data["sender"] as? String, let message = data["message"] as? String, let time = data["date"]{
-                    let newMessage = Message(message: message, sender: sender, time: time as! NSNumber)
-                    self.messages.append(newMessage)
-                    self.messageTextfield.text = ""
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                }
-                
-            }
+            
         }
         
     }
     
-    
     @IBAction func photoLibraryPressed(_ sender: Any) {
         
         
+        
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if self.messageTextfield.text?.count == 0 { return false }
+        if let message = messageTextfield.text, let sender = Auth.auth().currentUser?.uid {
+            sendMessagesHandler(message, sender)
+        }
+        return true
+    }
+    
+    
 }
 extension MessagesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -39,21 +39,19 @@ class ContactsVC: UIViewController {
     }
     
     func getContacts(){
-        Database.database().reference().child("users").observe(.childAdded) { (data) in
-            if let snapshot = data.value as? [String: Any] {
-                let user = UserInformation()
-                user.name = snapshot["name"] as? String
-                user.email = snapshot["email"] as? String
-                user.profileImage = snapshot["profileImage"] as? String
-                user.id = data.key
-                if let dict = snapshot["friends"] as? [String:Int]{
-                    if dict[CurrentUserInformation.uid] == 1 {
-                        user.friend = true
-                        DispatchQueue.main.async {
-                            self.contacts.append(user)
-                            self.tableView.reloadData()
-                        }
-                    }
+        Constants.FirebaseDB.db.reference().child("users").observe(.childAdded) { (data) in
+            guard let snapshot = data.value as? [String: Any] else { return }
+            let user = UserInformation()
+            user.name = snapshot["name"] as? String
+            user.email = snapshot["email"] as? String
+            user.profileImage = snapshot["profileImage"] as? String
+            user.id = data.key
+            guard let dict = snapshot["friends"] as? [String:Int] else { return }
+            if dict[CurrentUserInformation.uid] == 1 {
+                user.friend = true
+                DispatchQueue.main.async {
+                    self.contacts.append(user)
+                    self.tableView.reloadData()
                 }
             }
         }
@@ -79,5 +77,8 @@ extension ContactsVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
 }
