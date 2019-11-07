@@ -20,6 +20,11 @@ extension UIViewController {
     func hideTabBar(status: Bool){
         tabBarController?.tabBar.isHidden = status
     }
+    
+    func hideNavBar(status: Bool){
+        navigationController?.navigationBar.isHidden = status
+    }
+    
 }
 
 

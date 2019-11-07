@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class AddNewUserVC: UIViewController {
+class UserListVC: UIViewController {
     
     var usersInformation = [UserInformation]()
     
@@ -52,13 +52,13 @@ class AddNewUserVC: UIViewController {
     
 }
 
-extension AddNewUserVC: UITableViewDelegate, UITableViewDataSource {
+extension UserListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return usersInformation.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AddNewUserCell") as! AddNewUserCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserListCell") as! UserListCell
         let user = usersInformation[indexPath.row]
         cell.emailLabel.text = user.email
         cell.nameLabel.text = user.name
@@ -69,7 +69,12 @@ extension AddNewUserVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        let user = usersInformation[indexPath.row]
+        let controller = storyboard?.instantiateViewController(identifier: "AddNewFriendVC") as! AddNewFriendVC
+        controller.email = user.email
+        controller.name = user.name
+        controller.profileImageUrl = user.profileImage
+        show(controller, sender: nil)
     }
     
 }

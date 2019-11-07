@@ -8,12 +8,9 @@
 
 import UIKit
 
-class AddNewUserCell: UITableViewCell {
-    
+class UserListCell: UITableViewCell {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
-    
-    
 }
 
