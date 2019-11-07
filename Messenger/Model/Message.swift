@@ -11,4 +11,5 @@ import Foundation
 struct Message {
     let message: String
     let sender: String
+    let time: NSNumber
 }

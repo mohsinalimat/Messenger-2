@@ -23,13 +23,14 @@ class AddNewUserVC: UIViewController {
     }
     
     func fetchUser(){
-        Database.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
+        Database.database().reference().child("users").observe(.childAdded, with: { (data) in
             
-            if let snapshot = snapshot.value as? [String: AnyObject] {
+            if let snapshot = data.value as? [String: AnyObject] {
                 let user = UserInformation()
                 user.name = snapshot["name"] as? String
                 user.email = snapshot["email"] as? String
                 user.profileImage = snapshot["profileImage"] as? String
+                user.id = data.key
                 self.usersInformation.append(user)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -64,6 +65,11 @@ extension AddNewUserVC: UITableViewDelegate, UITableViewDataSource {
         tableView.rowHeight = 100
         cell.profileImage.loadImageCacheWithUrlString(imageUrl: user.profileImage!)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
     }
     
 }
