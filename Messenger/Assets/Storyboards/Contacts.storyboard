@@ -123,7 +123,7 @@
                                             <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="backButtonPressed:" destination="37q-wo-AQc" eventType="touchUpInside" id="tK6-Fm-HZ5"/>
+                                            <action selector="buttonPressed:" destination="37q-wo-AQc" eventType="touchUpInside" id="N4S-QQ-S7u"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -188,10 +188,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyp-Qh-qXD" customClass="ButtonVC" customModule="Messenger" customModuleProvider="target">
-                                        <rect key="frame" x="103" y="248" width="100" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyp-Qh-qXD" customClass="ButtonVC" customModule="Messenger" customModuleProvider="target">
+                                        <rect key="frame" x="103.66666666666666" y="247" width="100" height="30"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="eg0-cN-1lD"/>
+                                            <constraint firstAttribute="height" constant="30" id="i8e-bE-qlx"/>
+                                        </constraints>
                                         <state key="normal" title="Add Friend">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -210,7 +213,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="addFriendPressed:" destination="37q-wo-AQc" eventType="touchUpInside" id="djf-PW-Rep"/>
+                                            <action selector="buttonPressed:" destination="37q-wo-AQc" eventType="touchUpInside" id="XDi-bK-B2L"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -219,7 +222,9 @@
                                     <constraint firstItem="V7i-sc-hGb" firstAttribute="top" secondItem="2UY-75-Fx1" secondAttribute="top" constant="17" id="Hb9-gL-r3W"/>
                                     <constraint firstAttribute="height" constant="360" id="KO0-OW-Yyj"/>
                                     <constraint firstItem="S6i-eA-GYt" firstAttribute="top" secondItem="V7i-sc-hGb" secondAttribute="bottom" constant="20" id="Ndx-Fk-yA4"/>
+                                    <constraint firstItem="wyp-Qh-qXD" firstAttribute="centerX" secondItem="2UY-75-Fx1" secondAttribute="centerX" id="Trb-ze-mOr"/>
                                     <constraint firstItem="V7i-sc-hGb" firstAttribute="centerX" secondItem="2UY-75-Fx1" secondAttribute="centerX" constant="-0.5" id="e9i-hU-FCr"/>
+                                    <constraint firstItem="wyp-Qh-qXD" firstAttribute="top" secondItem="S6i-eA-GYt" secondAttribute="bottom" constant="30" id="p4u-ga-D3J"/>
                                     <constraint firstItem="S6i-eA-GYt" firstAttribute="centerX" secondItem="2UY-75-Fx1" secondAttribute="centerX" id="yWn-05-hIb"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -268,7 +273,7 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactsCell" id="bQl-qp-9yo">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactsVC" id="bQl-qp-9yo">
                                         <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bQl-qp-9yo" id="4dC-LN-Qqf">

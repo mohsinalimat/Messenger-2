@@ -19,7 +19,6 @@ class UserListVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         fetchUser()
-        
     }
     
     func fetchUser(){
@@ -31,6 +30,17 @@ class UserListVC: UIViewController {
                 user.email = snapshot["email"] as? String
                 user.profileImage = snapshot["profileImage"] as? String
                 user.id = data.key
+                if let dict = snapshot["friends"] as? [String:Int]{
+                    if dict[CurrentUserInformation.uid] == 1 {
+                        user.friend = true
+                    }else{
+                        user.friend = false
+                    }
+                }
+
+                if user.id == CurrentUserInformation.uid {
+                    return
+                }
                 self.usersInformation.append(user)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -58,8 +68,8 @@ extension UserListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserListCell") as! UserListCell
         let user = usersInformation[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserListCell") as! UserListCell
         cell.emailLabel.text = user.email
         cell.nameLabel.text = user.name
         tableView.rowHeight = 100
@@ -74,6 +84,8 @@ extension UserListVC: UITableViewDelegate, UITableViewDataSource {
         controller.email = user.email
         controller.name = user.name
         controller.profileImageUrl = user.profileImage
+        controller.friendId = user.id
+        controller.isYourFriend = user.friend
         show(controller, sender: nil)
     }
     

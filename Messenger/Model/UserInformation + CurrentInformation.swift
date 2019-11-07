@@ -13,9 +13,11 @@ class UserInformation{
     var name: String?
     var email: String?
     var profileImage: String?
+    var friend: Bool?
 }
 
 class CurrentUserInformation{
+    static var uid: String!
     static var name: String!
     static var email: String!
     static var profileImage: String!

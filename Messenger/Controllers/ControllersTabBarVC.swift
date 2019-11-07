@@ -23,6 +23,7 @@ class ControllersTabBarVC: UITabBarController {
         let uid = Auth.auth().currentUser?.uid
         Database.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
             if let snapshot = snapshot.value as? [String: AnyObject]{
+                CurrentUserInformation.uid = uid
                 CurrentUserInformation.name = snapshot["name"] as? String
                 CurrentUserInformation.email = snapshot["email"] as? String
                 CurrentUserInformation.profileImage = snapshot["profileImage"] as? String

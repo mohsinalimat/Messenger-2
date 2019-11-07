@@ -9,21 +9,7 @@
 import UIKit
 
 class UserInfoTableViewCell: UITableViewCell {
-
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var userPhoto: ImageVC!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        
-        
-    }
-
 }
