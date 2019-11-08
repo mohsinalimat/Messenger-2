@@ -8,9 +8,14 @@
 
 import Foundation
 
-struct Message {
+class Message {
     var message: String!
     var sender: String!
     var time: NSNumber!
     var friend: String!
+    
+    func friendChecker() -> String {
+        return sender == CurrentUserInformation.uid ? friend: sender
+    }
+    
 }

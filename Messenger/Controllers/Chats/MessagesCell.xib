@@ -20,29 +20,37 @@
                         <rect key="frame" x="70" y="10" width="258" height="132"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YYr-Lb-vYG" customClass="BackgroundView" customModule="Messenger" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="233" height="123.33333333333333"/>
+                                <rect key="frame" x="0.0" y="0.0" width="233" height="123"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fdfsbfisfgdufghsuifigsfuigsgfuidsgfiugsifgsiufgudsgfigsugfsdgifwegrwrge" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUw-qe-uca">
-                                        <rect key="frame" x="10" y="10" width="213" height="93.333333333333329"/>
+                                        <rect key="frame" x="10" y="27" width="213" height="76"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zJ-n9-HQs">
-                                        <rect key="frame" x="167.33333333333334" y="106.33333333333333" width="55.666666666666657" height="13.333333333333329"/>
+                                        <rect key="frame" x="167.33333333333334" y="106" width="55.666666666666657" height="13.333333333333329"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yd0-X0-WyF">
+                                        <rect key="frame" x="10.000000000000004" y="3.3333333333333339" width="50.333333333333343" height="21.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="1zJ-n9-HQs" firstAttribute="top" secondItem="NUw-qe-uca" secondAttribute="bottom" constant="3" id="3Q9-jv-nAf"/>
+                                    <constraint firstItem="NUw-qe-uca" firstAttribute="top" secondItem="yd0-X0-WyF" secondAttribute="bottom" constant="2.0000000000000071" id="6hx-cs-W2i"/>
                                     <constraint firstAttribute="bottom" secondItem="1zJ-n9-HQs" secondAttribute="bottom" constant="3.6699999999999999" id="A9h-Zx-M8O"/>
                                     <constraint firstAttribute="trailing" secondItem="1zJ-n9-HQs" secondAttribute="trailing" constant="9.9999999999999716" id="CCz-el-V9B"/>
                                     <constraint firstItem="NUw-qe-uca" firstAttribute="leading" secondItem="YYr-Lb-vYG" secondAttribute="leading" constant="10" id="Qub-2I-dvz"/>
                                     <constraint firstAttribute="trailing" secondItem="NUw-qe-uca" secondAttribute="trailing" constant="10" id="U0P-zo-iHw"/>
-                                    <constraint firstItem="NUw-qe-uca" firstAttribute="top" secondItem="YYr-Lb-vYG" secondAttribute="top" constant="10" id="kJl-Kl-21n"/>
+                                    <constraint firstItem="yd0-X0-WyF" firstAttribute="leading" secondItem="YYr-Lb-vYG" secondAttribute="leading" constant="10" id="ipI-1E-bYH"/>
+                                    <constraint firstItem="NUw-qe-uca" firstAttribute="top" secondItem="YYr-Lb-vYG" secondAttribute="top" constant="27" id="kJl-Kl-21n"/>
                                     <constraint firstAttribute="bottom" secondItem="NUw-qe-uca" secondAttribute="bottom" constant="20" id="pIF-Oy-uii"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -83,6 +91,7 @@
             <connections>
                 <outlet property="messageLabel" destination="NUw-qe-uca" id="fIC-nF-NYA"/>
                 <outlet property="messageView" destination="YYr-Lb-vYG" id="Gdm-mO-PX8"/>
+                <outlet property="nameLabel" destination="yd0-X0-WyF" id="CBn-FO-M0w"/>
                 <outlet property="timeLabel" destination="1zJ-n9-HQs" id="nNg-KV-cB6"/>
                 <outlet property="userImage" destination="ybH-Cw-A2L" id="JEZ-FR-g37"/>
             </connections>

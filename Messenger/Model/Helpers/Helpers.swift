@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 let imgCache = NSCache<AnyObject, AnyObject>()
 
@@ -23,6 +24,14 @@ extension UIViewController {
     
     func hideNavBar(status: Bool){
         navigationController?.navigationBar.isHidden = status
+    }
+    
+    func getSenderInfo(sender: String, completion: @escaping (_ data: [String: AnyObject]?, _ error: Error?) -> Void){
+        let ref = Constants.FirebaseDB.db.reference().child("users").child(sender)
+        ref.observeSingleEvent(of: .value) { (snapshot) in
+            guard let data = snapshot.value as? [String: AnyObject] else { return }
+            completion(data, nil)
+        }
     }
     
 }

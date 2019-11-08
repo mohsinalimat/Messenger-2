@@ -20,7 +20,7 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
     
     // Message Outlets
     var messages: [Message] = []
-        
+    
     @IBOutlet weak var messageTextfield: UITextField!
     @IBOutlet weak var photoLibrary: UIButton!
     @IBOutlet weak var sendButton: UIButton!
@@ -40,7 +40,7 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         hideTabBar(status: true)
-        getMessagesHandler()
+        getUserMessages()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -64,33 +64,51 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
         guard let friendId = friendId else { return }
         let values = ["message":message, "sender": sender, "date": Date().timeIntervalSince1970, "friend": friendId] as [String : Any]
         let reference = Constants.FirebaseDB.db.reference().child("messages")
-        let ref = reference.childByAutoId()
-        ref.updateChildValues(values)
-        messageTextfield.text = ""
-    }
-    
-    func getMessagesHandler(){
-        
-        let reference = Constants.FirebaseDB.db.reference().child("messages")
-        reference.observe(.childAdded) { (snapshot) in
-            guard let values = snapshot.value as? [String: AnyObject] else { return }
-            var message = Message()
-            message.message = values["message"] as? String
-            message.sender = values["sender"] as? String
-            message.time = values["date"] as? NSNumber
-            message.friend = values["friend"] as? String
-            DispatchQueue.main.async {
-                self.messages.append(message)
-                self.tableView.reloadData()
+        let childRef = reference.childByAutoId()
+        childRef.updateChildValues(values) { (error, ref) in
+            if error != nil {
+                print("error")
+                return
             }
+            let userMessagesRef = Constants.FirebaseDB.db.reference().child("friend-messages").child(sender)
+            let messageId = childRef.key!
+            userMessagesRef.updateChildValues([messageId: 1])
+            
+            let recipientRef = Constants.FirebaseDB.db.reference().child("friend-messages").child(friendId)
+            recipientRef.updateChildValues([messageId: 1])
+            
             
         }
+        messageTextfield.text = ""
         
+    }
+        
+    func getUserMessages(){
+        let ref = Constants.FirebaseDB.db.reference().child("friend-messages").child(CurrentUserInformation.uid)
+        ref.observe(.childAdded, with: { (snapshot) in
+            let messageId = snapshot.key
+            let messageReference = Constants.FirebaseDB.db.reference().child("messages").child(messageId)
+            messageReference.observeSingleEvent(of: .value) { (snapshot) in
+                guard let values = snapshot.value as? [String: AnyObject] else { return }
+                let message = Message()
+                message.message = values["message"] as? String
+                message.sender = values["sender"] as? String
+                message.time = values["date"] as? NSNumber
+                message.friend = values["friend"] as? String
+                if message.friendChecker() == self.friendId{
+                    self.messages.append(message)
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+
+                }
+            }
+        }, withCancel: nil)
     }
     
     @IBAction func photoLibraryPressed(_ sender: Any) {
         
-        
+        // TODO: Send photos
         
     }
     
@@ -102,7 +120,6 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    
 }
 extension MessagesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -112,14 +129,17 @@ extension MessagesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessagesCell") as! MessagesCell
         let message = messages[indexPath.row]
-        cell.messageLabel.text = message.message
-        if messages.count > 0 {
-            let date = NSDate(timeIntervalSince1970: message.time.doubleValue)
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "hh:mm a"
-            cell.timeLabel.text = dateFormatter.string(from: date as Date)
-            cell.userImage.loadImageCacheWithUrlString(imageUrl: CurrentUserInformation.profileImage)
+        getSenderInfo(sender: message.sender) { (data, error) in
+            guard let data = data else { return }
+            cell.nameLabel.text = "\(data["name"] as! String):"
+            cell.userImage.loadImageCacheWithUrlString(imageUrl: data["profileImage"] as! String)
         }
+        cell.messageLabel.text = message.message
+        let date = NSDate(timeIntervalSince1970: message.time.doubleValue)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm a"
+        cell.timeLabel.text = dateFormatter.string(from: date as Date)
+        
         return cell
     }
     
@@ -127,5 +147,6 @@ extension MessagesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
     
 }
