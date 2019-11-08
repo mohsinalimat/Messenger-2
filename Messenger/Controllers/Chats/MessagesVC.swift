@@ -35,6 +35,7 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
         tableView.dataSource = self
         messageTextfield.delegate = self
         tableView.register(UINib(nibName: "MessagesCell", bundle: nil), forCellReuseIdentifier: "MessagesCell")
+        tableView.register(UINib(nibName: "FriendMessagesCell", bundle: nil), forCellReuseIdentifier: "FriendMessagesCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,7 +83,7 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
         messageTextfield.text = ""
         
     }
-        
+    
     func getUserMessages(){
         let ref = Constants.FirebaseDB.db.reference().child("friend-messages").child(CurrentUserInformation.uid)
         ref.observe(.childAdded, with: { (snapshot) in
@@ -100,7 +101,7 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
-
+                    
                 }
             }
         }, withCancel: nil)
@@ -127,20 +128,36 @@ extension MessagesVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MessagesCell") as! MessagesCell
         let message = messages[indexPath.row]
-        getSenderInfo(sender: message.sender) { (data, error) in
-            guard let data = data else { return }
-            cell.nameLabel.text = "\(data["name"] as! String):"
-            cell.userImage.loadImageCacheWithUrlString(imageUrl: data["profileImage"] as! String)
+        if message.sender == CurrentUserInformation.uid {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MessagesCell") as! MessagesCell
+            getSenderInfo(sender: message.sender) { (data, error) in
+                guard let data = data else { return }
+                cell.nameLabel.text = "\(data["name"] as! String):"
+                cell.userImage.loadImageCacheWithUrlString(imageUrl: data["profileImage"] as! String)
+            }
+            cell.messageLabel.text = message.message
+            let date = NSDate(timeIntervalSince1970: message.time.doubleValue)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "hh:mm a"
+            cell.timeLabel.text = dateFormatter.string(from: date as Date)
+            
+            return cell
+            
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FriendMessagesCell") as! FriendMessagesCell
+            getSenderInfo(sender: message.sender) { (data, error) in
+                guard let data = data else { return }
+                cell.nameLabel.text = "\(data["name"] as! String):"
+                cell.profileImage.loadImageCacheWithUrlString(imageUrl: data["profileImage"] as! String)
+            }
+            cell.messageLabel.text = message.message
+            let date = NSDate(timeIntervalSince1970: message.time.doubleValue)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "hh:mm a"
+            cell.timeLabel.text = dateFormatter.string(from: date as Date)
+            return cell
         }
-        cell.messageLabel.text = message.message
-        let date = NSDate(timeIntervalSince1970: message.time.doubleValue)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "hh:mm a"
-        cell.timeLabel.text = dateFormatter.string(from: date as Date)
-        
-        return cell
     }
     
     

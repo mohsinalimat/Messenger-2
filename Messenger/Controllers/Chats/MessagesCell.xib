@@ -9,33 +9,33 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessagesCell" rowHeight="142" id="KGk-i7-Jjw" customClass="MessagesCell" customModule="Messenger" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="338" height="142"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessagesCell" rowHeight="100" id="KGk-i7-Jjw" customClass="MessagesCell" customModule="Messenger" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="338" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="338" height="142"/>
+                <rect key="frame" x="0.0" y="0.0" width="338" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yiM-76-O3L">
-                        <rect key="frame" x="70" y="10" width="258" height="132"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="yiM-76-O3L">
+                        <rect key="frame" x="80" y="10" width="248" height="80"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YYr-Lb-vYG" customClass="BackgroundView" customModule="Messenger" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="233" height="123"/>
+                                <rect key="frame" x="0.0" y="0.0" width="227" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fdfsbfisfgdufghsuifigsfuigsgfuidsgfiugsifgsiufgudsgfigsugfsdgifwegrwrge" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUw-qe-uca">
-                                        <rect key="frame" x="10" y="27" width="213" height="76"/>
+                                        <rect key="frame" x="10" y="27" width="207" height="33"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zJ-n9-HQs">
-                                        <rect key="frame" x="167.33333333333334" y="106" width="55.666666666666657" height="13.333333333333329"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeLabel" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zJ-n9-HQs">
+                                        <rect key="frame" x="10" y="63" width="207" height="14"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yd0-X0-WyF">
-                                        <rect key="frame" x="10.000000000000004" y="3.3333333333333339" width="50.333333333333343" height="21.666666666666664"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yd0-X0-WyF">
+                                        <rect key="frame" x="10" y="3.3333333333333339" width="207" height="21.666666666666664"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -43,15 +43,17 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="1zJ-n9-HQs" firstAttribute="top" secondItem="NUw-qe-uca" secondAttribute="bottom" constant="3" id="3Q9-jv-nAf"/>
-                                    <constraint firstItem="NUw-qe-uca" firstAttribute="top" secondItem="yd0-X0-WyF" secondAttribute="bottom" constant="2.0000000000000071" id="6hx-cs-W2i"/>
-                                    <constraint firstAttribute="bottom" secondItem="1zJ-n9-HQs" secondAttribute="bottom" constant="3.6699999999999999" id="A9h-Zx-M8O"/>
-                                    <constraint firstAttribute="trailing" secondItem="1zJ-n9-HQs" secondAttribute="trailing" constant="9.9999999999999716" id="CCz-el-V9B"/>
+                                    <constraint firstItem="1zJ-n9-HQs" firstAttribute="top" secondItem="NUw-qe-uca" secondAttribute="bottom" constant="3" id="03v-JK-T51"/>
+                                    <constraint firstAttribute="bottom" secondItem="1zJ-n9-HQs" secondAttribute="bottom" constant="3" id="8Ch-su-G6T"/>
+                                    <constraint firstAttribute="trailing" secondItem="yd0-X0-WyF" secondAttribute="trailing" constant="10" id="9A3-os-PS4"/>
                                     <constraint firstItem="NUw-qe-uca" firstAttribute="leading" secondItem="YYr-Lb-vYG" secondAttribute="leading" constant="10" id="Qub-2I-dvz"/>
                                     <constraint firstAttribute="trailing" secondItem="NUw-qe-uca" secondAttribute="trailing" constant="10" id="U0P-zo-iHw"/>
-                                    <constraint firstItem="yd0-X0-WyF" firstAttribute="leading" secondItem="YYr-Lb-vYG" secondAttribute="leading" constant="10" id="ipI-1E-bYH"/>
+                                    <constraint firstItem="NUw-qe-uca" firstAttribute="top" secondItem="yd0-X0-WyF" secondAttribute="bottom" constant="2" id="UfA-ow-vmt"/>
                                     <constraint firstItem="NUw-qe-uca" firstAttribute="top" secondItem="YYr-Lb-vYG" secondAttribute="top" constant="27" id="kJl-Kl-21n"/>
                                     <constraint firstAttribute="bottom" secondItem="NUw-qe-uca" secondAttribute="bottom" constant="20" id="pIF-Oy-uii"/>
+                                    <constraint firstItem="yd0-X0-WyF" firstAttribute="leading" secondItem="YYr-Lb-vYG" secondAttribute="leading" constant="10" id="rCB-jJ-VTO"/>
+                                    <constraint firstAttribute="trailing" secondItem="1zJ-n9-HQs" secondAttribute="trailing" constant="10" id="s6g-Gm-gmC"/>
+                                    <constraint firstItem="1zJ-n9-HQs" firstAttribute="leading" secondItem="YYr-Lb-vYG" secondAttribute="leading" constant="10" id="y7Y-LA-Obo"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="radius">
@@ -66,7 +68,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserDefaultIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ybH-Cw-A2L" customClass="ImageVC" customModule="Messenger" customModuleProvider="target">
-                                <rect key="frame" x="238" y="0.0" width="20" height="20"/>
+                                <rect key="frame" x="228" y="60" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="5dc-bI-cgc"/>
                                     <constraint firstAttribute="height" constant="20" id="ee2-hw-8sV"/>
@@ -83,8 +85,8 @@
                 <constraints>
                     <constraint firstItem="yiM-76-O3L" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="N9Y-rN-ZLl"/>
                     <constraint firstAttribute="trailing" secondItem="yiM-76-O3L" secondAttribute="trailing" constant="10" id="cVT-r2-d1h"/>
-                    <constraint firstItem="yiM-76-O3L" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="70" id="kb1-qZ-Qhi"/>
-                    <constraint firstAttribute="bottom" secondItem="yiM-76-O3L" secondAttribute="bottom" id="rmR-RQ-7cC"/>
+                    <constraint firstItem="yiM-76-O3L" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="80" id="kb1-qZ-Qhi"/>
+                    <constraint firstAttribute="bottom" secondItem="yiM-76-O3L" secondAttribute="bottom" constant="10" id="rmR-RQ-7cC"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -95,7 +97,7 @@
                 <outlet property="timeLabel" destination="1zJ-n9-HQs" id="nNg-KV-cB6"/>
                 <outlet property="userImage" destination="ybH-Cw-A2L" id="JEZ-FR-g37"/>
             </connections>
-            <point key="canvasLocation" x="116.8" y="192.85714285714286"/>
+            <point key="canvasLocation" x="116.8" y="177.33990147783251"/>
         </tableViewCell>
     </objects>
     <resources>
