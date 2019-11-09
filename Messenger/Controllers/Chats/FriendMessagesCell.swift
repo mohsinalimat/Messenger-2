@@ -12,7 +12,6 @@ class FriendMessagesCell: UITableViewCell {
 
     @IBOutlet weak var profileImage: ImageVC!
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

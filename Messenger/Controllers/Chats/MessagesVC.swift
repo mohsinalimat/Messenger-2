@@ -131,11 +131,6 @@ extension MessagesVC: UITableViewDelegate, UITableViewDataSource {
         let message = messages[indexPath.row]
         if message.sender == CurrentUserInformation.uid {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MessagesCell") as! MessagesCell
-            getSenderInfo(sender: message.sender) { (data, error) in
-                guard let data = data else { return }
-                cell.nameLabel.text = "\(data["name"] as! String):"
-                cell.userImage.loadImageCacheWithUrlString(imageUrl: data["profileImage"] as! String)
-            }
             cell.messageLabel.text = message.message
             let date = NSDate(timeIntervalSince1970: message.time.doubleValue)
             let dateFormatter = DateFormatter()
@@ -148,7 +143,6 @@ extension MessagesVC: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FriendMessagesCell") as! FriendMessagesCell
             getSenderInfo(sender: message.sender) { (data, error) in
                 guard let data = data else { return }
-                cell.nameLabel.text = "\(data["name"] as! String):"
                 cell.profileImage.loadImageCacheWithUrlString(imageUrl: data["profileImage"] as! String)
             }
             cell.messageLabel.text = message.message

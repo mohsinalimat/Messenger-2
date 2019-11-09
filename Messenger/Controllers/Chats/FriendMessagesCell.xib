@@ -12,12 +12,12 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendMessagesCell" rowHeight="142" id="KGk-i7-Jjw" customClass="FriendMessagesCell" customModule="Messenger" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="142"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="142"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cLs-hY-mvf">
-                        <rect key="frame" x="10" y="10" width="250" height="122"/>
+                        <rect key="frame" x="10" y="10" width="118" height="122"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserDefaultIcon" translatesAutoresizingMaskIntoConstraints="NO" id="GPc-u9-GIM" customClass="ImageVC" customModule="Messenger" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="102" width="20" height="20"/>
@@ -32,36 +32,27 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SnT-gw-fom" customClass="BackgroundView" customModule="Messenger" customModuleProvider="target">
-                                <rect key="frame" x="25" y="0.0" width="225" height="122"/>
+                                <rect key="frame" x="25" y="34" width="93" height="88"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04O-tv-0Gg">
-                                        <rect key="frame" x="10" y="3.5" width="205" height="21.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOK-xN-kLp">
-                                        <rect key="frame" x="10" y="27" width="205" height="75"/>
+                                        <rect key="frame" x="10" y="9" width="73" height="58"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Oc-AM-2Iv">
-                                        <rect key="frame" x="10" y="105" width="205" height="14"/>
+                                        <rect key="frame" x="10" y="67" width="73" height="14"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.40178189212328769" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.89019607840000003" green="0.015686274510000001" blue="0.1450980392" alpha="0.64958797089999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="4Oc-AM-2Iv" firstAttribute="top" secondItem="JOK-xN-kLp" secondAttribute="bottom" constant="3" id="943-rp-uGb"/>
-                                    <constraint firstAttribute="bottom" secondItem="JOK-xN-kLp" secondAttribute="bottom" constant="20" id="GU4-4Q-mRe"/>
-                                    <constraint firstItem="04O-tv-0Gg" firstAttribute="leading" secondItem="SnT-gw-fom" secondAttribute="leading" constant="10" id="K2m-qT-IZO"/>
-                                    <constraint firstItem="JOK-xN-kLp" firstAttribute="top" secondItem="SnT-gw-fom" secondAttribute="top" constant="27" id="S5Z-J7-IzC"/>
-                                    <constraint firstAttribute="trailing" secondItem="04O-tv-0Gg" secondAttribute="trailing" constant="10" id="UBz-Hx-DG8"/>
-                                    <constraint firstAttribute="bottom" secondItem="4Oc-AM-2Iv" secondAttribute="bottom" constant="3" id="VPz-bq-CRo"/>
-                                    <constraint firstItem="JOK-xN-kLp" firstAttribute="top" secondItem="04O-tv-0Gg" secondAttribute="bottom" constant="2" id="XJ2-RV-buS"/>
+                                    <constraint firstItem="4Oc-AM-2Iv" firstAttribute="top" secondItem="JOK-xN-kLp" secondAttribute="bottom" id="943-rp-uGb"/>
+                                    <constraint firstAttribute="bottom" secondItem="JOK-xN-kLp" secondAttribute="bottom" constant="21" id="GU4-4Q-mRe"/>
+                                    <constraint firstItem="JOK-xN-kLp" firstAttribute="top" secondItem="SnT-gw-fom" secondAttribute="top" constant="9" id="S5Z-J7-IzC"/>
+                                    <constraint firstAttribute="bottom" secondItem="4Oc-AM-2Iv" secondAttribute="bottom" constant="7" id="VPz-bq-CRo"/>
                                     <constraint firstAttribute="trailing" secondItem="4Oc-AM-2Iv" secondAttribute="trailing" constant="10" id="Zvh-tp-cVE"/>
                                     <constraint firstItem="JOK-xN-kLp" firstAttribute="leading" secondItem="SnT-gw-fom" secondAttribute="leading" constant="10" id="bNq-Zj-LOk"/>
                                     <constraint firstAttribute="trailing" secondItem="JOK-xN-kLp" secondAttribute="trailing" constant="10" id="nCb-iw-5wG"/>
@@ -74,19 +65,21 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="118" id="Gqb-qV-ix7"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="cLs-hY-mvf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="3iv-ng-c7b"/>
                     <constraint firstAttribute="bottom" secondItem="cLs-hY-mvf" secondAttribute="bottom" constant="10" id="8FA-NN-QkT"/>
                     <constraint firstItem="cLs-hY-mvf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="rWN-cK-sDO"/>
-                    <constraint firstAttribute="trailing" secondItem="cLs-hY-mvf" secondAttribute="trailing" constant="60" id="rzQ-Uk-Iw9"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cLs-hY-mvf" secondAttribute="trailing" constant="210" id="rzQ-Uk-Iw9"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="messageLabel" destination="JOK-xN-kLp" id="A3a-9M-6to"/>
-                <outlet property="nameLabel" destination="04O-tv-0Gg" id="jnm-a6-6iA"/>
                 <outlet property="profileImage" destination="GPc-u9-GIM" id="7Ad-BY-WnE"/>
                 <outlet property="timeLabel" destination="4Oc-AM-2Iv" id="FuU-YY-uvX"/>
             </connections>
