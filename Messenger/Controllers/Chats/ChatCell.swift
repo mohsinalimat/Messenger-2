@@ -11,4 +11,6 @@ import UIKit
 class ChatCell: UITableViewCell {
     @IBOutlet weak var profileImage: ImageVC!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var lastMessageLabel: UILabel!
+    @IBOutlet weak var senderImage: ImageVC!
 }

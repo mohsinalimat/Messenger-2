@@ -180,7 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				CBD5ECD0236E5C2200D24116 /* Messenger */,
-				CBD5ECCF236E5C2200D24116 /* Products */,
 				2A25B39603504A2916D35A20 /* Pods */,
 				23277DFF808C1474910B515F /* Frameworks */,
 			);
@@ -192,6 +191,7 @@
 				CBD5ECCE236E5C2200D24116 /* Messenger.app */,
 			);
 			name = Products;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		CBD5ECD0236E5C2200D24116 /* Messenger */ = {
@@ -216,6 +216,7 @@
 				CB5BD5042370CF4E00944E79 /* Contacts */,
 				CB5BD5002370CF0600944E79 /* Settings */,
 				CB5BD4FC2370A05100944E79 /* ControllersTabBarVC.swift */,
+				CBD5ECCF236E5C2200D24116 /* Products */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

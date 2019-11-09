@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Message {
+class Message{
     var message: String!
     var sender: String!
     var time: NSNumber!
@@ -17,5 +17,11 @@ class Message {
     func friendChecker() -> String {
         return sender == CurrentUserInformation.uid ? friend: sender
     }
-    
+}
+
+class RecentMessage{
+    var message: String!
+    var sender: String!
+    var time: NSNumber!
+    var friend: String!
 }

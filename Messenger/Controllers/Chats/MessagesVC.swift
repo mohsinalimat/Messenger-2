@@ -72,12 +72,13 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
                 print("error")
                 return
             }
-            let userMessagesRef = Constants.FirebaseDB.db.reference().child("friend-messages").child(sender)
+            let userMessagesRef = Constants.FirebaseDB.db.reference().child("friend-messages").child(sender).child(friendId)
             let messageId = childRef.key!
             userMessagesRef.updateChildValues([messageId: 1])
             
-            let friendRef = Constants.FirebaseDB.db.reference().child("friend-messages").child(friendId)
+            let friendRef = Constants.FirebaseDB.db.reference().child("friend-messages").child(friendId).child(sender)
             friendRef.updateChildValues([messageId: 1])
+            
             
             
         }
@@ -87,7 +88,7 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
     
     func getUserMessages(){
         
-        let ref = Constants.FirebaseDB.db.reference().child("friend-messages").child(CurrentUserInformation.uid)
+        let ref = Constants.FirebaseDB.db.reference().child("friend-messages").child(CurrentUserInformation.uid).child(friendId)
         ref.observe(.childAdded, with: { (snapshot) in
             let messageId = snapshot.key
             let messageReference = Constants.FirebaseDB.db.reference().child("messages").child(messageId)

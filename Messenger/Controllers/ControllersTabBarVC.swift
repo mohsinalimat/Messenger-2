@@ -10,11 +10,9 @@ import UIKit
 import Firebase
 
 class ControllersTabBarVC: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,12 +26,33 @@ class ControllersTabBarVC: UITabBarController {
                 CurrentUserInformation.email = snapshot["email"] as? String
                 CurrentUserInformation.profileImage = snapshot["profileImage"] as? String
             }
+            self.observeMessages()
         }, withCancel: nil)
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         print("TAB BAR DISAPPEARS")
+    }
+    
+    func observeMessages(){
+        print("Hi")
+        let ref = Constants.FirebaseDB.db.reference().child("friend-messages").child(CurrentUserInformation.uid)
+        ref.observe(.childAdded) { (snap) in
+            let userId = snap.key
+            Constants.FirebaseDB.db.reference().child("friend-messages").child(CurrentUserInformation.uid).child(userId).observe(.childAdded) { (snap) in
+                let messageId = snap.key
+                Constants.FirebaseDB.db.reference().child("messages").child(messageId).observeSingleEvent(of: .value) { (snapshot) in
+                    guard let values = snapshot.value as? [String: AnyObject] else { return }
+                    let message = RecentMessage()
+                    message.message = values["message"] as? String
+                    message.sender = values["sender"] as? String
+                    message.time = values["date"] as? NSNumber
+                    message.friend = values["friend"] as? String
+                    Constants.Model.model.append(message)
+                }
+            }
+        }
     }
     
 }

@@ -19,4 +19,8 @@ class Constants {
         static var db = Database.database()
     }
     
+    struct Model {
+        static var model = [RecentMessage]()
+    }
+    
 }
