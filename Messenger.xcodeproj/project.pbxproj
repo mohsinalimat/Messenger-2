@@ -20,8 +20,8 @@
 		CB5BD5022370CF2C00944E79 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BD5012370CF2C00944E79 /* UserInfoTableViewCell.swift */; };
 		CB74C8612373464C00E4AF94 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74C8602373464C00E4AF94 /* Message.swift */; };
 		CB74C863237347ED00E4AF94 /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74C862237347ED00E4AF94 /* MessagesVC.swift */; };
-		CB74C868237363BF00E4AF94 /* MessagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74C866237363BF00E4AF94 /* MessagesCell.swift */; };
-		CB74C869237363BF00E4AF94 /* MessagesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB74C867237363BF00E4AF94 /* MessagesCell.xib */; };
+		CB74C868237363BF00E4AF94 /* SenderMessagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74C866237363BF00E4AF94 /* SenderMessagesCell.swift */; };
+		CB74C869237363BF00E4AF94 /* SenderMessagesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB74C867237363BF00E4AF94 /* SenderMessagesCell.xib */; };
 		CB74C86B2373AAC100E4AF94 /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74C86A2373AAC100E4AF94 /* Friends.swift */; };
 		CB74C86D2373AB4200E4AF94 /* AddNewFriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74C86C2373AB4200E4AF94 /* AddNewFriendVC.swift */; };
 		CB7898F12371075E00E5D44D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB7898F02371075E00E5D44D /* Settings.storyboard */; };
@@ -62,8 +62,8 @@
 		CB5BD5012370CF2C00944E79 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
 		CB74C8602373464C00E4AF94 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		CB74C862237347ED00E4AF94 /* MessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
-		CB74C866237363BF00E4AF94 /* MessagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesCell.swift; sourceTree = "<group>"; };
-		CB74C867237363BF00E4AF94 /* MessagesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagesCell.xib; sourceTree = "<group>"; };
+		CB74C866237363BF00E4AF94 /* SenderMessagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderMessagesCell.swift; sourceTree = "<group>"; };
+		CB74C867237363BF00E4AF94 /* SenderMessagesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SenderMessagesCell.xib; sourceTree = "<group>"; };
 		CB74C86A2373AAC100E4AF94 /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
 		CB74C86C2373AB4200E4AF94 /* AddNewFriendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewFriendVC.swift; sourceTree = "<group>"; };
 		CB7898F02371075E00E5D44D /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -156,8 +156,8 @@
 				CB5BD4F62370936B00944E79 /* ChatsVC.swift */,
 				CBC4C5E92374D58400BCB8F6 /* ChatCell.swift */,
 				CB74C862237347ED00E4AF94 /* MessagesVC.swift */,
-				CB74C866237363BF00E4AF94 /* MessagesCell.swift */,
-				CB74C867237363BF00E4AF94 /* MessagesCell.xib */,
+				CB74C866237363BF00E4AF94 /* SenderMessagesCell.swift */,
+				CB74C867237363BF00E4AF94 /* SenderMessagesCell.xib */,
 				CB95CCA4237620CF00DD20E2 /* FriendMessagesCell.xib */,
 				CB95CCA3237620CF00DD20E2 /* FriendMessagesCell.swift */,
 			);
@@ -323,7 +323,7 @@
 			files = (
 				CBD5ECDE236E5C2300D24116 /* LaunchScreen.storyboard in Resources */,
 				CB95CCA6237620CF00DD20E2 /* FriendMessagesCell.xib in Resources */,
-				CB74C869237363BF00E4AF94 /* MessagesCell.xib in Resources */,
+				CB74C869237363BF00E4AF94 /* SenderMessagesCell.xib in Resources */,
 				CBD5ECDB236E5C2300D24116 /* Assets.xcassets in Resources */,
 				CBE52225236F64CC00AEC790 /* GoogleService-Info.plist in Resources */,
 				CB7898F323710BB000E5D44D /* Contacts.storyboard in Resources */,
@@ -393,7 +393,7 @@
 				CBC4C5E82374C7A400BCB8F6 /* ContactsCell.swift in Sources */,
 				CB34A06023725BE6007E8659 /* UserListCell.swift in Sources */,
 				CB74C863237347ED00E4AF94 /* MessagesVC.swift in Sources */,
-				CB74C868237363BF00E4AF94 /* MessagesCell.swift in Sources */,
+				CB74C868237363BF00E4AF94 /* SenderMessagesCell.swift in Sources */,
 				CBCEE915236F4345009E77B4 /* SignUpVC.swift in Sources */,
 				CBE5222D236F783600AEC790 /* Helpers.swift in Sources */,
 				CBD5ECD6236E5C2200D24116 /* SignInVC.swift in Sources */,

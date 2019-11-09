@@ -21,6 +21,7 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
     // Message Outlets
     var messages: [Message] = []
     
+    @IBOutlet weak var chatNavigation: UINavigationItem!
     @IBOutlet weak var messageTextfield: UITextField!
     @IBOutlet weak var photoLibrary: UIButton!
     @IBOutlet weak var sendButton: UIButton!
@@ -28,13 +29,13 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
     // Navigation Outlets
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var chatNavigation: UINavigationItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         messageTextfield.delegate = self
-        tableView.register(UINib(nibName: "MessagesCell", bundle: nil), forCellReuseIdentifier: "MessagesCell")
+        chatNavigation.title = friendName
+        tableView.register(UINib(nibName: "SenderMessagesCell", bundle: nil), forCellReuseIdentifier: "SenderMessagesCell")
         tableView.register(UINib(nibName: "FriendMessagesCell", bundle: nil), forCellReuseIdentifier: "FriendMessagesCell")
     }
         
@@ -137,8 +138,8 @@ extension MessagesVC: UITableViewDelegate, UITableViewDataSource {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh:mm a"
         if message.sender == CurrentUserInformation.uid {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MessagesCell") as! MessagesCell
-            cell.messageLabel.text = message.message
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SenderMessagesCell") as! SenderMessagesCell
+            cell.messagesLabel.text = message.message
             cell.timeLabel.text = dateFormatter.string(from: date as Date)
             return cell
             

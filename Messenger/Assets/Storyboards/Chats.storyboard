@@ -155,13 +155,10 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" cocoaTouchSystemColor="lightTextColor"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -186,7 +183,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="chatNavigation" destination="3XG-ht-9to" id="k7e-e3-dj7"/>
+                        <outlet property="chatNavigation" destination="3XG-ht-9to" id="xyR-xf-TOc"/>
                         <outlet property="messageTextfield" destination="zT8-lq-Ymp" id="qn1-CF-0sZ"/>
                         <outlet property="photoLibrary" destination="YpX-lO-3kL" id="ngc-l0-tKc"/>
                         <outlet property="sendButton" destination="CUl-C4-Z2Z" id="DVQ-df-UBQ"/>

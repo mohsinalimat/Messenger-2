@@ -28,7 +28,6 @@ class SignInVC: UIViewController {
         
         let controller = storyboard?.instantiateViewController(identifier: Constants.Storyboard.signUpVC) as! SignUpVC
         show(controller, sender: nil)
-        
     }
         
     func handleLogin(){
