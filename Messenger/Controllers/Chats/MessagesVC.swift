@@ -37,7 +37,7 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
         tableView.register(UINib(nibName: "MessagesCell", bundle: nil), forCellReuseIdentifier: "MessagesCell")
         tableView.register(UINib(nibName: "FriendMessagesCell", bundle: nil), forCellReuseIdentifier: "FriendMessagesCell")
     }
-    
+        
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         hideTabBar(status: true)
@@ -75,8 +75,8 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
             let messageId = childRef.key!
             userMessagesRef.updateChildValues([messageId: 1])
             
-            let recipientRef = Constants.FirebaseDB.db.reference().child("friend-messages").child(friendId)
-            recipientRef.updateChildValues([messageId: 1])
+            let friendRef = Constants.FirebaseDB.db.reference().child("friend-messages").child(friendId)
+            friendRef.updateChildValues([messageId: 1])
             
             
         }
@@ -85,6 +85,7 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
     }
     
     func getUserMessages(){
+        
         let ref = Constants.FirebaseDB.db.reference().child("friend-messages").child(CurrentUserInformation.uid)
         ref.observe(.childAdded, with: { (snapshot) in
             let messageId = snapshot.key
@@ -100,6 +101,8 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
                     self.messages.append(message)
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
+                        let indexPath = IndexPath(row: (self.messages.count - 1), section: 0)
+                        self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
                     }
                     
                 }
@@ -120,23 +123,23 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
         }
         return true
     }
-    
+     
 }
+
 extension MessagesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
     }
-    
+        
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = messages[indexPath.row]
+        let date = NSDate(timeIntervalSince1970: message.time.doubleValue)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm a"
         if message.sender == CurrentUserInformation.uid {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MessagesCell") as! MessagesCell
             cell.messageLabel.text = message.message
-            let date = NSDate(timeIntervalSince1970: message.time.doubleValue)
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "hh:mm a"
             cell.timeLabel.text = dateFormatter.string(from: date as Date)
-            
             return cell
             
         }else{
@@ -146,9 +149,6 @@ extension MessagesVC: UITableViewDelegate, UITableViewDataSource {
                 cell.profileImage.loadImageCacheWithUrlString(imageUrl: data["profileImage"] as! String)
             }
             cell.messageLabel.text = message.message
-            let date = NSDate(timeIntervalSince1970: message.time.doubleValue)
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "hh:mm a"
             cell.timeLabel.text = dateFormatter.string(from: date as Date)
             return cell
         }

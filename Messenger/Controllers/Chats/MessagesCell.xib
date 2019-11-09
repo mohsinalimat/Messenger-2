@@ -17,19 +17,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="yiM-76-O3L">
-                        <rect key="frame" x="210" y="10" width="118" height="80"/>
+                        <rect key="frame" x="181" y="10" width="147" height="80"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YYr-Lb-vYG" customClass="BackgroundView" customModule="Messenger" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="118" height="80"/>
+                                <rect key="frame" x="0.0" y="0.0" width="147" height="80"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fdfsbfisfgdufghsuifigsfuigsgfuidsgfiugsifgsiufgudsgfigsugfsdgifwegrwrge" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUw-qe-uca">
-                                        <rect key="frame" x="10" y="9" width="98" height="51"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="fdfsbfisfgdufghsuifigsfuigsgfuidsgfiugsifgsiufgudsgfigsugfsdgifwegrwrge" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUw-qe-uca">
+                                        <rect key="frame" x="10" y="9" width="127" height="54"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeLabel" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zJ-n9-HQs">
-                                        <rect key="frame" x="10" y="63" width="98" height="14"/>
+                                        <rect key="frame" x="10" y="63" width="127" height="14"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                         <color key="textColor" white="0.64754566210045661" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -37,12 +37,11 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="1zJ-n9-HQs" firstAttribute="top" secondItem="NUw-qe-uca" secondAttribute="bottom" constant="3" id="03v-JK-T51"/>
+                                    <constraint firstItem="1zJ-n9-HQs" firstAttribute="top" secondItem="NUw-qe-uca" secondAttribute="bottom" id="03v-JK-T51"/>
                                     <constraint firstAttribute="bottom" secondItem="1zJ-n9-HQs" secondAttribute="bottom" constant="3" id="8Ch-su-G6T"/>
                                     <constraint firstItem="NUw-qe-uca" firstAttribute="leading" secondItem="YYr-Lb-vYG" secondAttribute="leading" constant="10" id="Qub-2I-dvz"/>
                                     <constraint firstAttribute="trailing" secondItem="NUw-qe-uca" secondAttribute="trailing" constant="10" id="U0P-zo-iHw"/>
                                     <constraint firstItem="NUw-qe-uca" firstAttribute="top" secondItem="YYr-Lb-vYG" secondAttribute="top" constant="9" id="kJl-Kl-21n"/>
-                                    <constraint firstAttribute="bottom" secondItem="NUw-qe-uca" secondAttribute="bottom" constant="20" id="pIF-Oy-uii"/>
                                     <constraint firstAttribute="trailing" secondItem="1zJ-n9-HQs" secondAttribute="trailing" constant="10" id="s6g-Gm-gmC"/>
                                     <constraint firstItem="1zJ-n9-HQs" firstAttribute="leading" secondItem="YYr-Lb-vYG" secondAttribute="leading" constant="10" id="y7Y-LA-Obo"/>
                                 </constraints>
@@ -60,14 +59,14 @@
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="118" id="mCy-Ca-I9m"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="147" id="Tdt-Bc-L1v"/>
                         </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="yiM-76-O3L" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="N9Y-rN-ZLl"/>
                     <constraint firstAttribute="trailing" secondItem="yiM-76-O3L" secondAttribute="trailing" constant="10" id="cVT-r2-d1h"/>
-                    <constraint firstItem="yiM-76-O3L" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="210" id="kb1-qZ-Qhi"/>
+                    <constraint firstItem="yiM-76-O3L" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="180" id="kb1-qZ-Qhi"/>
                     <constraint firstAttribute="bottom" secondItem="yiM-76-O3L" secondAttribute="bottom" constant="10" id="rmR-RQ-7cC"/>
                 </constraints>
             </tableViewCellContentView>
