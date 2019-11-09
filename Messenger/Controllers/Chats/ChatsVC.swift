@@ -59,20 +59,16 @@ extension ChatsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell") as! ChatCell
         let rec = Constants.Model.model
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm a"
         let chat = chats[indexPath.row]
         for i in 0..<rec.count{
             if rec[i].friend == chat.id || rec[i].sender == chat.id{
                 if rec[i].message.count > 0 {
-                    Constants.FirebaseDB.db.reference().child("users").child(rec[i].sender).observe(.value) { (snap) in
-                        cell.senderImage.isHidden = false
-                        cell.lastMessageLabel.isHidden = false
-                        guard let values = snap.value as? [String: Any] else { return }
-                        cell.senderImage.loadImageCacheWithUrlString(imageUrl: values["profileImage"] as! String)
-                    }
-                    cell.lastMessageLabel.textColor = .black
                     cell.lastMessageLabel.text = rec[i].message
+                    let date = NSDate(timeIntervalSince1970: rec[i].time.doubleValue)
+                    cell.timeLabel.text = "\(dateFormatter.string(from: date as Date))"
                 }
-                
             }
         }
         

@@ -53,48 +53,45 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User's name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HI3-ek-JgB">
-                                                    <rect key="frame" x="101" y="11" width="107" height="24"/>
+                                                    <rect key="frame" x="98" y="11" width="107" height="24"/>
                                                     <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plY-29-SSH">
-                                                    <rect key="frame" x="101" y="43" width="106" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Message" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plY-29-SSH">
+                                                    <rect key="frame" x="98" y="34" width="242" height="20.333333333333329"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="242" id="p09-pi-exE"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.64754566209999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserDefaultIcon" translatesAutoresizingMaskIntoConstraints="NO" id="r2f-9U-u82" customClass="ImageVC" customModule="Messenger" customModuleProvider="target">
-                                                    <rect key="frame" x="344" y="42" width="16" height="16"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="16" id="C9E-uR-ypE"/>
-                                                        <constraint firstAttribute="width" constant="16" id="EAW-mM-ufZ"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="radius">
-                                                            <real key="value" value="8"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBK-wp-RCa">
+                                                    <rect key="frame" x="318" y="11" width="42" height="20"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="pie-UA-eCn" firstAttribute="top" secondItem="86v-ef-QXi" secondAttribute="topMargin" id="2Jg-1R-5vS"/>
-                                                <constraint firstItem="r2f-9U-u82" firstAttribute="trailing" secondItem="86v-ef-QXi" secondAttribute="trailingMargin" id="2xg-rn-a9E"/>
+                                                <constraint firstItem="plY-29-SSH" firstAttribute="leading" secondItem="pie-UA-eCn" secondAttribute="trailing" constant="5" id="Lug-v2-nj2"/>
+                                                <constraint firstItem="plY-29-SSH" firstAttribute="top" secondItem="HI3-ek-JgB" secondAttribute="bottom" constant="-1" id="NIv-G2-1Kl"/>
                                                 <constraint firstItem="pie-UA-eCn" firstAttribute="leading" secondItem="86v-ef-QXi" secondAttribute="leadingMargin" id="Psd-WX-uXv"/>
-                                                <constraint firstItem="plY-29-SSH" firstAttribute="top" secondItem="HI3-ek-JgB" secondAttribute="bottom" constant="8" id="WmH-nS-hQg"/>
-                                                <constraint firstItem="r2f-9U-u82" firstAttribute="top" secondItem="86v-ef-QXi" secondAttribute="topMargin" constant="31" id="a54-Wb-hBD"/>
-                                                <constraint firstItem="HI3-ek-JgB" firstAttribute="leading" secondItem="pie-UA-eCn" secondAttribute="trailing" constant="8" id="dDb-Sh-VEB"/>
+                                                <constraint firstItem="kBK-wp-RCa" firstAttribute="top" secondItem="86v-ef-QXi" secondAttribute="topMargin" id="RCM-ZJ-bh1"/>
+                                                <constraint firstItem="HI3-ek-JgB" firstAttribute="leading" secondItem="pie-UA-eCn" secondAttribute="trailing" constant="5" id="dDb-Sh-VEB"/>
                                                 <constraint firstItem="HI3-ek-JgB" firstAttribute="top" secondItem="86v-ef-QXi" secondAttribute="topMargin" id="fhS-k9-yaa"/>
                                                 <constraint firstItem="pie-UA-eCn" firstAttribute="bottom" secondItem="86v-ef-QXi" secondAttribute="bottomMargin" id="iXW-j1-DNu"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="r2f-9U-u82" secondAttribute="bottom" constant="31" id="lFs-Uy-Fdi"/>
-                                                <constraint firstItem="plY-29-SSH" firstAttribute="leading" secondItem="pie-UA-eCn" secondAttribute="trailing" constant="8" id="vlI-2d-KU2"/>
+                                                <constraint firstItem="kBK-wp-RCa" firstAttribute="leading" secondItem="HI3-ek-JgB" secondAttribute="trailing" constant="113" id="mtc-6r-cle"/>
+                                                <constraint firstItem="kBK-wp-RCa" firstAttribute="trailing" secondItem="86v-ef-QXi" secondAttribute="trailingMargin" id="zMF-xK-nOL"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lastMessageLabel" destination="plY-29-SSH" id="6Ys-lT-btw"/>
                                             <outlet property="nameLabel" destination="HI3-ek-JgB" id="wnO-lB-0OC"/>
                                             <outlet property="profileImage" destination="pie-UA-eCn" id="ks4-G7-dBe"/>
-                                            <outlet property="senderImage" destination="r2f-9U-u82" id="hQG-xk-Mzw"/>
+                                            <outlet property="timeLabel" destination="kBK-wp-RCa" id="FAR-he-K52"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
