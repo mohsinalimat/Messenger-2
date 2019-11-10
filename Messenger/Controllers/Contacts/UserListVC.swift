@@ -37,7 +37,10 @@ class UserListVC: UIViewController {
                         user.friend = false
                     }
                 }
-
+                if snapshot["friends"] == nil {
+                    print("nil")
+                    user.friend = false
+                }
                 if user.id == CurrentUserInformation.uid {
                     return
                 }

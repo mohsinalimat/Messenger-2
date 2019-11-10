@@ -18,10 +18,3 @@ class Message{
         return sender == CurrentUserInformation.uid ? friend: sender
     }
 }
-
-class RecentMessage{
-    var message: String!
-    var sender: String!
-    var time: NSNumber!
-    var friend: String!
-}

@@ -172,6 +172,7 @@
                                             <constraint firstAttribute="width" constant="100" id="eg0-cN-1lD"/>
                                             <constraint firstAttribute="height" constant="30" id="i8e-bE-qlx"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="Add Friend">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -226,6 +227,7 @@
                         <viewLayoutGuide key="safeArea" id="SjN-LR-XNa"/>
                     </view>
                     <connections>
+                        <outlet property="addFriendButton" destination="wyp-Qh-qXD" id="gIO-s2-oNN"/>
                         <outlet property="emailLabel" destination="CbW-33-4U1" id="kVY-MN-cRZ"/>
                         <outlet property="nameLabel" destination="Jv8-Qo-cIJ" id="B0j-UU-uZ4"/>
                         <outlet property="profileImage" destination="V7i-sc-hGb" id="XeM-XK-S0L"/>

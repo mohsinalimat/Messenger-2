@@ -31,12 +31,12 @@ class ChatsVC: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-           super.viewDidAppear(animated)
-           if chats.count > 0 {
-               tableView.separatorInset.left = 100
-               tableView.separatorColor = .black
-           }
-       }
+        super.viewDidAppear(animated)
+        if chats.count > 0 {
+            tableView.separatorInset.left = 100
+            tableView.separatorColor = .black
+        }
+    }
     
     func loadChats(){
         Constants.FirebaseDB.db.reference().child("users").observe(.childAdded) { (data) in
