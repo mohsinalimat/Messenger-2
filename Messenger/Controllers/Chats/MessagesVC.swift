@@ -59,6 +59,7 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
         if let message = messageTextfield.text, let sender = Auth.auth().currentUser?.uid {
             sendMessagesHandler(message, sender)
         }
+        messageTextfield.resignFirstResponder()
     }
     
     func sendMessagesHandler(_ message: String,_ sender: String){
@@ -123,6 +124,7 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
         if let message = messageTextfield.text, let sender = Auth.auth().currentUser?.uid {
             sendMessagesHandler(message, sender)
         }
+        messageTextfield.resignFirstResponder()
         return true
     }
      
