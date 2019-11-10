@@ -11,7 +11,6 @@ import Firebase
 
 class SignUpAddImageVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
-    let uniqueName = NSUUID().uuidString
     var selectedImage: UIImage?
     var email: String?
     var password: String?
@@ -47,6 +46,10 @@ class SignUpAddImageVC: UIViewController, UIImagePickerControllerDelegate, UINav
         
     }
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     func openImagePicker(_ type: UIImagePickerController.SourceType){
         let picker = UIImagePickerController()
         picker.delegate = self
@@ -59,8 +62,8 @@ class SignUpAddImageVC: UIViewController, UIImagePickerControllerDelegate, UINav
         if selectedImage == nil {
             selectedImage = UIImage(named: "UserDefaultIcon")
         }
-        
-        let storageRef = Storage.storage().reference().child("Images").child("\(self.uniqueName).jpg")
+        let uniqueName = NSUUID().uuidString
+        let storageRef = Storage.storage().reference().child("Images").child("\(uniqueName).jpg")
         if let uploadData = self.selectedImage?.jpegData(compressionQuality: 0.1) {
             storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
                 if let error = error {

@@ -18,6 +18,10 @@
 		CB5BD4FD2370A05100944E79 /* ControllersTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BD4FC2370A05100944E79 /* ControllersTabBarVC.swift */; };
 		CB5BD4FF2370C58D00944E79 /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BD4FE2370C58D00944E79 /* ImageVC.swift */; };
 		CB5BD5022370CF2C00944E79 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BD5012370CF2C00944E79 /* UserInfoTableViewCell.swift */; };
+		CB6C12D1237889E100965FF7 /* CurrentUsrMediaMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6C12CF237889E100965FF7 /* CurrentUsrMediaMessageCell.swift */; };
+		CB6C12D2237889E100965FF7 /* CurrentUsrMediaMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6C12D0237889E100965FF7 /* CurrentUsrMediaMessageCell.xib */; };
+		CB6C12D623788C4700965FF7 /* FriendMediaMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6C12D423788C4700965FF7 /* FriendMediaMessageCell.swift */; };
+		CB6C12D723788C4700965FF7 /* FriendMediaMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6C12D523788C4700965FF7 /* FriendMediaMessageCell.xib */; };
 		CB74C8612373464C00E4AF94 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74C8602373464C00E4AF94 /* Message.swift */; };
 		CB74C863237347ED00E4AF94 /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74C862237347ED00E4AF94 /* MessagesVC.swift */; };
 		CB74C868237363BF00E4AF94 /* SenderMessagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74C866237363BF00E4AF94 /* SenderMessagesCell.swift */; };
@@ -60,6 +64,10 @@
 		CB5BD4FC2370A05100944E79 /* ControllersTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllersTabBarVC.swift; sourceTree = "<group>"; };
 		CB5BD4FE2370C58D00944E79 /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
 		CB5BD5012370CF2C00944E79 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
+		CB6C12CF237889E100965FF7 /* CurrentUsrMediaMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUsrMediaMessageCell.swift; sourceTree = "<group>"; };
+		CB6C12D0237889E100965FF7 /* CurrentUsrMediaMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentUsrMediaMessageCell.xib; sourceTree = "<group>"; };
+		CB6C12D423788C4700965FF7 /* FriendMediaMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendMediaMessageCell.swift; sourceTree = "<group>"; };
+		CB6C12D523788C4700965FF7 /* FriendMediaMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendMediaMessageCell.xib; sourceTree = "<group>"; };
 		CB74C8602373464C00E4AF94 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		CB74C862237347ED00E4AF94 /* MessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
 		CB74C866237363BF00E4AF94 /* SenderMessagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderMessagesCell.swift; sourceTree = "<group>"; };
@@ -153,13 +161,10 @@
 		CB5BD5052370CF6D00944E79 /* Chats */ = {
 			isa = PBXGroup;
 			children = (
+				CB6C12D323788C0300965FF7 /* Cells */,
 				CB5BD4F62370936B00944E79 /* ChatsVC.swift */,
 				CBC4C5E92374D58400BCB8F6 /* ChatCell.swift */,
 				CB74C862237347ED00E4AF94 /* MessagesVC.swift */,
-				CB74C866237363BF00E4AF94 /* SenderMessagesCell.swift */,
-				CB74C867237363BF00E4AF94 /* SenderMessagesCell.xib */,
-				CB95CCA4237620CF00DD20E2 /* FriendMessagesCell.xib */,
-				CB95CCA3237620CF00DD20E2 /* FriendMessagesCell.swift */,
 			);
 			path = Chats;
 			sourceTree = "<group>";
@@ -174,6 +179,21 @@
 				CBD5ECDC236E5C2300D24116 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CB6C12D323788C0300965FF7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CB74C866237363BF00E4AF94 /* SenderMessagesCell.swift */,
+				CB95CCA3237620CF00DD20E2 /* FriendMessagesCell.swift */,
+				CB6C12CF237889E100965FF7 /* CurrentUsrMediaMessageCell.swift */,
+				CB6C12D423788C4700965FF7 /* FriendMediaMessageCell.swift */,
+				CB74C867237363BF00E4AF94 /* SenderMessagesCell.xib */,
+				CB95CCA4237620CF00DD20E2 /* FriendMessagesCell.xib */,
+				CB6C12D0237889E100965FF7 /* CurrentUsrMediaMessageCell.xib */,
+				CB6C12D523788C4700965FF7 /* FriendMediaMessageCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		CBD5ECC5236E5C2200D24116 = {
@@ -323,8 +343,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBD5ECDE236E5C2300D24116 /* LaunchScreen.storyboard in Resources */,
+				CB6C12D723788C4700965FF7 /* FriendMediaMessageCell.xib in Resources */,
 				CB95CCA6237620CF00DD20E2 /* FriendMessagesCell.xib in Resources */,
 				CB74C869237363BF00E4AF94 /* SenderMessagesCell.xib in Resources */,
+				CB6C12D2237889E100965FF7 /* CurrentUsrMediaMessageCell.xib in Resources */,
 				CBD5ECDB236E5C2300D24116 /* Assets.xcassets in Resources */,
 				CBE52225236F64CC00AEC790 /* GoogleService-Info.plist in Resources */,
 				CB7898F323710BB000E5D44D /* Contacts.storyboard in Resources */,
@@ -398,9 +420,11 @@
 				CBCEE915236F4345009E77B4 /* SignUpVC.swift in Sources */,
 				CBE5222D236F783600AEC790 /* Helpers.swift in Sources */,
 				CBD5ECD6236E5C2200D24116 /* SignInVC.swift in Sources */,
+				CB6C12D623788C4700965FF7 /* FriendMediaMessageCell.swift in Sources */,
 				CBD5ECD2236E5C2200D24116 /* AppDelegate.swift in Sources */,
 				CB34A0592372155E007E8659 /* UserListVC.swift in Sources */,
 				CBD5ECEA236E5D8300D24116 /* TextfieldVC.swift in Sources */,
+				CB6C12D1237889E100965FF7 /* CurrentUsrMediaMessageCell.swift in Sources */,
 				CBD5ECEC236E5E1100D24116 /* ButtonVC.swift in Sources */,
 				CB5BD5022370CF2C00944E79 /* UserInfoTableViewCell.swift in Sources */,
 				CBD5ECEE236E5E4600D24116 /* BackgroundVC.swift in Sources */,

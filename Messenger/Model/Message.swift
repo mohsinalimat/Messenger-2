@@ -13,7 +13,7 @@ class Message{
     var sender: String!
     var time: NSNumber!
     var friend: String!
-    
+    var mediaUrl: String!
     func friendChecker() -> String {
         return sender == CurrentUserInformation.uid ? friend: sender
     }

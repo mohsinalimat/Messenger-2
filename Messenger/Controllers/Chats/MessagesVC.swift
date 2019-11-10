@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class MessagesVC: UIViewController, UITextFieldDelegate {
+class MessagesVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // User outlets
     
@@ -19,7 +19,9 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
     var friendEmail: String!
     
     // Message Outlets
+    let sender = CurrentUserInformation.uid!
     var messages: [Message] = []
+    var selectedImage: UIImage!
     
     @IBOutlet weak var chatNavigation: UINavigationItem!
     @IBOutlet weak var messageTextfield: UITextField!
@@ -37,8 +39,10 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
         chatNavigation.title = friendName
         tableView.register(UINib(nibName: "SenderMessagesCell", bundle: nil), forCellReuseIdentifier: "SenderMessagesCell")
         tableView.register(UINib(nibName: "FriendMessagesCell", bundle: nil), forCellReuseIdentifier: "FriendMessagesCell")
+        tableView.register(UINib(nibName: "CurrentUsrMediaMessageCell", bundle: nil), forCellReuseIdentifier: "CurrentUsrMediaMessageCell")
+        tableView.register(UINib(nibName: "FriendMediaMessageCell", bundle: nil), forCellReuseIdentifier: "FriendMediaMessageCell")
     }
-        
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         hideTabBar(status: true)
@@ -56,13 +60,13 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
     }
     @IBAction func sendButtonPressed(_ sender: Any) {
         if self.messageTextfield.text?.count == 0 { return }
-        if let message = messageTextfield.text, let sender = Auth.auth().currentUser?.uid {
-            sendMessagesHandler(message, sender)
+        if let message = messageTextfield.text {
+            sendMessagesHandler(message)
         }
         messageTextfield.resignFirstResponder()
     }
     
-    func sendMessagesHandler(_ message: String,_ sender: String){
+    func sendMessagesHandler(_ message: String){
         // TODO: Add the person who will recieve this.
         guard let friendId = friendId else { return }
         let values = ["message":message, "sender": sender, "date": Date().timeIntervalSince1970, "friend": friendId] as [String : Any]
@@ -73,11 +77,11 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
                 print("error")
                 return
             }
-            let userMessagesRef = Constants.FirebaseDB.db.reference().child("friend-messages").child(sender).child(friendId)
+            let userMessagesRef = Constants.FirebaseDB.db.reference().child("friend-messages").child(self.sender).child(friendId)
             let messageId = childRef.key!
             userMessagesRef.updateChildValues([messageId: 1])
             
-            let friendRef = Constants.FirebaseDB.db.reference().child("friend-messages").child(friendId).child(sender)
+            let friendRef = Constants.FirebaseDB.db.reference().child("friend-messages").child(friendId).child(self.sender)
             friendRef.updateChildValues([messageId: 1])
             
             
@@ -86,6 +90,7 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
         messageTextfield.text = ""
         
     }
+    
     
     func getUserMessages(){
         
@@ -100,6 +105,7 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
                 message.sender = values["sender"] as? String
                 message.time = values["date"] as? NSNumber
                 message.friend = values["friend"] as? String
+                message.mediaUrl = values["mediaUrl"] as? String
                 if message.friendChecker() == self.friendId{
                     self.messages.append(message)
                     DispatchQueue.main.async {
@@ -113,48 +119,121 @@ class MessagesVC: UIViewController, UITextFieldDelegate {
         }, withCancel: nil)
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            selectedImage = editedImage
+        }else if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            selectedImage = image
+        }
+        if let image = selectedImage {
+            uploadImageToFirebase(image)
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func uploadImageToFirebase(_ image: UIImage){
+        let mediaName = NSUUID().uuidString
+        let storageRef = Storage.storage().reference().child("message-img").child(mediaName)
+        if let jpegImage = self.selectedImage?.jpegData(compressionQuality: 0.1) {
+            
+            storageRef.putData(jpegImage, metadata: nil) { (metadata, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+                storageRef.downloadURL { (url, error) in
+                    guard let url = url else { return }
+                    self.sendMediaMessage(url.absoluteString)
+                }
+            }
+            
+        }
+    }
+    
+    func sendMediaMessage(_ mediaUrl: String){
+        guard let friendId = friendId else { return }
+        
+        let values = ["mediaUrl": mediaUrl, "sender": self.sender, "date": Date().timeIntervalSince1970, "friend": friendId] as [String : Any]
+        let reference = Constants.FirebaseDB.db.reference().child("messages")
+        let childRef = reference.childByAutoId()
+        childRef.updateChildValues(values) { (error, ref) in
+            if error != nil {
+                print("error")
+                return
+            }
+            let userMessagesRef = Constants.FirebaseDB.db.reference().child("friend-messages").child(self.sender).child(friendId)
+            let messageId = childRef.key!
+            userMessagesRef.updateChildValues([messageId: 1])
+            
+            let friendRef = Constants.FirebaseDB.db.reference().child("friend-messages").child(friendId).child(self.sender)
+            friendRef.updateChildValues([messageId: 1])
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func openImagePicker(_ type: UIImagePickerController.SourceType){
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = type
+        picker.allowsEditing = true
+        present(picker, animated: true, completion: nil)
+    }
+    
     @IBAction func photoLibraryPressed(_ sender: Any) {
-        
-        // TODO: Send photos
-        
+        openImagePicker(.photoLibrary)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if self.messageTextfield.text?.count == 0 { return false }
-        if let message = messageTextfield.text, let sender = Auth.auth().currentUser?.uid {
-            sendMessagesHandler(message, sender)
+        if let message = messageTextfield.text{
+            sendMessagesHandler(message)
         }
         messageTextfield.resignFirstResponder()
         return true
     }
-     
+    
 }
 
 extension MessagesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
     }
-        
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = messages[indexPath.row]
         let date = NSDate(timeIntervalSince1970: message.time.doubleValue)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh:mm a"
         if message.sender == CurrentUserInformation.uid {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SenderMessagesCell") as! SenderMessagesCell
-            cell.messagesLabel.text = message.message
-            cell.timeLabel.text = dateFormatter.string(from: date as Date)
-            return cell
+            if message.mediaUrl == nil {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "SenderMessagesCell") as! SenderMessagesCell
+                cell.messagesLabel.text = message.message
+                cell.timeLabel.text = dateFormatter.string(from: date as Date)
+                return cell
+            }else{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "CurrentUsrMediaMessageCell") as! CurrentUsrMediaMessageCell
+                cell.mediaMessage.loadImageCacheWithUrlString(imageUrl: message.mediaUrl)
+                return cell
+            }
             
         }else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FriendMessagesCell") as! FriendMessagesCell
-            getSenderInfo(sender: message.sender) { (data, error) in
-                guard let data = data else { return }
-                cell.profileImage.loadImageCacheWithUrlString(imageUrl: data["profileImage"] as! String)
+            if message.mediaUrl == nil {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "FriendMessagesCell") as! FriendMessagesCell
+                getSenderInfo(sender: message.sender) { (data, error) in
+                    guard let data = data else { return }
+                    cell.profileImage.loadImageCacheWithUrlString(imageUrl: data["profileImage"] as! String)
+                }
+                cell.messageLabel.text = message.message
+                cell.timeLabel.text = dateFormatter.string(from: date as Date)
+                return cell
+            }else{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "FriendMediaMessageCell") as! FriendMediaMessageCell
+                cell.mediaMessage.loadImageCacheWithUrlString(imageUrl: message.mediaUrl)
+                return cell
             }
-            cell.messageLabel.text = message.message
-            cell.timeLabel.text = dateFormatter.string(from: date as Date)
-            return cell
         }
     }
     
