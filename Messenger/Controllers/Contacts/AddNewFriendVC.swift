@@ -11,14 +11,14 @@ import Firebase
 
 class AddNewFriendVC: UIViewController {
     
-//    TODO: Change the condintion of the Add button if users interact with it.
+    //    TODO: Change the condintion of the Add button if users interact with it.
     
     var name: String!
     var email: String!
     var profileImageUrl: String!
     var friendId: String!
     var isYourFriend: Bool!
-        
+    
     @IBOutlet weak var profileImage: ImageVC!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
@@ -36,20 +36,13 @@ class AddNewFriendVC: UIViewController {
     }
     
     
-    @IBAction func buttonPressed(_ sender: UIButton) {
-        
-        if sender.tag == 0 {
-            self.navigationController?.popViewController(animated: true)
-            hideTabBar(status: false)
-        }
-        if sender.tag == 1 {
-            print("Hi")
-            addFriendHandler()
-        }
+    @IBAction func addFriendButton(_ sender: Any) {
+        addFriendHandler()
     }
     
+    
     func addFriendHandler(){
-        if !isYourFriend {
+        if isYourFriend == nil || !isYourFriend {
             let ref = Constants.FirebaseDB.db.reference().child("users")
             let currentFriendsRef = ref.child(CurrentUserInformation.uid).child("friends")
             currentFriendsRef.child(friendId).setValue(true)

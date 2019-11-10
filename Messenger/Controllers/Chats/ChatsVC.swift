@@ -65,6 +65,8 @@ extension ChatsVC: UITableViewDelegate, UITableViewDataSource {
         for i in 0..<rec.count{
             if rec[i].friend == chat.id || rec[i].sender == chat.id{
                 if rec[i].message.count > 0 {
+                    cell.lastMessageLabel.isHidden = false
+                    cell.timeLabel.isHidden = false
                     cell.lastMessageLabel.text = rec[i].message
                     let date = NSDate(timeIntervalSince1970: rec[i].time.doubleValue)
                     cell.timeLabel.text = "\(dateFormatter.string(from: date as Date))"
@@ -76,6 +78,9 @@ extension ChatsVC: UITableViewDelegate, UITableViewDataSource {
         if let url = chat.profileImage {
             cell.profileImage.loadImageCacheWithUrlString(imageUrl: url)
             cell.setNeedsLayout()
+        }
+        if chats.count > 0 {
+            tableView.separatorInset.left = 100
         }
         tableView.rowHeight = 100
         return cell

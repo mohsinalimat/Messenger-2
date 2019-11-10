@@ -74,6 +74,9 @@ extension ContactsVC: UITableViewDelegate, UITableViewDataSource {
             cell.setNeedsLayout()
         }
         tableView.rowHeight = 100
+        if contacts.count > 0 {
+            tableView.separatorInset.left = 100
+        }
         return cell
     }
     

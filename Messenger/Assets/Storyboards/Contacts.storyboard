@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZPz-Z5-g8C">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,7 +12,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ContactsNavBar" id="ZPz-Z5-g8C" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fLp-xc-KFO">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -28,18 +28,18 @@
             <objects>
                 <viewController storyboardIdentifier="UserListVC" id="7ue-ze-9hd" customClass="UserListVC" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DGH-Dc-HFL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MFD-zb-0rw">
-                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="UserListCell" rowHeight="100" id="Mr6-63-qaQ" customClass="UserListCell" customModule="Messenger" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mr6-63-qaQ" id="G7X-fQ-3Ru">
-                                            <rect key="frame" x="0.0" y="0.0" width="349" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="294" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserDefaultIcon" translatesAutoresizingMaskIntoConstraints="NO" id="R1V-Jw-i6o" customClass="ImageVC" customModule="Messenger" customModuleProvider="target">
@@ -108,37 +108,14 @@
             <objects>
                 <viewController storyboardIdentifier="AddNewFriendVC" id="37q-wo-AQc" customClass="AddNewFriendVC" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZJc-8A-2Zz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHV-Sk-I6v">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mn4-hz-tKx">
-                                        <rect key="frame" x="5" y="48" width="80" height="22"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="ofc-Mk-xP9"/>
-                                        </constraints>
-                                        <state key="normal" title="Back" image="chevron.left" catalog="system">
-                                            <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="buttonPressed:" destination="37q-wo-AQc" eventType="touchUpInside" id="N4S-QQ-S7u"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Mn4-hz-tKx" secondAttribute="bottom" constant="4" id="ek9-0g-QIr"/>
-                                    <constraint firstItem="Mn4-hz-tKx" firstAttribute="leading" secondItem="bHV-Sk-I6v" secondAttribute="leading" constant="5" id="qFr-2C-Two"/>
-                                    <constraint firstAttribute="height" constant="74" id="yHY-NK-E9B"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2UY-75-Fx1" customClass="BackgroundView" customModule="Messenger" customModuleProvider="target">
-                                <rect key="frame" x="34" y="111" width="307" height="360"/>
+                                <rect key="frame" x="34" y="67" width="252" height="434"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserDefaultIcon" translatesAutoresizingMaskIntoConstraints="NO" id="V7i-sc-hGb" customClass="ImageVC" customModule="Messenger" customModuleProvider="target">
-                                        <rect key="frame" x="103" y="17" width="100" height="100"/>
+                                        <rect key="frame" x="75.5" y="17" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="DdT-Ms-4Te"/>
                                             <constraint firstAttribute="width" constant="100" id="lzi-hd-lh0"/>
@@ -150,16 +127,16 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S6i-eA-GYt" customClass="BackgroundView" customModule="Messenger" customModuleProvider="target">
-                                        <rect key="frame" x="71.666666666666686" y="137" width="164" height="80"/>
+                                        <rect key="frame" x="44" y="137" width="164" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jv8-Qo-cIJ">
-                                                <rect key="frame" x="20" y="7.9999999999999982" width="124" height="20.333333333333329"/>
+                                                <rect key="frame" x="20" y="8" width="124" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbW-33-4U1">
-                                                <rect key="frame" x="20" y="28.333333333333314" width="124" height="12"/>
+                                                <rect key="frame" x="20" y="28.5" width="124" height="12"/>
                                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="10"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -189,7 +166,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyp-Qh-qXD" customClass="ButtonVC" customModule="Messenger" customModuleProvider="target">
-                                        <rect key="frame" x="103.66666666666666" y="247" width="100" height="30"/>
+                                        <rect key="frame" x="76" y="247" width="100" height="30"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="eg0-cN-1lD"/>
@@ -213,6 +190,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <action selector="addFriendButton:" destination="37q-wo-AQc" eventType="touchUpInside" id="Dx3-RN-CJA"/>
                                             <action selector="buttonPressed:" destination="37q-wo-AQc" eventType="touchUpInside" id="XDi-bK-B2L"/>
                                         </connections>
                                     </button>
@@ -220,7 +198,6 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="V7i-sc-hGb" firstAttribute="top" secondItem="2UY-75-Fx1" secondAttribute="top" constant="17" id="Hb9-gL-r3W"/>
-                                    <constraint firstAttribute="height" constant="360" id="KO0-OW-Yyj"/>
                                     <constraint firstItem="S6i-eA-GYt" firstAttribute="top" secondItem="V7i-sc-hGb" secondAttribute="bottom" constant="20" id="Ndx-Fk-yA4"/>
                                     <constraint firstItem="wyp-Qh-qXD" firstAttribute="centerX" secondItem="2UY-75-Fx1" secondAttribute="centerX" id="Trb-ze-mOr"/>
                                     <constraint firstItem="V7i-sc-hGb" firstAttribute="centerX" secondItem="2UY-75-Fx1" secondAttribute="centerX" constant="-0.5" id="e9i-hU-FCr"/>
@@ -242,12 +219,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="bHV-Sk-I6v" firstAttribute="top" secondItem="ZJc-8A-2Zz" secondAttribute="top" id="0oH-9c-FQf"/>
-                            <constraint firstItem="bHV-Sk-I6v" firstAttribute="trailing" secondItem="SjN-LR-XNa" secondAttribute="trailing" id="JDo-o8-cwn"/>
-                            <constraint firstItem="2UY-75-Fx1" firstAttribute="top" secondItem="bHV-Sk-I6v" secondAttribute="bottom" constant="37" id="bCu-Qs-Gkm"/>
-                            <constraint firstItem="SjN-LR-XNa" firstAttribute="trailing" secondItem="2UY-75-Fx1" secondAttribute="trailing" constant="34" id="dE5-o0-e1S"/>
-                            <constraint firstItem="2UY-75-Fx1" firstAttribute="leading" secondItem="SjN-LR-XNa" secondAttribute="leading" constant="34" id="pow-eR-r31"/>
-                            <constraint firstItem="bHV-Sk-I6v" firstAttribute="leading" secondItem="SjN-LR-XNa" secondAttribute="leading" id="qwa-I1-Fjy"/>
+                            <constraint firstItem="2UY-75-Fx1" firstAttribute="leading" secondItem="SjN-LR-XNa" secondAttribute="leading" constant="34" id="JP6-Vf-fUB"/>
+                            <constraint firstItem="2UY-75-Fx1" firstAttribute="top" secondItem="SjN-LR-XNa" secondAttribute="top" constant="67" id="Q1i-on-5xk"/>
+                            <constraint firstItem="SjN-LR-XNa" firstAttribute="trailing" secondItem="2UY-75-Fx1" secondAttribute="trailing" constant="34" id="fhY-h7-rPb"/>
+                            <constraint firstItem="2UY-75-Fx1" firstAttribute="centerY" secondItem="ZJc-8A-2Zz" secondAttribute="centerY" id="pdN-eA-6Zu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SjN-LR-XNa"/>
                     </view>
@@ -266,18 +241,18 @@
             <objects>
                 <viewController storyboardIdentifier="ContactsVC" id="mbW-fq-GxW" customClass="ContactsVC" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LdM-1R-Poh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VgG-js-4iK">
-                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactsCell" rowHeight="100" id="bQl-qp-9yo" customClass="ContactsCell" customModule="Messenger" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bQl-qp-9yo" id="4dC-LN-Qqf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserDefaultIcon" translatesAutoresizingMaskIntoConstraints="NO" id="NeW-Q0-kSI" customClass="ImageVC" customModule="Messenger" customModuleProvider="target">
@@ -352,7 +327,6 @@
     </scenes>
     <resources>
         <image name="UserDefaultIcon" width="640" height="640"/>
-        <image name="chevron.left" catalog="system" width="48" height="64"/>
         <image name="plus" catalog="system" width="64" height="56"/>
     </resources>
 </document>
