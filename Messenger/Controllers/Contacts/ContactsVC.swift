@@ -26,6 +26,14 @@ class ContactsVC: UIViewController {
         contacts = []
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if contacts.count > 0 {
+            tableView.separatorInset.left = 100
+            tableView.separatorColor = .black
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getContacts()
@@ -74,9 +82,6 @@ extension ContactsVC: UITableViewDelegate, UITableViewDataSource {
             cell.setNeedsLayout()
         }
         tableView.rowHeight = 100
-        if contacts.count > 0 {
-            tableView.separatorInset.left = 100
-        }
         return cell
     }
     

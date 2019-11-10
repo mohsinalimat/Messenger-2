@@ -30,6 +30,14 @@ class ChatsVC: UIViewController {
         chats = []
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+           super.viewDidAppear(animated)
+           if chats.count > 0 {
+               tableView.separatorInset.left = 100
+               tableView.separatorColor = .black
+           }
+       }
+    
     func loadChats(){
         Constants.FirebaseDB.db.reference().child("users").observe(.childAdded) { (data) in
             guard let snapshot = data.value as? [String: Any] else { return }
@@ -78,9 +86,6 @@ extension ChatsVC: UITableViewDelegate, UITableViewDataSource {
         if let url = chat.profileImage {
             cell.profileImage.loadImageCacheWithUrlString(imageUrl: url)
             cell.setNeedsLayout()
-        }
-        if chats.count > 0 {
-            tableView.separatorInset.left = 100
         }
         tableView.rowHeight = 100
         return cell
