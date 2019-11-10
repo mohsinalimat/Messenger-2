@@ -44,11 +44,12 @@ class ControllersTabBarVC: UITabBarController {
                 let messageId = snap.key
                 Constants.FirebaseDB.db.reference().child("messages").child(messageId).observeSingleEvent(of: .value) { (snapshot) in
                     guard let values = snapshot.value as? [String: AnyObject] else { return }
-                    let message = RecentMessage()
+                    let message = Message()
                     message.message = values["message"] as? String
                     message.sender = values["sender"] as? String
                     message.time = values["date"] as? NSNumber
                     message.friend = values["friend"] as? String
+                    message.mediaUrl = values["mediaUrl"] as? String
                     Constants.Model.model.append(message)
                 }
             }

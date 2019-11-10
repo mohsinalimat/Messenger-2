@@ -10,4 +10,5 @@ import UIKit
 
 class FriendMediaMessageCell: UITableViewCell {
     @IBOutlet weak var mediaMessage: ImageVC!
+    @IBOutlet weak var timeLabel: UILabel!
 }

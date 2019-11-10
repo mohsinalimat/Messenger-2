@@ -10,4 +10,5 @@ import UIKit
 
 class CurrentUsrMediaMessageCell: UITableViewCell {
     @IBOutlet weak var mediaMessage: UIImageView!
+    @IBOutlet weak var timeLabel: UILabel!
 }

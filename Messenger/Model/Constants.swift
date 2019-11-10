@@ -20,7 +20,7 @@ class Constants {
     }
     
     struct Model {
-        static var model = [RecentMessage]()
+        static var model = [Message]()
     }
     
 }

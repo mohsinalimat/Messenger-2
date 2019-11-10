@@ -216,6 +216,7 @@ extension MessagesVC: UITableViewDelegate, UITableViewDataSource {
             }else{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "CurrentUsrMediaMessageCell") as! CurrentUsrMediaMessageCell
                 cell.mediaMessage.loadImageCacheWithUrlString(imageUrl: message.mediaUrl)
+                cell.timeLabel.text = dateFormatter.string(from: date as Date)
                 return cell
             }
             
@@ -232,6 +233,7 @@ extension MessagesVC: UITableViewDelegate, UITableViewDataSource {
             }else{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "FriendMediaMessageCell") as! FriendMediaMessageCell
                 cell.mediaMessage.loadImageCacheWithUrlString(imageUrl: message.mediaUrl)
+                cell.timeLabel.text = dateFormatter.string(from: date as Date)
                 return cell
             }
         }

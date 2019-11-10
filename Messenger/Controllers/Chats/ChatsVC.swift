@@ -72,14 +72,13 @@ extension ChatsVC: UITableViewDelegate, UITableViewDataSource {
         let chat = chats[indexPath.row]
         for i in 0..<rec.count{
             if rec[i].friend == chat.id || rec[i].sender == chat.id{
-                guard let text = rec[i].message else { break }
-                if text.count > 0 {
-                    cell.lastMessageLabel.isHidden = false
-                    cell.timeLabel.isHidden = false
-                    cell.lastMessageLabel.text = text
-                    let date = NSDate(timeIntervalSince1970: rec[i].time.doubleValue)
-                    cell.timeLabel.text = "\(dateFormatter.string(from: date as Date))"
+                if rec[i].mediaUrl == nil{
+                    cell.lastMessageLabel.text = rec[i].message
+                }else if rec[i].mediaUrl != nil{
+                    cell.lastMessageLabel.text = "[Image]"
                 }
+                let date = NSDate(timeIntervalSince1970: rec[i].time.doubleValue)
+                cell.timeLabel.text = "\(dateFormatter.string(from: date as Date))"
             }
         }
         
