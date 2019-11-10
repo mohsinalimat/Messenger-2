@@ -16,6 +16,30 @@
                 <rect key="frame" x="0.0" y="0.0" width="450" height="208"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgh-MZ-28q" customClass="BackgroundView" customModule="Messenger" customModuleProvider="target">
+                        <rect key="frame" x="20" y="0.0" width="210" height="180"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewI-gU-RXd">
+                                <rect key="frame" x="20" y="70" width="170" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="180" id="LF0-0L-pDR"/>
+                            <constraint firstAttribute="trailing" secondItem="ewI-gU-RXd" secondAttribute="trailing" constant="20" id="RSQ-fR-g9n"/>
+                            <constraint firstAttribute="bottom" secondItem="ewI-gU-RXd" secondAttribute="bottom" constant="70" id="UFF-bl-hXs"/>
+                            <constraint firstItem="ewI-gU-RXd" firstAttribute="top" secondItem="kgh-MZ-28q" secondAttribute="top" constant="70" id="uX0-5Y-dtz"/>
+                            <constraint firstItem="ewI-gU-RXd" firstAttribute="leading" secondItem="kgh-MZ-28q" secondAttribute="leading" constant="20" id="zlV-ca-Z0q"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserDefaultIcon" translatesAutoresizingMaskIntoConstraints="NO" id="NQf-oT-lfZ" customClass="ImageVC" customModule="Messenger" customModuleProvider="target">
                         <rect key="frame" x="20" y="0.0" width="210" height="180"/>
                         <constraints>
@@ -39,8 +63,12 @@
                     <constraint firstAttribute="bottom" secondItem="L3H-ME-UWg" secondAttribute="bottom" constant="5" id="8fX-Wm-bI6"/>
                     <constraint firstItem="NQf-oT-lfZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="CKK-tG-vKe"/>
                     <constraint firstItem="L3H-ME-UWg" firstAttribute="top" secondItem="NQf-oT-lfZ" secondAttribute="bottom" constant="5" id="Tko-4o-ePt"/>
+                    <constraint firstItem="kgh-MZ-28q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="qFw-y0-oS7"/>
+                    <constraint firstItem="L3H-ME-UWg" firstAttribute="top" secondItem="kgh-MZ-28q" secondAttribute="bottom" constant="5" id="qXW-O4-xSt"/>
                     <constraint firstItem="L3H-ME-UWg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="rkT-GR-Wf8"/>
+                    <constraint firstItem="kgh-MZ-28q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="vsE-Nn-fVv"/>
                     <constraint firstAttribute="trailing" secondItem="NQf-oT-lfZ" secondAttribute="trailing" constant="220" id="x4b-0h-7L1"/>
+                    <constraint firstAttribute="trailing" secondItem="kgh-MZ-28q" secondAttribute="trailing" constant="220" id="zMc-jq-y0c"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
