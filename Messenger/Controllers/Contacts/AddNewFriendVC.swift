@@ -28,13 +28,7 @@ class AddNewFriendVC: UIViewController {
         super.viewDidLoad()
         nameLabel.text = name
         emailLabel.text = email
-        if isYourFriend {
-            addFriendButton.backgroundColor = .systemRed
-            addFriendButton.setTitle("Remove Friend", for: .normal)
-        }else if !isYourFriend {
-            addFriendButton.backgroundColor = .systemGreen
-            addFriendButton.setTitle("Add Friend", for: .normal)
-        }
+        friendChecker(isYourFriend)
         profileImage.loadImageCacheWithUrlString(imageUrl: profileImageUrl)
         
     }
@@ -49,6 +43,15 @@ class AddNewFriendVC: UIViewController {
         addFriendHandler()
     }
     
+    func friendChecker(_ status: Bool){
+        if status {
+            addFriendButton.backgroundColor = .systemRed
+            addFriendButton.setTitle("Remove Friend", for: .normal)
+        }else if !status {
+            addFriendButton.backgroundColor = .systemGreen
+            addFriendButton.setTitle("Add Friend", for: .normal)
+        }
+    }
     
     func addFriendHandler(){
         if !isYourFriend{
@@ -57,17 +60,16 @@ class AddNewFriendVC: UIViewController {
             currentFriendsRef.child(friendId).setValue(true)
             let newFriendRef = ref.child(friendId).child("friends")
             newFriendRef.child(CurrentUserInformation.uid).setValue(true)
-            addFriendButton.backgroundColor = .systemRed
-            addFriendButton.setTitle("Remove Friend", for: .normal)
             isYourFriend = true
+            friendChecker(isYourFriend)
+            
         }else{
             let ref = Constants.FirebaseDB.db.reference().child("users").child(CurrentUserInformation.uid).child("friends")
             ref.updateChildValues([friendId: false])
             let friendRef = Constants.FirebaseDB.db.reference().child("users").child(friendId).child("friends")
             friendRef.updateChildValues([CurrentUserInformation.uid: false])
             isYourFriend = false
-            addFriendButton.setTitle("Add Friend", for: .normal)
-            addFriendButton.backgroundColor = .systemGreen
+            friendChecker(isYourFriend)
         }
     }
     

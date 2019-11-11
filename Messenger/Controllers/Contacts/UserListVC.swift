@@ -22,8 +22,8 @@ class UserListVC: UIViewController {
     }
     
     func fetchUser(){
+        
         Database.database().reference().child("users").observe(.childAdded, with: { (data) in
-            
             if let snapshot = data.value as? [String: AnyObject] {
                 let user = UserInformation()
                 user.name = snapshot["name"] as? String
@@ -38,7 +38,6 @@ class UserListVC: UIViewController {
                     }
                 }
                 if snapshot["friends"] == nil {
-                    print("nil")
                     user.friend = false
                 }
                 if user.id == CurrentUserInformation.uid {
