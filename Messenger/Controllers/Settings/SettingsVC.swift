@@ -35,6 +35,11 @@ class SettingsVC: UIViewController {
         view.window?.makeKeyAndVisible()
     }
     
+    func nextController() {
+        let controller = storyboard?.instantiateViewController(identifier: "UserInformationVC") as! UserInformationVC
+        show(controller, sender: nil)
+    }
+    
 }
 
 extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
@@ -50,6 +55,11 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
         cell.setNeedsLayout()
         tableView.rowHeight = 100
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        nextController()
     }
     
 }

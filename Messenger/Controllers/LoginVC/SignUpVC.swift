@@ -29,9 +29,7 @@ class SignUpVC: UIViewController {
     
     
     @IBAction func signUpButtonPressed(_ sender: Any) {
-        
         handleRegister()
-        
     }
     
     func validate() -> String? {
@@ -50,8 +48,7 @@ class SignUpVC: UIViewController {
         }else if (lastName + name).count > 30 {
             return "Your name should not be more than 15 characters long."
         }
-    
-        
+
         if password.count < 6 {
             return "Password should be at least 6 characters long"
         }
