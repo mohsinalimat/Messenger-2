@@ -9,7 +9,7 @@
 import UIKit
 
 class FriendMessagesCell: UITableViewCell {
-
+    
     @IBOutlet weak var profileImage: ImageVC!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
