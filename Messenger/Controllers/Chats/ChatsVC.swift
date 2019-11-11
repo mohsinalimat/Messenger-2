@@ -18,6 +18,7 @@ class ChatsVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableFooterView = UIView(frame: .zero)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,14 +29,6 @@ class ChatsVC: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         chats = []
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if chats.count > 0 {
-            tableView.separatorInset.left = 100
-            tableView.separatorColor = .black
-        }
     }
     
     func loadChats(){

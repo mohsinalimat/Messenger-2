@@ -19,19 +19,12 @@ class ContactsVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableFooterView = UIView(frame: .zero)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         contacts = []
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if contacts.count > 0 {
-            tableView.separatorInset.left = 100
-            tableView.separatorColor = .black
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,3 +83,4 @@ extension ContactsVC: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
+

@@ -16,6 +16,7 @@ class SettingsVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableFooterView = UIView(frame: .zero)
     }
     
     @IBAction func logoutButtonPressed(_ sender: Any) {
@@ -50,6 +51,5 @@ extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
         tableView.rowHeight = 100
         return cell
     }
-    
     
 }
