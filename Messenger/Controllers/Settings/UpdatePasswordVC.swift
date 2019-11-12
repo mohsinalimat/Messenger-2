@@ -15,11 +15,6 @@ class UpdatePasswordVC: UIViewController {
     @IBOutlet weak var confirmNewPasswordTf: TextFieldVC!
     @IBOutlet weak var confirmButton: ButtonVC!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         hideTabBar(status: true)
@@ -58,12 +53,13 @@ class UpdatePasswordVC: UIViewController {
         }
         let newPassword = newPasswordTf.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         Auth.auth().currentUser?.updatePassword(to: newPassword, completion: { (error) in
-            self.showAlert(title: "Error happened!", message: error?.localizedDescription)
-            return
+            if let error = error {
+                self.showAlert(title: "Error Happened!", message: error.localizedDescription)
+                return
+            }
+            self.showAlert(title: "Success", message: "Your password has been changed successfully!")
         })
-        showAlert(title: "Success", message: "Your password has been changed successfully!")
+        
     }
-    
-    
     
 }

@@ -10,16 +10,16 @@ import UIKit
 import Firebase
 
 class UserInformationVC: UIViewController {
-
+    
     @IBOutlet weak var profileImage: ImageVC!
     @IBOutlet weak var changeImageView: BackgroundView!
     @IBOutlet weak var changeEmail: ButtonVC!
     @IBOutlet weak var changePasswordButton: ButtonVC!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         hideTabBar(status: false)
@@ -36,9 +36,8 @@ class UserInformationVC: UIViewController {
     }
     
     @IBAction func emailButtonPressed(_ sender: Any) {
-    
-        print("hi")
-        
+        let controller = storyboard?.instantiateViewController(identifier: "UpdateEmailVC") as! UpdateEmailVC
+        show(controller, sender: nil)
     }
     
 }

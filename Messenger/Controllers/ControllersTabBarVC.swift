@@ -36,7 +36,6 @@ class ControllersTabBarVC: UITabBarController {
     }
     
     func observeMessages(){
-        print("Hi")
         let ref = Constants.FirebaseDB.db.reference().child("friend-messages").child(CurrentUserInformation.uid)
         ref.observe(.childAdded) { (snap) in
             let userId = snap.key
