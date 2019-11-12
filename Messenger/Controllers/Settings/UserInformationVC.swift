@@ -14,6 +14,7 @@ class UserInformationVC: UIViewController {
     @IBOutlet weak var profileImage: ImageVC!
     @IBOutlet weak var changeImageView: BackgroundView!
     @IBOutlet weak var changeEmail: ButtonVC!
+    @IBOutlet weak var changePasswordButton: ButtonVC!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,9 +30,15 @@ class UserInformationVC: UIViewController {
         hideTabBar(status: true)
     }
     
+    @IBAction func passwordButtonPressed(_ sender: Any) {
+        let controller = storyboard?.instantiateViewController(identifier: "UpdatePasswordVC") as! UpdatePasswordVC
+        show(controller, sender: nil)
+    }
+    
     @IBAction func emailButtonPressed(_ sender: Any) {
     
         print("hi")
         
     }
+    
 }

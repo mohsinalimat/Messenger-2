@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uFE-63-J0o">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,7 +12,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SettingsNavBarVC" id="uFE-63-J0o" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5dl-kg-Cq8">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -28,22 +28,22 @@
             <objects>
                 <viewController storyboardIdentifier="SettingsVC" id="kAI-Qv-8XL" customClass="SettingsVC" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L8X-tT-QTL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nkO-Uk-lsC">
-                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SettingsCell" rowHeight="100" id="GOC-3C-QNn" customClass="UserInfoTableViewCell" customModule="Messenger" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GOC-3C-QNn" id="m4Q-gz-zgV">
-                                            <rect key="frame" x="0.0" y="0.0" width="349" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserDefaultIcon" translatesAutoresizingMaskIntoConstraints="NO" id="fG8-8g-hZx" customClass="ImageVC" customModule="Messenger" customModuleProvider="target">
-                                                    <rect key="frame" x="5" y="11" width="78" height="78"/>
+                                                    <rect key="frame" x="10" y="11" width="78" height="78"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="78" id="0XE-Md-O5D"/>
                                                     </constraints>
@@ -54,13 +54,13 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User's name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdO-Es-Wxg">
-                                                    <rect key="frame" x="90" y="13" width="108" height="24"/>
+                                                    <rect key="frame" x="95" y="13" width="108" height="24"/>
                                                     <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNQ-mV-0QC">
-                                                    <rect key="frame" x="90" y="37" width="36" height="18"/>
+                                                    <rect key="frame" x="95" y="37" width="36" height="18"/>
                                                     <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -114,14 +114,14 @@
             <objects>
                 <viewController storyboardIdentifier="UserInformationVC" id="Baw-wi-5FK" customClass="UserInformationVC" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wkw-rr-XGd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DIE-Vc-bd4" customClass="BackgroundView" customModule="Messenger" customModuleProvider="target">
-                                <rect key="frame" x="27" y="132" width="321" height="548"/>
+                                <rect key="frame" x="27" y="88" width="360" height="560"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserDefaultIcon" translatesAutoresizingMaskIntoConstraints="NO" id="WLs-N6-98H" customClass="ImageVC" customModule="Messenger" customModuleProvider="target">
-                                        <rect key="frame" x="100.66666666666669" y="20" width="120" height="120"/>
+                                        <rect key="frame" x="120" y="20" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="YUh-Os-u6u"/>
                                             <constraint firstAttribute="height" constant="120" id="oqE-Xj-BTI"/>
@@ -133,10 +133,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EIf-wy-aKd" customClass="BackgroundView" customModule="Messenger" customModuleProvider="target">
-                                        <rect key="frame" x="100.66666666666669" y="20" width="120" height="120"/>
+                                        <rect key="frame" x="120" y="20" width="120" height="120"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NmP-wY-gd9">
-                                                <rect key="frame" x="24.999999999999986" y="26" width="70" height="67.666666666666671"/>
+                                                <rect key="frame" x="25" y="26" width="70" height="67.666666666666671"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="2Ub-2R-rTp"/>
@@ -144,7 +144,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGQ-xK-bhd">
-                                                <rect key="frame" x="24.999999999999986" y="90" width="70" height="12"/>
+                                                <rect key="frame" x="25" y="90" width="70" height="12"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="10"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -167,7 +167,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7V-FA-LQa" customClass="ButtonVC" customModule="Messenger" customModuleProvider="target">
-                                        <rect key="frame" x="82" y="217" width="157" height="30"/>
+                                        <rect key="frame" x="101.66666666666666" y="214" width="156.99999999999997" height="30"/>
                                         <color key="backgroundColor" red="0.1215686275" green="0.19215686269999999" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Ngj-gs-f8D"/>
@@ -195,13 +195,41 @@
                                             <action selector="emailButtonPressed:" destination="Baw-wi-5FK" eventType="touchUpInside" id="jMc-AL-qzU"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qsl-3o-8sh" customClass="ButtonVC" customModule="Messenger" customModuleProvider="target">
+                                        <rect key="frame" x="101.66666666666666" y="174" width="156.99999999999997" height="30"/>
+                                        <color key="backgroundColor" red="0.1215686275" green="0.19215686269999999" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="157" id="dwh-Rq-eWH"/>
+                                            <constraint firstAttribute="height" constant="30" id="fvw-lT-sy9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                        <state key="normal" title="Change Password">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="passwordButtonPressed:" destination="Baw-wi-5FK" eventType="touchUpInside" id="PMz-LT-9bg"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="EIf-wy-aKd" firstAttribute="centerX" secondItem="DIE-Vc-bd4" secondAttribute="centerX" id="9XR-TA-exE"/>
                                     <constraint firstItem="WLs-N6-98H" firstAttribute="top" secondItem="DIE-Vc-bd4" secondAttribute="top" constant="20" id="Cih-7J-aHq"/>
-                                    <constraint firstItem="r7V-FA-LQa" firstAttribute="top" secondItem="WLs-N6-98H" secondAttribute="bottom" constant="77" id="Oiy-wb-8gf"/>
+                                    <constraint firstItem="r7V-FA-LQa" firstAttribute="top" secondItem="Qsl-3o-8sh" secondAttribute="bottom" constant="10" id="Epx-JP-1Rj"/>
                                     <constraint firstItem="WLs-N6-98H" firstAttribute="centerX" secondItem="DIE-Vc-bd4" secondAttribute="centerX" id="PoI-fY-jEc"/>
+                                    <constraint firstItem="Qsl-3o-8sh" firstAttribute="top" secondItem="WLs-N6-98H" secondAttribute="bottom" constant="34" id="UYP-yK-xVb"/>
+                                    <constraint firstItem="Qsl-3o-8sh" firstAttribute="centerX" secondItem="DIE-Vc-bd4" secondAttribute="centerX" id="hBG-10-6aG"/>
                                     <constraint firstItem="r7V-FA-LQa" firstAttribute="centerX" secondItem="DIE-Vc-bd4" secondAttribute="centerX" id="j15-lN-BuM"/>
                                     <constraint firstItem="EIf-wy-aKd" firstAttribute="top" secondItem="DIE-Vc-bd4" secondAttribute="top" constant="20" id="qch-ZO-nXv"/>
                                 </constraints>
@@ -230,6 +258,7 @@
                     <connections>
                         <outlet property="changeEmail" destination="r7V-FA-LQa" id="S9N-eO-kRr"/>
                         <outlet property="changeImageView" destination="EIf-wy-aKd" id="LI1-gV-wh6"/>
+                        <outlet property="changePasswordButton" destination="Qsl-3o-8sh" id="8jE-ad-dW9"/>
                         <outlet property="profileImage" destination="WLs-N6-98H" id="KGv-AU-fhE"/>
                     </connections>
                 </viewController>
@@ -237,9 +266,116 @@
             </objects>
             <point key="canvasLocation" x="1098.4000000000001" y="168.4729064039409"/>
         </scene>
+        <!--Update PasswordVC-->
+        <scene sceneID="1q0-ZZ-NBF">
+            <objects>
+                <viewController storyboardIdentifier="UpdatePasswordVC" id="0qL-sU-vE9" customClass="UpdatePasswordVC" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sl0-Pt-wfI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iVw-9L-Q7o" customClass="BackgroundView" customModule="Messenger" customModuleProvider="target">
+                                <rect key="frame" x="47" y="40" width="320" height="400"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your new password" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="vGK-zB-4rO" customClass="TextFieldVC" customModule="Messenger" customModuleProvider="target">
+                                        <rect key="frame" x="66" y="150" width="188" height="34"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="Aml-yC-IQ3"/>
+                                            <constraint firstAttribute="width" constant="188" id="kLm-kk-tlS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="lock"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RuE-WE-4zb" customClass="TextFieldVC" customModule="Messenger" customModuleProvider="target">
+                                        <rect key="frame" x="66" y="192" width="188" height="34"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="9zQ-FN-jbY"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="188" id="vmM-MU-Hva"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="lock"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkR-gH-InA" customClass="ButtonVC" customModule="Messenger" customModuleProvider="target">
+                                        <rect key="frame" x="110" y="256" width="100" height="30"/>
+                                        <color key="backgroundColor" red="0.1215686275" green="0.19215686269999999" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="WkV-7G-eqT"/>
+                                            <constraint firstAttribute="height" constant="30" id="ax4-3e-F2i"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <state key="normal" title="Confirm">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="confirmPressed:" destination="0qL-sU-vE9" eventType="touchUpInside" id="njc-zb-2rg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="RuE-WE-4zb" firstAttribute="top" secondItem="vGK-zB-4rO" secondAttribute="bottom" constant="8" id="49M-GM-bv5"/>
+                                    <constraint firstAttribute="height" constant="400" id="5sb-d4-m6P"/>
+                                    <constraint firstItem="vGK-zB-4rO" firstAttribute="top" secondItem="iVw-9L-Q7o" secondAttribute="top" constant="150" id="C5E-TI-fcE"/>
+                                    <constraint firstItem="IkR-gH-InA" firstAttribute="centerX" secondItem="iVw-9L-Q7o" secondAttribute="centerX" id="E1J-xT-22s"/>
+                                    <constraint firstItem="IkR-gH-InA" firstAttribute="top" secondItem="RuE-WE-4zb" secondAttribute="bottom" constant="30" id="eiu-yB-8LI"/>
+                                    <constraint firstItem="vGK-zB-4rO" firstAttribute="centerX" secondItem="iVw-9L-Q7o" secondAttribute="centerX" id="lja-6c-2aY"/>
+                                    <constraint firstItem="RuE-WE-4zb" firstAttribute="centerX" secondItem="iVw-9L-Q7o" secondAttribute="centerX" id="yQA-41-5zy"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="iVw-9L-Q7o" firstAttribute="centerX" secondItem="sl0-Pt-wfI" secondAttribute="centerX" id="9Gh-w5-syX"/>
+                            <constraint firstItem="iVw-9L-Q7o" firstAttribute="leading" secondItem="oJE-7E-tOx" secondAttribute="leading" constant="47" id="F8E-BY-Zmb"/>
+                            <constraint firstItem="oJE-7E-tOx" firstAttribute="trailing" secondItem="iVw-9L-Q7o" secondAttribute="trailing" constant="47" id="gaZ-uN-fi5"/>
+                            <constraint firstItem="iVw-9L-Q7o" firstAttribute="top" secondItem="oJE-7E-tOx" secondAttribute="top" constant="40" id="jcg-fU-95d"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oJE-7E-tOx"/>
+                    </view>
+                    <connections>
+                        <outlet property="confirmButton" destination="IkR-gH-InA" id="nXo-UY-QiS"/>
+                        <outlet property="confirmNewPasswordTf" destination="RuE-WE-4zb" id="bfe-RM-Od2"/>
+                        <outlet property="newPasswordTf" destination="vGK-zB-4rO" id="fIX-Xa-OCF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SDg-JZ-Z4c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2149.5999999999999" y="168.4729064039409"/>
+        </scene>
     </scenes>
     <resources>
         <image name="UserDefaultIcon" width="640" height="640"/>
         <image name="camera" catalog="system" width="64" height="48"/>
+        <image name="lock" width="50" height="50"/>
     </resources>
 </document>

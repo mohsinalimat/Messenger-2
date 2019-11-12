@@ -34,6 +34,7 @@
 		CB7898F523710BBD00E5D44D /* Chats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB7898F423710BBD00E5D44D /* Chats.storyboard */; };
 		CB95CCA5237620CF00DD20E2 /* FriendMessagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95CCA3237620CF00DD20E2 /* FriendMessagesCell.swift */; };
 		CB95CCA6237620CF00DD20E2 /* FriendMessagesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB95CCA4237620CF00DD20E2 /* FriendMessagesCell.xib */; };
+		CBB37136237B2D2B009BD613 /* UpdatePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB37135237B2D2B009BD613 /* UpdatePasswordVC.swift */; };
 		CBC4C5E82374C7A400BCB8F6 /* ContactsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC4C5E72374C7A400BCB8F6 /* ContactsCell.swift */; };
 		CBC4C5EA2374D58400BCB8F6 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC4C5E92374D58400BCB8F6 /* ChatCell.swift */; };
 		CBCEE915236F4345009E77B4 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCEE914236F4345009E77B4 /* SignUpVC.swift */; };
@@ -81,6 +82,7 @@
 		CB7898F423710BBD00E5D44D /* Chats.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chats.storyboard; sourceTree = "<group>"; };
 		CB95CCA3237620CF00DD20E2 /* FriendMessagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendMessagesCell.swift; sourceTree = "<group>"; };
 		CB95CCA4237620CF00DD20E2 /* FriendMessagesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendMessagesCell.xib; sourceTree = "<group>"; };
+		CBB37135237B2D2B009BD613 /* UpdatePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordVC.swift; sourceTree = "<group>"; };
 		CBC4C5E72374C7A400BCB8F6 /* ContactsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCell.swift; sourceTree = "<group>"; };
 		CBC4C5E92374D58400BCB8F6 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		CBCEE914236F4345009E77B4 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				CB5BD4F82370939500944E79 /* SettingsVC.swift */,
 				CB5BD5012370CF2C00944E79 /* UserInfoTableViewCell.swift */,
 				CB3A9727237A0EA20037926C /* UserInformationVC.swift */,
+				CBB37135237B2D2B009BD613 /* UpdatePasswordVC.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				CBD5ECEC236E5E1100D24116 /* ButtonVC.swift in Sources */,
 				CB5BD5022370CF2C00944E79 /* UserInfoTableViewCell.swift in Sources */,
 				CBD5ECEE236E5E4600D24116 /* BackgroundVC.swift in Sources */,
+				CBB37136237B2D2B009BD613 /* UpdatePasswordVC.swift in Sources */,
 				CB34A05B23721BCE007E8659 /* UserInformation + CurrentInformation.swift in Sources */,
 				CB5BD4FD2370A05100944E79 /* ControllersTabBarVC.swift in Sources */,
 				CB74C8612373464C00E4AF94 /* Message.swift in Sources */,
