@@ -23,6 +23,11 @@ class SettingsVC: UIViewController {
         signOutHandler()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
+    }
+    
     func signOutHandler(){
         do{
             try Auth.auth().signOut()
@@ -39,7 +44,7 @@ class SettingsVC: UIViewController {
         let controller = storyboard?.instantiateViewController(identifier: "UserInformationVC") as! UserInformationVC
         show(controller, sender: nil)
     }
-    
+     
 }
 
 extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
