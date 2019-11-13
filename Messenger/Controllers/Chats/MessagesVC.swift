@@ -22,6 +22,7 @@ class MessagesVC: UIViewController, UITextFieldDelegate, UIImagePickerController
     let sender = CurrentUserInformation.uid!
     var messages: [Message] = []
     var selectedImage: UIImage!
+    var messagesId = [String]()
     
     @IBOutlet weak var chatNavigation: UINavigationItem!
     @IBOutlet weak var messageTextfield: UITextField!
@@ -41,6 +42,7 @@ class MessagesVC: UIViewController, UITextFieldDelegate, UIImagePickerController
         tableView.register(UINib(nibName: "FriendMessagesCell", bundle: nil), forCellReuseIdentifier: "FriendMessagesCell")
         tableView.register(UINib(nibName: "CurrentUsrMediaMessageCell", bundle: nil), forCellReuseIdentifier: "CurrentUsrMediaMessageCell")
         tableView.register(UINib(nibName: "FriendMediaMessageCell", bundle: nil), forCellReuseIdentifier: "FriendMediaMessageCell")
+        getMessagesID()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -157,8 +159,8 @@ class MessagesVC: UIViewController, UITextFieldDelegate, UIImagePickerController
         let reference = Constants.FirebaseDB.db.reference().child("messages")
         let childRef = reference.childByAutoId()
         childRef.updateChildValues(values) { (error, ref) in
-            if error != nil {
-                print("error")
+            if let error = error{
+                self.showAlert(title: "Error", message: error.localizedDescription)
                 return
             }
             let userMessagesRef = Constants.FirebaseDB.db.reference().child("friend-messages").child(self.sender).child(friendId)
@@ -167,6 +169,7 @@ class MessagesVC: UIViewController, UITextFieldDelegate, UIImagePickerController
             
             let friendRef = Constants.FirebaseDB.db.reference().child("friend-messages").child(friendId).child(self.sender)
             friendRef.updateChildValues([messageId: 1])
+            self.getMessagesID()
         }
     }
     
@@ -195,64 +198,70 @@ class MessagesVC: UIViewController, UITextFieldDelegate, UIImagePickerController
         return true
     }
     
+    func getMessagesID(){
+        Constants.FirebaseDB.db.reference().child("friend-messages").child(CurrentUserInformation.uid).child(friendId).observe(.childAdded) { (snap) in
+            self.messagesId.append(snap.key)
+        }
+    }
 }
-
-extension MessagesVC: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let message = messages[indexPath.row]
-        let date = NSDate(timeIntervalSince1970: message.time.doubleValue)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "hh:mm a"
-        if message.sender == CurrentUserInformation.uid {
-            if message.mediaUrl == nil {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "SenderMessagesCell") as! SenderMessagesCell
-                cell.messagesLabel.text = message.message
-                cell.timeLabel.text = dateFormatter.string(from: date as Date)
-                return cell
-            }else{
-                let cell = tableView.dequeueReusableCell(withIdentifier: "CurrentUsrMediaMessageCell") as! CurrentUsrMediaMessageCell
-                cell.mediaMessage.loadImageCacheWithUrlString(imageUrl: message.mediaUrl)
-                cell.timeLabel.text = dateFormatter.string(from: date as Date)
-                return cell
-            }
-            
-        }else{
-            if message.mediaUrl == nil {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "FriendMessagesCell") as! FriendMessagesCell
-                getSenderInfo(sender: message.sender) { (data, error) in
-                    guard let data = data else { return }
-                    cell.profileImage.loadImageCacheWithUrlString(imageUrl: data["profileImage"] as! String)
-                }
-                cell.messageLabel.text = message.message
-                cell.timeLabel.text = dateFormatter.string(from: date as Date)
-                return cell
-            }else{
-                let cell = tableView.dequeueReusableCell(withIdentifier: "FriendMediaMessageCell") as! FriendMediaMessageCell
-                cell.mediaMessage.loadImageCacheWithUrlString(imageUrl: message.mediaUrl)
-                cell.timeLabel.text = dateFormatter.string(from: date as Date)
-                return cell
-            }
+    extension MessagesVC: UITableViewDelegate, UITableViewDataSource {
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return messages.count
         }
-    }
-    
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        true
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
-        if editingStyle == .delete {
-            print("hi")
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let message = messages[indexPath.row]
+            let date = NSDate(timeIntervalSince1970: message.time.doubleValue)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "hh:mm a"
+            if message.sender == CurrentUserInformation.uid {
+                if message.mediaUrl == nil {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "SenderMessagesCell") as! SenderMessagesCell
+                    cell.messagesLabel.text = message.message
+                    cell.timeLabel.text = dateFormatter.string(from: date as Date)
+                    return cell
+                }else{
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "CurrentUsrMediaMessageCell") as! CurrentUsrMediaMessageCell
+                    cell.mediaMessage.loadImageCacheWithUrlString(imageUrl: message.mediaUrl)
+                    cell.timeLabel.text = dateFormatter.string(from: date as Date)
+                    return cell
+                }
+                
+            }else{
+                if message.mediaUrl == nil {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "FriendMessagesCell") as! FriendMessagesCell
+                    getSenderInfo(sender: message.sender) { (data, error) in
+                        guard let data = data else { return }
+                        cell.profileImage.loadImageCacheWithUrlString(imageUrl: data["profileImage"] as! String)
+                    }
+                    cell.messageLabel.text = message.message
+                    cell.timeLabel.text = dateFormatter.string(from: date as Date)
+                    return cell
+                }else{
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "FriendMediaMessageCell") as! FriendMediaMessageCell
+                    cell.mediaMessage.loadImageCacheWithUrlString(imageUrl: message.mediaUrl)
+                    cell.timeLabel.text = dateFormatter.string(from: date as Date)
+                    return cell
+                }
+            }
         }
-    }
-    
+        
+        
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        
+        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            Constants.FirebaseDB.db.reference().child("friend-messages").child(CurrentUserInformation.uid).child(friendId).child(messagesId[indexPath.row]).removeValue { (error, ref) in
+                if let error = error {
+                    self.showAlert(title: "Error", message: error.localizedDescription)
+                    return
+                }
+                print("Success")
+                self.messagesId.remove(at: indexPath.row)
+                self.messages.remove(at: indexPath.row)
+                tableView.reloadData()
+                
+            }
+        }
 }

@@ -8,11 +8,11 @@
 
 import Foundation
 
-class Message{
-    var message: String!
-    var sender: String!
+class Message: NSObject{
     var time: NSNumber!
     var friend: String!
+    var message: String!
+    var sender: String!
     var mediaUrl: String!
     func friendChecker() -> String {
         return sender == CurrentUserInformation.uid ? friend: sender
