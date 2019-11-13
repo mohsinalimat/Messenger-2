@@ -40,7 +40,11 @@ class UpdateEmailVC: UIViewController {
         if confirmNew != newEmail {
             return "Please make sure your emails match"
         }
-                
+        
+        if newEmail == CurrentUserInformation.email {
+            return "The new email should not be the same as your current email "
+        }
+        
         return nil
     }
     
@@ -58,8 +62,12 @@ class UpdateEmailVC: UIViewController {
                 self.showAlert(title: "Error Happened!", message: error.localizedDescription)
                 return
             }
+            let ref = Constants.FirebaseDB.db.reference().child("users").child(CurrentUserInformation.uid)
+            ref.updateChildValues(["email":newEmail])
+            CurrentUserInformation.email = newEmail
             self.showAlert(title: "Success", message: "Your email has been changed successfully!")
         })
+        
         
     }
 }

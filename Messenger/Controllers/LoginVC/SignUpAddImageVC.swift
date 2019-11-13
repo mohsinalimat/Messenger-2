@@ -33,7 +33,7 @@ class SignUpAddImageVC: UIViewController, UIImagePickerControllerDelegate, UINav
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
+    
         if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             selectedImage = editedImage
         }else if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {

@@ -44,7 +44,7 @@ class SettingsVC: UIViewController {
         let controller = storyboard?.instantiateViewController(identifier: "UserInformationVC") as! UserInformationVC
         show(controller, sender: nil)
     }
-     
+    
 }
 
 extension SettingsVC: UITableViewDelegate, UITableViewDataSource {
