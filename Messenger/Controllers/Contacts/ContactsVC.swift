@@ -77,10 +77,18 @@ extension ContactsVC: UITableViewDelegate, UITableViewDataSource {
         tableView.rowHeight = 100
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let friend = contacts[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
+        let controller = storyboard?.instantiateViewController(identifier: "FriendInfoVC") as! FriendInfoVC
+        controller.friendName = friend.name
+        controller.friendEmail = friend.email
+        controller.friendImage = friend.profileImage
+        controller.isFriend = friend.friend
+        show(controller, sender: nil)
     }
+    
     
 }
 

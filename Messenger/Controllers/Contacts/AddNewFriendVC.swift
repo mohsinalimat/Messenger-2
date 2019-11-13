@@ -11,8 +11,6 @@ import Firebase
 
 class AddNewFriendVC: UIViewController {
     
-    //    TODO: Change the condintion of the Add button if users interact with it.
-    
     var name: String!
     var email: String!
     var profileImageUrl: String!
