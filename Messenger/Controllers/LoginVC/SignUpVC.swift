@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import Lottie
 
 class SignUpVC: UIViewController {
     
@@ -17,18 +18,30 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var emailTextField: TextFieldVC!
     @IBOutlet weak var nameTextField: TextFieldVC!
     @IBOutlet weak var lastNameTextField: TextFieldVC!
-    @IBOutlet weak var backButton: ButtonVC!
+    @IBOutlet weak var animationView: AnimationView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
-    @IBAction func backButtonPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)  
+    func animation(_ status: Bool){
+        animationView.isHidden = !status
+        emailTextField.isEnabled = !status
+        lastNameTextField.isEnabled = !status
+        nameTextField.isEnabled = !status
+        passwordTextField.isEnabled = !status
+        signUpButton.isEnabled = !status
+        if status {
+            animationView.animation = Animation.named("loading")
+            animationView.loopMode = .loop
+            animationView.play()
+        }else{
+            animationView.stop()
+        }
     }
     
-    
     @IBAction func signUpButtonPressed(_ sender: Any) {
+        animation(true)
         handleRegister()
     }
     
@@ -60,6 +73,7 @@ class SignUpVC: UIViewController {
         let textFieldError = validate()
         if textFieldError != nil {
             showAlert(title: "Error happened!", message: textFieldError)
+            return animation(false)
         }else{
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let name = nameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -75,7 +89,9 @@ class SignUpVC: UIViewController {
                 return
             }
                 self.nextController(email: email, password: password, name: fullName, uid: uid)
+                self.animation(false)
             }
+            
         }
         
     }
