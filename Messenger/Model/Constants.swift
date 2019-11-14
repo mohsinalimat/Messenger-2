@@ -21,6 +21,7 @@ class Constants {
     
     struct Model {
         static var model = [Message]()
+        static var checkForNil: Bool!
     }
     
 }

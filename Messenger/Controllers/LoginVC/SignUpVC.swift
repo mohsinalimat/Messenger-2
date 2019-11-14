@@ -19,11 +19,11 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var nameTextField: TextFieldVC!
     @IBOutlet weak var lastNameTextField: TextFieldVC!
     @IBOutlet weak var animationView: AnimationView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var backButton: ButtonVC!
         
+    @IBAction func backButtonClicked(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
-    
     func animation(_ status: Bool){
         animationView.isHidden = !status
         emailTextField.isEnabled = !status
@@ -31,6 +31,7 @@ class SignUpVC: UIViewController {
         nameTextField.isEnabled = !status
         passwordTextField.isEnabled = !status
         signUpButton.isEnabled = !status
+        backButton.isEnabled = !status
         if status {
             animationView.animation = Animation.named("loading")
             animationView.loopMode = .loop

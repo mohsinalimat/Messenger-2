@@ -51,6 +51,7 @@ class ControllersTabBarVC: UITabBarController {
                     message.friend = values["friend"] as? String
                     message.mediaUrl = values["mediaUrl"] as? String
                     Constants.Model.model.append(message)
+                    Constants.Model.checkForNil = true
                 }
             }
         }

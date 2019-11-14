@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Lottie
 
 class SignUpAddImageVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
@@ -20,16 +21,23 @@ class SignUpAddImageVC: UIViewController, UIImagePickerControllerDelegate, UINav
     @IBOutlet weak var profileImage: ImageVC!
     @IBOutlet weak var addButton: ButtonVC!
     @IBOutlet weak var continueButton: ButtonVC!
+    @IBOutlet weak var animationView: AnimationView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    func animation(_ status: Bool){
+        animationView.isHidden = !status
+        addButton.isEnabled = !status
+        continueButton.isEnabled = !status
+        if status {
+            animationView.animation = Animation.named("loading")
+            animationView.loopMode = .loop
+            animationView.play()
+        }else{
+            animationView.stop()
+        }
     }
     
     @IBAction func addImagePressed(_ sender: Any) {
-        
         openImagePicker(.photoLibrary)
-        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -59,6 +67,7 @@ class SignUpAddImageVC: UIViewController, UIImagePickerControllerDelegate, UINav
     }
     
     @IBAction func continuePressed(_ sender: Any) {
+        animation(true)
         if selectedImage == nil {
             selectedImage = UIImage(named: "UserDefaultIcon")
         }
@@ -82,8 +91,8 @@ class SignUpAddImageVC: UIViewController, UIImagePickerControllerDelegate, UINav
                     let values: [String : Any] = ["name": self.name!, "email": self.email!, "profileImage": url.absoluteString]
                     self.registerUserHandler(uid: self.uid!, values: values)
                 }
-                
             }
+            self.animation(true)
         }
     }
     

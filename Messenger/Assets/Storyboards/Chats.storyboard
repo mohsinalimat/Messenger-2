@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kpC-Zv-nCX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kpC-Zv-nCX">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -134,6 +134,14 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="714"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vv4-Tw-yMx" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="122.66666666666669" y="728" width="130" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="os1-FI-bMU"/>
+                                    <constraint firstAttribute="height" constant="30" id="p1p-O5-HNT"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r0t-2T-83i" customClass="BackgroundView" customModule="Messenger" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="758" width="375" height="55"/>
                                 <subviews>
@@ -189,7 +197,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="r0t-2T-83i" secondAttribute="bottom" constant="-1" id="6tn-7Y-ULM"/>
+                            <constraint firstItem="Vv4-Tw-yMx" firstAttribute="centerX" secondItem="fyn-a5-BFv" secondAttribute="centerX" id="Knb-GT-Xty"/>
                             <constraint firstItem="r0t-2T-83i" firstAttribute="top" secondItem="rJY-gm-nyk" secondAttribute="bottom" id="MGc-pj-ibv"/>
+                            <constraint firstItem="r0t-2T-83i" firstAttribute="top" secondItem="Vv4-Tw-yMx" secondAttribute="bottom" id="RD2-wr-XRe"/>
                             <constraint firstItem="rJY-gm-nyk" firstAttribute="trailing" secondItem="SOU-Qg-pcP" secondAttribute="trailing" id="XTq-2j-fc9"/>
                             <constraint firstItem="rJY-gm-nyk" firstAttribute="top" secondItem="SOU-Qg-pcP" secondAttribute="top" id="i57-GE-O24"/>
                             <constraint firstItem="rJY-gm-nyk" firstAttribute="leading" secondItem="SOU-Qg-pcP" secondAttribute="leading" id="jda-bO-Bt0"/>
@@ -198,14 +208,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SOU-Qg-pcP"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Chats" id="3XG-ht-9to">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="info.circle" catalog="system" id="r3z-iy-p0m">
-                            <connections>
-                                <action selector="addButtonPressed:" destination="Xmj-ad-Fpv" id="gl1-RR-i1H"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Chats" id="3XG-ht-9to"/>
                     <connections>
+                        <outlet property="animationView" destination="Vv4-Tw-yMx" id="hKm-rG-qqp"/>
                         <outlet property="chatNavigation" destination="3XG-ht-9to" id="xyR-xf-TOc"/>
                         <outlet property="messageTextfield" destination="zT8-lq-Ymp" id="qn1-CF-0sZ"/>
                         <outlet property="photoLibrary" destination="YpX-lO-3kL" id="ngc-l0-tKc"/>
@@ -220,7 +225,6 @@
     </scenes>
     <resources>
         <image name="UserDefaultIcon" width="640" height="640"/>
-        <image name="info.circle" catalog="system" width="64" height="60"/>
         <image name="photoLibrary" width="64" height="64"/>
         <image name="plus" catalog="system" width="64" height="56"/>
         <image name="sendButton" width="64" height="64"/>

@@ -17,11 +17,6 @@ class SignInVC: UIViewController {
     @IBOutlet weak var signInButton: ButtonVC!
     @IBOutlet weak var animationView: AnimationView!
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     func animation(_ status: Bool){
         animationView.isHidden = !status
         usernameTextField.isEnabled = !status
@@ -44,7 +39,7 @@ class SignInVC: UIViewController {
     @IBAction func signUpButtonClicked(_ sender: Any) {
         
         let controller = storyboard?.instantiateViewController(identifier: Constants.Storyboard.signUpVC) as! SignUpVC
-        show(controller, sender: nil)
+        present(controller, animated: true, completion: nil)
     }
     
     func handleLogin(){

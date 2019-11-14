@@ -427,9 +427,34 @@
                                     <constraint firstAttribute="height" constant="100" id="H0r-2J-iAM"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0P-5x-tyg" customClass="ButtonVC" customModule="Messenger" customModuleProvider="target">
+                                <rect key="frame" x="16" y="44" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.31764705879999999" green="0.41176470590000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="1A5-M3-p4v"/>
+                                    <constraint firstAttribute="height" constant="40" id="Yre-B3-ubA"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="chevron.left" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="backButtonClicked:" destination="WDS-Yo-6vr" eventType="touchUpInside" id="tzi-iP-Hhp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Q0P-5x-tyg" firstAttribute="top" secondItem="dxf-L1-hhN" secondAttribute="top" id="25Y-Ab-PC5"/>
                             <constraint firstItem="5wD-Xu-1hg" firstAttribute="centerX" secondItem="1gR-NJ-Ick" secondAttribute="centerX" id="55P-CP-xp2"/>
                             <constraint firstItem="5nH-l6-EmZ" firstAttribute="top" secondItem="dxf-L1-hhN" secondAttribute="top" constant="13" id="6YF-5H-bun"/>
                             <constraint firstItem="gJB-3F-XEg" firstAttribute="top" secondItem="p6z-HN-gSk" secondAttribute="bottom" constant="8" id="6Zj-E4-JWq"/>
@@ -444,11 +469,13 @@
                             <constraint firstItem="5wD-Xu-1hg" firstAttribute="top" secondItem="XLE-z2-iAd" secondAttribute="bottom" constant="8" id="blU-2r-Qqd"/>
                             <constraint firstItem="p6z-HN-gSk" firstAttribute="top" secondItem="5nH-l6-EmZ" secondAttribute="bottom" constant="40" id="gBm-3u-hXY"/>
                             <constraint firstItem="4fu-ue-enk" firstAttribute="top" secondItem="gJB-3F-XEg" secondAttribute="bottom" constant="8" id="gGr-Mw-ikq"/>
+                            <constraint firstItem="Q0P-5x-tyg" firstAttribute="leading" secondItem="dxf-L1-hhN" secondAttribute="leading" constant="16" id="ora-Pe-kXq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dxf-L1-hhN"/>
                     </view>
                     <connections>
                         <outlet property="animationView" destination="5wD-Xu-1hg" id="c7j-qe-fa0"/>
+                        <outlet property="backButton" destination="Q0P-5x-tyg" id="Avr-HI-HsH"/>
                         <outlet property="emailTextField" destination="4fu-ue-enk" id="1CQ-Jz-qkE"/>
                         <outlet property="lastNameTextField" destination="gJB-3F-XEg" id="w0G-Pf-xif"/>
                         <outlet property="nameTextField" destination="p6z-HN-gSk" id="a2Q-jk-7QG"/>
@@ -485,7 +512,7 @@
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jq2-5s-tvU" customClass="ButtonVC" customModule="Messenger" customModuleProvider="target">
                                         <rect key="frame" x="20" y="182" width="230" height="36"/>
-                                        <color key="backgroundColor" red="0.1215686275" green="0.19215686269999999" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.31764705879999999" green="0.41176470590000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="20"/>
                                         <state key="normal" title="Add Image">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -495,7 +522,7 @@
                                                 <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                <color key="value" red="0.58823529409999997" green="0.23529411759999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.31764705879999999" green="0.41176470590000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="12"/>
@@ -519,7 +546,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcd-rC-mNK" customClass="ButtonVC" customModule="Messenger" customModuleProvider="target">
                                         <rect key="frame" x="20" y="236" width="230" height="36"/>
-                                        <color key="backgroundColor" red="0.1215686275" green="0.19215686269999999" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.31764705879999999" green="0.41176470590000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="20"/>
                                         <state key="normal" title="Continue">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -535,18 +562,27 @@
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                <color key="value" red="0.58823529409999997" green="0.23529411759999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.31764705879999999" green="0.41176470590000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="continuePressed:" destination="zUm-tb-tjS" eventType="touchUpInside" id="Ox7-r4-tDQ"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yVM-WJ-ebe" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="15" y="291" width="240" height="101"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="LOh-Nw-Nzv"/>
+                                            <constraint firstAttribute="height" constant="101" id="bRP-DS-Nwr"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="Rcd-rC-mNK" firstAttribute="top" secondItem="jq2-5s-tvU" secondAttribute="bottom" constant="18" id="0Al-1H-wbW"/>
                                     <constraint firstItem="1wM-ms-Lbz" firstAttribute="leading" secondItem="TeG-rJ-1MV" secondAttribute="leading" constant="20" symbolic="YES" id="84E-qg-CCl"/>
+                                    <constraint firstItem="yVM-WJ-ebe" firstAttribute="centerX" secondItem="TeG-rJ-1MV" secondAttribute="centerX" id="9Jk-Lr-ZGd"/>
                                     <constraint firstItem="jq2-5s-tvU" firstAttribute="leading" secondItem="TeG-rJ-1MV" secondAttribute="leading" constant="20" symbolic="YES" id="POI-kW-NW2"/>
                                     <constraint firstItem="1wM-ms-Lbz" firstAttribute="top" secondItem="sms-Fo-PKd" secondAttribute="bottom" constant="9" id="TR1-Vr-8Pj"/>
                                     <constraint firstAttribute="height" constant="400" id="Taq-PA-R0c"/>
@@ -557,10 +593,11 @@
                                     <constraint firstItem="jq2-5s-tvU" firstAttribute="top" secondItem="1wM-ms-Lbz" secondAttribute="bottom" constant="11" id="iPx-5R-Duv"/>
                                     <constraint firstItem="sms-Fo-PKd" firstAttribute="top" secondItem="TeG-rJ-1MV" secondAttribute="top" constant="44" id="pnD-kM-cFP"/>
                                     <constraint firstItem="sms-Fo-PKd" firstAttribute="centerX" secondItem="TeG-rJ-1MV" secondAttribute="centerX" id="y57-vP-CiS"/>
+                                    <constraint firstItem="yVM-WJ-ebe" firstAttribute="top" secondItem="Rcd-rC-mNK" secondAttribute="bottom" constant="19" id="zk8-go-BtC"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" red="0.58823529409999997" green="0.23529411759999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.31764705879999999" green="0.41176470590000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="radius">
                                         <real key="value" value="16"/>
@@ -585,6 +622,7 @@
                     <navigationItem key="navigationItem" id="n1W-Cc-Idh"/>
                     <connections>
                         <outlet property="addButton" destination="jq2-5s-tvU" id="7GJ-Rm-Q0y"/>
+                        <outlet property="animationView" destination="yVM-WJ-ebe" id="AO6-LV-pOL"/>
                         <outlet property="continueButton" destination="Rcd-rC-mNK" id="PHP-qI-ssV"/>
                         <outlet property="profileImage" destination="sms-Fo-PKd" id="XYu-Ve-cNg"/>
                         <segue destination="UVy-c4-oHK" kind="show" identifier="ControllersTabBar" id="qvv-w5-AQw"/>
@@ -597,6 +635,7 @@
     </scenes>
     <resources>
         <image name="UserDefaultIcon" width="640" height="640"/>
+        <image name="chevron.left" catalog="system" width="48" height="64"/>
         <image name="gear" catalog="system" width="64" height="58"/>
         <image name="logo" width="500" height="500"/>
         <image name="message.fill" catalog="system" width="64" height="56"/>
@@ -605,6 +644,6 @@
         <image name="user" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kTf-yb-Nf5"/>
+        <segue reference="qvv-w5-AQw"/>
     </inferredMetricsTieBreakers>
 </document>
