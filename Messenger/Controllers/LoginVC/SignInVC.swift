@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lottie
 import FirebaseAuth
 
 class SignInVC: UIViewController {
@@ -14,13 +15,30 @@ class SignInVC: UIViewController {
     @IBOutlet weak var usernameTextField: TextFieldVC!
     @IBOutlet weak var passwordTextField: TextFieldVC!
     @IBOutlet weak var signInButton: ButtonVC!
+    @IBOutlet weak var animationView: AnimationView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        animationView.isHidden = false
+    }
+    
+    func animation(_ status: Bool){
+        animationView.isHidden = !status
+        if status {
+            animationView.animation = Animation.named("loading")
+            animationView.loopMode = .loop
+            animationView.play()
+        }else{
+            animationView.stop()
+        }
+        usernameTextField.isEnabled = !status
+        passwordTextField.isEnabled = !status
+        signInButton.isEnabled = !status
     }
     
     @IBAction func signInButtonClicked(_ sender: Any) {
+        animation(true)
         handleLogin()
     }
     
@@ -29,7 +47,7 @@ class SignInVC: UIViewController {
         let controller = storyboard?.instantiateViewController(identifier: Constants.Storyboard.signUpVC) as! SignUpVC
         show(controller, sender: nil)
     }
-        
+    
     func handleLogin(){
         let textFieldError = validateTextFields()
         if textFieldError != nil {
@@ -45,6 +63,7 @@ class SignInVC: UIViewController {
                 }
             }
         }
+        animation(false)
     }
     
     func validateTextFields() -> String? {

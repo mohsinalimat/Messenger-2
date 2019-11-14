@@ -35,6 +35,7 @@
 		CBAA800A237C7ED3008CA16F /* FriendInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAA8009237C7ED3008CA16F /* FriendInfoVC.swift */; };
 		CBAA800F237CD39D008CA16F /* FriendMessagesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAA800D237CD39B008CA16F /* FriendMessagesCell.xib */; };
 		CBAA8010237CD39D008CA16F /* FriendMediaMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAA800E237CD39D008CA16F /* FriendMediaMessageCell.xib */; };
+		CBAA8021237CF022008CA16F /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = CBAA8020237CF022008CA16F /* loading.json */; };
 		CBB37136237B2D2B009BD613 /* UpdatePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB37135237B2D2B009BD613 /* UpdatePasswordVC.swift */; };
 		CBB37138237B418E009BD613 /* UpdateEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB37137237B418E009BD613 /* UpdateEmailVC.swift */; };
 		CBC4C5E82374C7A400BCB8F6 /* ContactsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC4C5E72374C7A400BCB8F6 /* ContactsCell.swift */; };
@@ -85,6 +86,7 @@
 		CBAA8009237C7ED3008CA16F /* FriendInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInfoVC.swift; sourceTree = "<group>"; };
 		CBAA800D237CD39B008CA16F /* FriendMessagesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendMessagesCell.xib; sourceTree = "<group>"; };
 		CBAA800E237CD39D008CA16F /* FriendMediaMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendMediaMessageCell.xib; sourceTree = "<group>"; };
+		CBAA8020237CF022008CA16F /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loading.json; path = ../../../../../Downloads/loading.json; sourceTree = "<group>"; };
 		CBB37135237B2D2B009BD613 /* UpdatePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordVC.swift; sourceTree = "<group>"; };
 		CBB37137237B418E009BD613 /* UpdateEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateEmailVC.swift; sourceTree = "<group>"; };
 		CBC4C5E72374C7A400BCB8F6 /* ContactsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCell.swift; sourceTree = "<group>"; };
@@ -208,6 +210,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		CBAA8011237CE8DC008CA16F /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				CBAA8020237CF022008CA16F /* loading.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		CBD5ECC5236E5C2200D24116 = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +266,7 @@
 		CBD5ECE6236E5D4E00D24116 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				CBAA8011237CE8DC008CA16F /* Animations */,
 				CB5BD506237106E100944E79 /* Storyboards */,
 				CBD5ECE8236E5D7400D24116 /* Helper Recources */,
 				CBD5ECDA236E5C2300D24116 /* Assets.xcassets */,
@@ -355,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBD5ECDE236E5C2300D24116 /* LaunchScreen.storyboard in Resources */,
+				CBAA8021237CF022008CA16F /* loading.json in Resources */,
 				CBAA8010237CD39D008CA16F /* FriendMediaMessageCell.xib in Resources */,
 				CB74C869237363BF00E4AF94 /* SenderMessagesCell.xib in Resources */,
 				CB6C12D2237889E100965FF7 /* CurrentUsrMediaMessageCell.xib in Resources */,

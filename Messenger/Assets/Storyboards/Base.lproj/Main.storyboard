@@ -101,6 +101,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3q-01-eYv" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="75" y="216.00000000000003" width="235" height="74.999999999999972"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="ihv-Jp-zcJ"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -110,9 +117,12 @@
                                     <constraint firstItem="zIS-pg-KXC" firstAttribute="top" secondItem="Pna-zh-H66" secondAttribute="bottom" constant="18" id="9ec-mk-jwg"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="zIS-pg-KXC" secondAttribute="trailing" constant="80" id="HSp-q7-qjC"/>
                                     <constraint firstAttribute="height" constant="300" id="K6o-Pu-9Jm"/>
+                                    <constraint firstAttribute="trailing" secondItem="X3q-01-eYv" secondAttribute="trailing" constant="75" id="ZG6-T1-0BO"/>
                                     <constraint firstAttribute="trailing" secondItem="Aa6-69-wWZ" secondAttribute="trailing" constant="77" id="ZJP-ca-dj9"/>
+                                    <constraint firstItem="X3q-01-eYv" firstAttribute="leading" secondItem="JfO-ly-VWm" secondAttribute="leading" constant="75" id="b8p-ax-Lhq"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Pna-zh-H66" secondAttribute="trailing" constant="80" id="by0-Zo-68G"/>
                                     <constraint firstItem="Aa6-69-wWZ" firstAttribute="leading" secondItem="JfO-ly-VWm" secondAttribute="leading" constant="68" id="ctY-6x-gNM"/>
+                                    <constraint firstItem="X3q-01-eYv" firstAttribute="top" secondItem="zIS-pg-KXC" secondAttribute="bottom" constant="8" id="emn-PE-thv"/>
                                     <constraint firstItem="Pna-zh-H66" firstAttribute="leading" secondItem="JfO-ly-VWm" secondAttribute="leading" constant="72" id="p29-tG-S5W"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -212,6 +222,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="animationView" destination="X3q-01-eYv" id="sjR-IJ-0eo"/>
                         <outlet property="passwordTextField" destination="zIS-pg-KXC" id="XHM-dc-DSX"/>
                         <outlet property="signInButton" destination="Zay-Ez-6ZV" id="5Vl-Sc-e8N"/>
                         <outlet property="usernameTextField" destination="Pna-zh-H66" id="2M2-co-g4a"/>
