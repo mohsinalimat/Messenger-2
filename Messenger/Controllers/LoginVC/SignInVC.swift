@@ -20,11 +20,13 @@ class SignInVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        animationView.isHidden = false
     }
     
     func animation(_ status: Bool){
         animationView.isHidden = !status
+        usernameTextField.isEnabled = !status
+        passwordTextField.isEnabled = !status
+        signInButton.isEnabled = !status
         if status {
             animationView.animation = Animation.named("loading")
             animationView.loopMode = .loop
@@ -32,9 +34,6 @@ class SignInVC: UIViewController {
         }else{
             animationView.stop()
         }
-        usernameTextField.isEnabled = !status
-        passwordTextField.isEnabled = !status
-        signInButton.isEnabled = !status
     }
     
     @IBAction func signInButtonClicked(_ sender: Any) {
@@ -52,6 +51,8 @@ class SignInVC: UIViewController {
         let textFieldError = validateTextFields()
         if textFieldError != nil {
             showAlert(title: "Error happened!", message: textFieldError)
+            self.animation(false)
+            return
         }else{
             let email = usernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -61,9 +62,10 @@ class SignInVC: UIViewController {
                 }else{
                     self.nextController()
                 }
+                self.animation(false)
             }
         }
-        animation(false)
+        
     }
     
     func validateTextFields() -> String? {
