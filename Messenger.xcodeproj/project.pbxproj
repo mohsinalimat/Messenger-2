@@ -22,7 +22,6 @@
 		CB6C12D1237889E100965FF7 /* CurrentUsrMediaMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6C12CF237889E100965FF7 /* CurrentUsrMediaMessageCell.swift */; };
 		CB6C12D2237889E100965FF7 /* CurrentUsrMediaMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6C12D0237889E100965FF7 /* CurrentUsrMediaMessageCell.xib */; };
 		CB6C12D623788C4700965FF7 /* FriendMediaMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6C12D423788C4700965FF7 /* FriendMediaMessageCell.swift */; };
-		CB6C12D723788C4700965FF7 /* FriendMediaMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB6C12D523788C4700965FF7 /* FriendMediaMessageCell.xib */; };
 		CB74C8612373464C00E4AF94 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74C8602373464C00E4AF94 /* Message.swift */; };
 		CB74C863237347ED00E4AF94 /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74C862237347ED00E4AF94 /* MessagesVC.swift */; };
 		CB74C868237363BF00E4AF94 /* SenderMessagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB74C866237363BF00E4AF94 /* SenderMessagesCell.swift */; };
@@ -33,8 +32,9 @@
 		CB7898F323710BB000E5D44D /* Contacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB7898F223710BB000E5D44D /* Contacts.storyboard */; };
 		CB7898F523710BBD00E5D44D /* Chats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB7898F423710BBD00E5D44D /* Chats.storyboard */; };
 		CB95CCA5237620CF00DD20E2 /* FriendMessagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95CCA3237620CF00DD20E2 /* FriendMessagesCell.swift */; };
-		CB95CCA6237620CF00DD20E2 /* FriendMessagesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB95CCA4237620CF00DD20E2 /* FriendMessagesCell.xib */; };
 		CBAA800A237C7ED3008CA16F /* FriendInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAA8009237C7ED3008CA16F /* FriendInfoVC.swift */; };
+		CBAA800F237CD39D008CA16F /* FriendMessagesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAA800D237CD39B008CA16F /* FriendMessagesCell.xib */; };
+		CBAA8010237CD39D008CA16F /* FriendMediaMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAA800E237CD39D008CA16F /* FriendMediaMessageCell.xib */; };
 		CBB37136237B2D2B009BD613 /* UpdatePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB37135237B2D2B009BD613 /* UpdatePasswordVC.swift */; };
 		CBB37138237B418E009BD613 /* UpdateEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB37137237B418E009BD613 /* UpdateEmailVC.swift */; };
 		CBC4C5E82374C7A400BCB8F6 /* ContactsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC4C5E72374C7A400BCB8F6 /* ContactsCell.swift */; };
@@ -72,7 +72,6 @@
 		CB6C12CF237889E100965FF7 /* CurrentUsrMediaMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUsrMediaMessageCell.swift; sourceTree = "<group>"; };
 		CB6C12D0237889E100965FF7 /* CurrentUsrMediaMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentUsrMediaMessageCell.xib; sourceTree = "<group>"; };
 		CB6C12D423788C4700965FF7 /* FriendMediaMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendMediaMessageCell.swift; sourceTree = "<group>"; };
-		CB6C12D523788C4700965FF7 /* FriendMediaMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendMediaMessageCell.xib; sourceTree = "<group>"; };
 		CB74C8602373464C00E4AF94 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		CB74C862237347ED00E4AF94 /* MessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
 		CB74C866237363BF00E4AF94 /* SenderMessagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderMessagesCell.swift; sourceTree = "<group>"; };
@@ -83,8 +82,9 @@
 		CB7898F223710BB000E5D44D /* Contacts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contacts.storyboard; sourceTree = "<group>"; };
 		CB7898F423710BBD00E5D44D /* Chats.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chats.storyboard; sourceTree = "<group>"; };
 		CB95CCA3237620CF00DD20E2 /* FriendMessagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendMessagesCell.swift; sourceTree = "<group>"; };
-		CB95CCA4237620CF00DD20E2 /* FriendMessagesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendMessagesCell.xib; sourceTree = "<group>"; };
 		CBAA8009237C7ED3008CA16F /* FriendInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInfoVC.swift; sourceTree = "<group>"; };
+		CBAA800D237CD39B008CA16F /* FriendMessagesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendMessagesCell.xib; sourceTree = "<group>"; };
+		CBAA800E237CD39D008CA16F /* FriendMediaMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendMediaMessageCell.xib; sourceTree = "<group>"; };
 		CBB37135237B2D2B009BD613 /* UpdatePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordVC.swift; sourceTree = "<group>"; };
 		CBB37137237B418E009BD613 /* UpdateEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateEmailVC.swift; sourceTree = "<group>"; };
 		CBC4C5E72374C7A400BCB8F6 /* ContactsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCell.swift; sourceTree = "<group>"; };
@@ -200,10 +200,10 @@
 				CB95CCA3237620CF00DD20E2 /* FriendMessagesCell.swift */,
 				CB6C12CF237889E100965FF7 /* CurrentUsrMediaMessageCell.swift */,
 				CB6C12D423788C4700965FF7 /* FriendMediaMessageCell.swift */,
+				CBAA800E237CD39D008CA16F /* FriendMediaMessageCell.xib */,
+				CBAA800D237CD39B008CA16F /* FriendMessagesCell.xib */,
 				CB74C867237363BF00E4AF94 /* SenderMessagesCell.xib */,
-				CB95CCA4237620CF00DD20E2 /* FriendMessagesCell.xib */,
 				CB6C12D0237889E100965FF7 /* CurrentUsrMediaMessageCell.xib */,
-				CB6C12D523788C4700965FF7 /* FriendMediaMessageCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -355,12 +355,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBD5ECDE236E5C2300D24116 /* LaunchScreen.storyboard in Resources */,
-				CB6C12D723788C4700965FF7 /* FriendMediaMessageCell.xib in Resources */,
-				CB95CCA6237620CF00DD20E2 /* FriendMessagesCell.xib in Resources */,
+				CBAA8010237CD39D008CA16F /* FriendMediaMessageCell.xib in Resources */,
 				CB74C869237363BF00E4AF94 /* SenderMessagesCell.xib in Resources */,
 				CB6C12D2237889E100965FF7 /* CurrentUsrMediaMessageCell.xib in Resources */,
 				CBD5ECDB236E5C2300D24116 /* Assets.xcassets in Resources */,
 				CBE52225236F64CC00AEC790 /* GoogleService-Info.plist in Resources */,
+				CBAA800F237CD39D008CA16F /* FriendMessagesCell.xib in Resources */,
 				CB7898F323710BB000E5D44D /* Contacts.storyboard in Resources */,
 				CB7898F523710BBD00E5D44D /* Chats.storyboard in Resources */,
 				CBD5ECD9236E5C2200D24116 /* Main.storyboard in Resources */,

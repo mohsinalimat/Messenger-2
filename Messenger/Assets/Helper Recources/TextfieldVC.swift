@@ -22,6 +22,13 @@ import UIKit
             updateView()
         }
     }
+
+    @IBInspectable var cornerRadius: CGFloat = 0 {
+        didSet{
+            layer.cornerRadius = cornerRadius
+        }
+    }
+    
     
     @IBInspectable
     var shadowColor: UIColor? {
