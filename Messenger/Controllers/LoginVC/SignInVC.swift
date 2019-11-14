@@ -15,7 +15,6 @@ class SignInVC: UIViewController {
     @IBOutlet weak var usernameTextField: TextFieldVC!
     @IBOutlet weak var passwordTextField: TextFieldVC!
     @IBOutlet weak var signInButton: ButtonVC!
-    @IBOutlet weak var animationView: AnimationView!
     
     
     override func viewDidLoad() {
@@ -23,17 +22,17 @@ class SignInVC: UIViewController {
     }
     
     func animation(_ status: Bool){
-        animationView.isHidden = !status
-        usernameTextField.isEnabled = !status
-        passwordTextField.isEnabled = !status
-        signInButton.isEnabled = !status
-        if status {
-            animationView.animation = Animation.named("loading")
-            animationView.loopMode = .loop
-            animationView.play()
-        }else{
-            animationView.stop()
-        }
+//        animationView.isHidden = !status
+//        usernameTextField.isEnabled = !status
+//        passwordTextField.isEnabled = !status
+//        signInButton.isEnabled = !status
+//        if status {
+//            animationView.animation = Animation.named("loading")
+//            animationView.loopMode = .loop
+//            animationView.play()
+//        }else{
+//            animationView.stop()
+//        }
     }
     
     @IBAction func signInButtonClicked(_ sender: Any) {
