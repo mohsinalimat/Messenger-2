@@ -1,4 +1,20 @@
 
+## Installation
+ 1). Create an account at [Firebase](https://console.firebase.google.com/u/0/) and create a New project for your application.\
+ 2). Set up your Firebase Authentication sign-in methods. ---> [Firebase Auth](https://firebase.google.com/docs/auth)\
+ 3). Configure your Firebase Authentication Settings.
+  ```
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+ ```
+ 4). Enable your Firebase Database. ---> [Database](https://firebase.google.com/docs/database)\
+ 5). Enable your Firebase Storage. ---> [Storage](https://firebase.google.com/docs/storage)\
+ 6). Download `GoogleService-Info.plist` from your Firebase project.
+ 
 ## _License_
 ```
 MIT License
