@@ -21,10 +21,24 @@ This app allows users to add friends and chat with them.
  **iOS version**: 13.1\
  **XCode version**: 11.2\
  **Swift version**: 5
+ 
+ ## _Demo_
+ <img src="Images/Contacts.png" height="444"> <img src="Images/chats.png" height="444"> <img src="Images/settings1.png" height="444">
+  <img src="Images/chatView.png" height="444"> <img src="Images/addFriend.png" height="444"> <img src="Images/settings2.png" height="444">
+  ### _Overview_
+ - Contacts - this is the place where you can see all your friends.
+ - Messages - recent messages from your friends.
+ - Settings - In the settings view you can change your email/password or profile image.
+ - AddFriendView  - allows you to add friends
+ - ChatView - this is the place where you can chat with your friends.
+
+### _Libraries_
+ - lottie-ios ---> [url](https://github.com/airbnb/lottie-ios)
+ - IQKeyboardManager ---> [url](https://github.com/hackiftekhar/IQKeyboardManager)
+ - Firebase ---> [url](https://firebase.google.com/)
+
  ## _License_
 ```
-
-
 
 MIT License
 
