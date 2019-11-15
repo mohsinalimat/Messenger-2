@@ -91,6 +91,7 @@ class MessagesVC: UIViewController, UITextFieldDelegate, UIImagePickerController
         childRef.updateChildValues(values) { (error, ref) in
             if error != nil {
                 print("error")
+                self.animation(false)
                 return
             }
             let userMessagesRef = Constants.FirebaseDB.db.reference().child("friend-messages").child(self.sender).child(friendId)
@@ -99,9 +100,7 @@ class MessagesVC: UIViewController, UITextFieldDelegate, UIImagePickerController
             
             let friendRef = Constants.FirebaseDB.db.reference().child("friend-messages").child(friendId).child(self.sender)
             friendRef.updateChildValues([messageId: 1])
-            
-            
-            
+            self.animation(false)
         }
         messageTextfield.text = ""
         
@@ -109,7 +108,6 @@ class MessagesVC: UIViewController, UITextFieldDelegate, UIImagePickerController
     
     
     func getUserMessages(){
-        animation(true)
         let ref = Constants.FirebaseDB.db.reference().child("friend-messages").child(CurrentUserInformation.uid).child(friendId)
         ref.observe(.childAdded, with: { (snapshot) in
             let messageId = snapshot.key
@@ -131,7 +129,6 @@ class MessagesVC: UIViewController, UITextFieldDelegate, UIImagePickerController
                     }
                     
                 }
-                self.animation(false)
             }
         }, withCancel: nil)
     }
