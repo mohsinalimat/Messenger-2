@@ -1,5 +1,5 @@
 ## _Info_
-This is the open source instant messaging framework for iOS. This app allows users to add friends and chat with them.
+This is the open source instant messaging app for iOS. This app allows users to add friends and chat with them.
 ## _Installation_
  1). Create an account at [Firebase](https://console.firebase.google.com/u/0/) and create a New project for your application.\
  2). Go to Sign-In method tab and choose `Email/password`\
