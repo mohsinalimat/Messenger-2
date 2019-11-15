@@ -107,13 +107,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P7J-Oc-0BR"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Messages" id="EI2-aS-KtW">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="SZO-k9-TQ9">
-                            <connections>
-                                <action selector="addButtonPressed:" destination="bCA-8u-Yj3" id="oBQ-h9-jnH"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Messages" id="EI2-aS-KtW"/>
                     <connections>
                         <outlet property="tableView" destination="R0i-l6-3A8" id="QIt-9q-oyw"/>
                     </connections>
@@ -226,7 +220,6 @@
     <resources>
         <image name="UserDefaultIcon" width="640" height="640"/>
         <image name="photoLibrary" width="64" height="64"/>
-        <image name="plus" catalog="system" width="64" height="56"/>
         <image name="sendButton" width="64" height="64"/>
     </resources>
 </document>
