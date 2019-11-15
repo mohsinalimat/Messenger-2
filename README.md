@@ -1,8 +1,9 @@
 
 ## Installation
  1). Create an account at [Firebase](https://console.firebase.google.com/u/0/) and create a New project for your application.\
- 2). Set up your Firebase Authentication sign-in methods. ---> [Firebase Auth](https://firebase.google.com/docs/auth)\
- 3). Configure your Firebase Authentication Settings.
+ 3). Set up your Firebase Authentication sign-in methods. ---> [Firebase Auth](https://firebase.google.com/docs/auth)\
+ 4). Enable your Firebase Database. ---> [Database](https://firebase.google.com/docs/database)\
+ 5). Configure your Database Settings.
   ```
  {
   "rules": {
@@ -11,9 +12,8 @@
   }
 }
  ```
- 4). Enable your Firebase Database. ---> [Database](https://firebase.google.com/docs/database)\
- 5). Enable your Firebase Storage. ---> [Storage](https://firebase.google.com/docs/storage)\
- 6). Download `GoogleService-Info.plist` from your Firebase project and replace the existing file in your Xcode project.
+ 6). Enable your Firebase Storage. ---> [Storage](https://firebase.google.com/docs/storage)\
+ 7). Download `GoogleService-Info.plist` from your Firebase project and replace the existing file in your Xcode project.
  
  ## _License_
 ```
