@@ -1,6 +1,6 @@
-## Info
+## _Info_
 This app allows users to add friends and chat with them.
-## Installation
+## _Installation_
  1). Create an account at [Firebase](https://console.firebase.google.com/u/0/) and create a New project for your application.\
  2). Go to Sign-In method tab and choose `Email/password`\
  3). Set up your Firebase Authentication sign-in methods. ---> [Firebase Auth](https://firebase.google.com/docs/auth)\
@@ -17,8 +17,15 @@ This app allows users to add friends and chat with them.
  6). Enable your Firebase Storage. ---> [Storage](https://firebase.google.com/docs/storage)\
  7). Download `GoogleService-Info.plist` from your Firebase project and replace the existing file in your Xcode project.
  
+ ## _Requirements_
+ **iOS version**: 13.1\
+ **XCode version**: 11.2\
+ **Swift version**: 5
  ## _License_
 ```
+
+
+
 MIT License
 
 Copyright (c) 2019 Vitaliy Paliy
