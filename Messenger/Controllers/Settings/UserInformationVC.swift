@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Lottie
 
 class UserInformationVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
@@ -15,6 +16,8 @@ class UserInformationVC: UIViewController, UIImagePickerControllerDelegate, UINa
     @IBOutlet weak var changeImageView: BackgroundView!
     @IBOutlet weak var changeEmail: ButtonVC!
     @IBOutlet weak var changePasswordButton: ButtonVC!
+    
+    @IBOutlet weak var animationView: AnimationView!
     var selectedImage: UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +25,21 @@ class UserInformationVC: UIViewController, UIImagePickerControllerDelegate, UINa
         changeImageView.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped(_:)))
         changeImageView.addGestureRecognizer(tap)
+    }
+    
+    func animation(_ status: Bool){
+        navigationController?.navigationBar.isUserInteractionEnabled = !status
+        changeEmail.isEnabled = !status
+        changeImageView.isUserInteractionEnabled = !status
+        changePasswordButton.isEnabled = !status
+        animationView.isHidden = !status
+        if status {
+            animationView.animation = Animation.named("loading")
+            animationView.loopMode = .loop
+            animationView.play()
+        }else{
+            animationView.stop()
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -36,6 +54,7 @@ class UserInformationVC: UIViewController, UIImagePickerControllerDelegate, UINa
         }
         let uniqueName = NSUUID().uuidString
         let storageRef = Storage.storage().reference().child("Images").child("\(uniqueName).jpg")
+        animation(true)
         if let uploadData = self.selectedImage?.jpegData(compressionQuality: 0.1) {
             storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
                 if let error = error {
@@ -45,13 +64,16 @@ class UserInformationVC: UIViewController, UIImagePickerControllerDelegate, UINa
                 storageRef.downloadURL { (url, error) in
                     if let error = error {
                         print(error.localizedDescription)
+                        self.animation(false)
                         return
                     }
                     guard let url = url else {
                         print("Error downloading image(url is nil)")
+                        self.animation(false)
                         return
                     }
                     CurrentUserInformation.profileImage = url.absoluteString
+                    self.animation(false)
                     self.updateProfileImageHandler(url.absoluteString)
                 }
             }

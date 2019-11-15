@@ -212,14 +212,24 @@
                                             <action selector="passwordButtonPressed:" destination="Baw-wi-5FK" eventType="touchUpInside" id="PMz-LT-9bg"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vXX-P6-EFt" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="59.666666666666686" y="259" width="202" height="128"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="Ijx-VD-BUD"/>
+                                            <constraint firstAttribute="width" constant="202" id="T7k-FW-Tuk"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="vXX-P6-EFt" firstAttribute="centerX" secondItem="DIE-Vc-bd4" secondAttribute="centerX" id="6Fs-fq-miV"/>
                                     <constraint firstItem="EIf-wy-aKd" firstAttribute="centerX" secondItem="DIE-Vc-bd4" secondAttribute="centerX" id="9XR-TA-exE"/>
                                     <constraint firstItem="WLs-N6-98H" firstAttribute="top" secondItem="DIE-Vc-bd4" secondAttribute="top" constant="20" id="Cih-7J-aHq"/>
                                     <constraint firstItem="r7V-FA-LQa" firstAttribute="top" secondItem="Qsl-3o-8sh" secondAttribute="bottom" constant="10" id="Epx-JP-1Rj"/>
                                     <constraint firstItem="WLs-N6-98H" firstAttribute="centerX" secondItem="DIE-Vc-bd4" secondAttribute="centerX" id="PoI-fY-jEc"/>
                                     <constraint firstItem="Qsl-3o-8sh" firstAttribute="top" secondItem="WLs-N6-98H" secondAttribute="bottom" constant="34" id="UYP-yK-xVb"/>
+                                    <constraint firstItem="vXX-P6-EFt" firstAttribute="top" secondItem="r7V-FA-LQa" secondAttribute="bottom" constant="15" id="Ysk-78-CMu"/>
                                     <constraint firstItem="Qsl-3o-8sh" firstAttribute="centerX" secondItem="DIE-Vc-bd4" secondAttribute="centerX" id="hBG-10-6aG"/>
                                     <constraint firstItem="r7V-FA-LQa" firstAttribute="centerX" secondItem="DIE-Vc-bd4" secondAttribute="centerX" id="j15-lN-BuM"/>
                                     <constraint firstItem="EIf-wy-aKd" firstAttribute="top" secondItem="DIE-Vc-bd4" secondAttribute="top" constant="20" id="qch-ZO-nXv"/>
@@ -247,6 +257,7 @@
                         <viewLayoutGuide key="safeArea" id="pZq-FZ-Ddw"/>
                     </view>
                     <connections>
+                        <outlet property="animationView" destination="vXX-P6-EFt" id="ATK-vN-bnG"/>
                         <outlet property="changeEmail" destination="r7V-FA-LQa" id="S9N-eO-kRr"/>
                         <outlet property="changeImageView" destination="EIf-wy-aKd" id="LI1-gV-wh6"/>
                         <outlet property="changePasswordButton" destination="Qsl-3o-8sh" id="8jE-ad-dW9"/>
@@ -269,7 +280,7 @@
                                 <rect key="frame" x="47" y="84" width="281" height="400"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your new email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rgh-jH-08a" customClass="TextFieldVC" customModule="Messenger" customModuleProvider="target">
-                                        <rect key="frame" x="46.666666666666742" y="150" width="188" height="34"/>
+                                        <rect key="frame" x="46.666666666666686" y="150" width="188" height="34"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="188" id="1N4-Mj-BFx"/>
@@ -297,7 +308,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DUv-gn-Xo2" customClass="TextFieldVC" customModule="Messenger" customModuleProvider="target">
-                                        <rect key="frame" x="46.666666666666742" y="194" width="188" height="34"/>
+                                        <rect key="frame" x="46.666666666666686" y="194" width="188" height="34"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="WSt-8e-F1f"/>
@@ -344,16 +355,24 @@
                                             <action selector="confirmButtonPressed:" destination="WZm-IC-dth" eventType="touchUpInside" id="RVd-VU-ATr"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdh-94-dnB" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="67" y="302" width="146" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="DUv-gn-Xo2" firstAttribute="top" secondItem="Rgh-jH-08a" secondAttribute="bottom" constant="10" id="Aky-qo-Cjx"/>
                                     <constraint firstAttribute="height" constant="400" id="HjH-Wc-rKl"/>
                                     <constraint firstItem="Rgh-jH-08a" firstAttribute="top" secondItem="mUS-Qx-q9f" secondAttribute="top" constant="150" id="Iye-NB-Dft"/>
+                                    <constraint firstItem="pdh-94-dnB" firstAttribute="leading" secondItem="mUS-Qx-q9f" secondAttribute="leading" constant="67" id="JRJ-u1-9pk"/>
                                     <constraint firstItem="OBt-Rb-Xwb" firstAttribute="centerX" secondItem="mUS-Qx-q9f" secondAttribute="centerX" id="Jw8-CI-y2q"/>
+                                    <constraint firstAttribute="trailing" secondItem="pdh-94-dnB" secondAttribute="trailing" constant="68" id="mCD-Ou-5iL"/>
+                                    <constraint firstItem="pdh-94-dnB" firstAttribute="top" secondItem="OBt-Rb-Xwb" secondAttribute="bottom" constant="14" id="nBk-By-lEH"/>
                                     <constraint firstItem="DUv-gn-Xo2" firstAttribute="centerX" secondItem="mUS-Qx-q9f" secondAttribute="centerX" id="p6e-B4-zEk"/>
                                     <constraint firstItem="OBt-Rb-Xwb" firstAttribute="top" secondItem="DUv-gn-Xo2" secondAttribute="bottom" constant="30" id="pNg-Ex-zpf"/>
                                     <constraint firstItem="Rgh-jH-08a" firstAttribute="centerX" secondItem="mUS-Qx-q9f" secondAttribute="centerX" id="qYA-Am-gUe"/>
+                                    <constraint firstAttribute="bottom" secondItem="pdh-94-dnB" secondAttribute="bottom" constant="48" id="red-k2-Mo0"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="radius">
@@ -378,6 +397,7 @@
                         <viewLayoutGuide key="safeArea" id="PGZ-Dq-uaB"/>
                     </view>
                     <connections>
+                        <outlet property="animationView" destination="pdh-94-dnB" id="Jof-Cw-eB1"/>
                         <outlet property="confirmButton" destination="OBt-Rb-Xwb" id="y0u-vq-9M7"/>
                         <outlet property="confirmEmail" destination="DUv-gn-Xo2" id="67s-4H-Bbo"/>
                         <outlet property="newEmailTf" destination="Rgh-jH-08a" id="cAU-YB-inR"/>
@@ -399,7 +419,7 @@
                                 <rect key="frame" x="47" y="84" width="281" height="400"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your new password" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="vGK-zB-4rO" customClass="TextFieldVC" customModule="Messenger" customModuleProvider="target">
-                                        <rect key="frame" x="46.666666666666742" y="150" width="188" height="34"/>
+                                        <rect key="frame" x="46.666666666666686" y="150" width="188" height="34"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="Aml-yC-IQ3"/>
@@ -427,7 +447,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RuE-WE-4zb" customClass="TextFieldVC" customModule="Messenger" customModuleProvider="target">
-                                        <rect key="frame" x="46.666666666666742" y="194" width="188" height="34"/>
+                                        <rect key="frame" x="46.666666666666686" y="194" width="188" height="34"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="9zQ-FN-jbY"/>
@@ -474,6 +494,10 @@
                                             <action selector="confirmPressed:" destination="0qL-sU-vE9" eventType="touchUpInside" id="njc-zb-2rg"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jyw-kk-UjH" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="80" y="307" width="123" height="59"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -481,8 +505,12 @@
                                     <constraint firstAttribute="height" constant="400" id="5sb-d4-m6P"/>
                                     <constraint firstItem="vGK-zB-4rO" firstAttribute="top" secondItem="iVw-9L-Q7o" secondAttribute="top" constant="150" id="C5E-TI-fcE"/>
                                     <constraint firstItem="IkR-gH-InA" firstAttribute="centerX" secondItem="iVw-9L-Q7o" secondAttribute="centerX" id="E1J-xT-22s"/>
+                                    <constraint firstItem="jyw-kk-UjH" firstAttribute="leading" secondItem="iVw-9L-Q7o" secondAttribute="leading" constant="80" id="QxU-0Q-08e"/>
+                                    <constraint firstAttribute="bottom" secondItem="jyw-kk-UjH" secondAttribute="bottom" constant="34" id="Sb0-wK-FeY"/>
+                                    <constraint firstItem="jyw-kk-UjH" firstAttribute="top" secondItem="IkR-gH-InA" secondAttribute="bottom" constant="19" id="X1s-Ht-rLZ"/>
                                     <constraint firstItem="IkR-gH-InA" firstAttribute="top" secondItem="RuE-WE-4zb" secondAttribute="bottom" constant="30" id="eiu-yB-8LI"/>
                                     <constraint firstItem="vGK-zB-4rO" firstAttribute="centerX" secondItem="iVw-9L-Q7o" secondAttribute="centerX" id="lja-6c-2aY"/>
+                                    <constraint firstAttribute="trailing" secondItem="jyw-kk-UjH" secondAttribute="trailing" constant="78" id="mCL-Zh-CQr"/>
                                     <constraint firstItem="RuE-WE-4zb" firstAttribute="centerX" secondItem="iVw-9L-Q7o" secondAttribute="centerX" id="yQA-41-5zy"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -508,6 +536,7 @@
                         <viewLayoutGuide key="safeArea" id="oJE-7E-tOx"/>
                     </view>
                     <connections>
+                        <outlet property="animationView" destination="jyw-kk-UjH" id="iym-lG-RI3"/>
                         <outlet property="confirmButton" destination="IkR-gH-InA" id="nXo-UY-QiS"/>
                         <outlet property="confirmNewPasswordTf" destination="RuE-WE-4zb" id="bfe-RM-Od2"/>
                         <outlet property="newPasswordTf" destination="vGK-zB-4rO" id="fIX-Xa-OCF"/>
