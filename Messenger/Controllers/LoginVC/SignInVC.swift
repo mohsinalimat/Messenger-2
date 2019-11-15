@@ -12,10 +12,14 @@ import FirebaseAuth
 
 class SignInVC: UIViewController {
     
+    // Outlets
+    
     @IBOutlet weak var usernameTextField: TextFieldVC!
     @IBOutlet weak var passwordTextField: TextFieldVC!
     @IBOutlet weak var signInButton: ButtonVC!
     @IBOutlet weak var animationView: AnimationView!
+    
+    // This method starts/stops loading animation
     
     func animation(_ status: Bool){
         animationView.isHidden = !status
@@ -42,6 +46,8 @@ class SignInVC: UIViewController {
         present(controller, animated: true, completion: nil)
     }
     
+    // This method handles login
+    
     func handleLogin(){
         let textFieldError = validateTextFields()
         if textFieldError != nil {
@@ -62,6 +68,8 @@ class SignInVC: UIViewController {
         }
         
     }
+    
+    // Validates text fields
     
     func validateTextFields() -> String? {
         if usernameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {

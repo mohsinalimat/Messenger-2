@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+
 class Constants {
     struct Storyboard {
         static let signUpVC = "SignUpVC"

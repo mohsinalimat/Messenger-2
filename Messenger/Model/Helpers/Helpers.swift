@@ -9,8 +9,10 @@
 import UIKit
 import Firebase
 
+// Caches the images
 let imgCache = NSCache<AnyObject, AnyObject>()
 
+// Helper methods for ViewControllers
 extension UIViewController {
     
     func showAlert(title: String, message: String?) {

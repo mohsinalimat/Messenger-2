@@ -19,6 +19,7 @@ class ControllersTabBarVC: UITabBarController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("TAB BAR")
+        // Populates CurrentInfo with data.
         let uid = Auth.auth().currentUser?.uid
         Database.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
             if let snapshot = snapshot.value as? [String: AnyObject]{
@@ -35,6 +36,8 @@ class ControllersTabBarVC: UITabBarController {
         super.viewWillDisappear(animated)
         print("TAB BAR DISAPPEARS")
     }
+    
+    // This method gets messages to display for ChatVC
     
     func observeMessages(){
         let ref = Constants.FirebaseDB.db.reference().child("friend-messages").child(CurrentUserInformation.uid)

@@ -21,8 +21,9 @@ class UserListVC: UIViewController {
         fetchUser()
     }
     
+    // fetches all users
+    
     func fetchUser(){
-        
         Database.database().reference().child("users").observe(.childAdded, with: { (data) in
             if let snapshot = data.value as? [String: AnyObject] {
                 let user = UserInformation()

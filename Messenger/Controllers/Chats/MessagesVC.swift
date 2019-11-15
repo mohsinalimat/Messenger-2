@@ -47,6 +47,8 @@ class MessagesVC: UIViewController, UITextFieldDelegate, UIImagePickerController
         getMessagesID()
     }
     
+    // This method starts/stops loading animation
+    
     func animation(_ status: Bool){
         navigationController?.navigationBar.isUserInteractionEnabled = !status
         messageTextfield.isEnabled = !status
@@ -81,7 +83,7 @@ class MessagesVC: UIViewController, UITextFieldDelegate, UIImagePickerController
         }
         messageTextfield.resignFirstResponder()
     }
-    
+        
     func sendMessagesHandler(_ message: String){
         // TODO: Add the person who will recieve this.
         guard let friendId = friendId else { return }

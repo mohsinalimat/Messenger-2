@@ -13,6 +13,8 @@ import Lottie
 
 class SignUpVC: UIViewController {
     
+    // Outlets
+    
     @IBOutlet weak var signUpButton: ButtonVC!
     @IBOutlet weak var passwordTextField: TextFieldVC!
     @IBOutlet weak var emailTextField: TextFieldVC!
@@ -24,6 +26,9 @@ class SignUpVC: UIViewController {
     @IBAction func backButtonClicked(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    // This method starts/stops loading animation
+    
     func animation(_ status: Bool){
         animationView.isHidden = !status
         emailTextField.isEnabled = !status
@@ -45,6 +50,8 @@ class SignUpVC: UIViewController {
         animation(true)
         handleRegister()
     }
+    
+    // Validates text fields
     
     func validate() -> String? {
         if nameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "", lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
@@ -69,6 +76,8 @@ class SignUpVC: UIViewController {
         
         return nil
     }
+    
+    // This method handles registration process
     
     func handleRegister(){
         let textFieldError = validate()

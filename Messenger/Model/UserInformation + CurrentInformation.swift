@@ -8,6 +8,8 @@
 
 import Foundation
 
+// User information
+
 class UserInformation{
     var id: String?
     var name: String?

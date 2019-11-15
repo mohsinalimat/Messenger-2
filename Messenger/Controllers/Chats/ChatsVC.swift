@@ -31,6 +31,8 @@ class ChatsVC: UIViewController {
         chats = []
     }
     
+    // Populates messages cell with data
+    
     func loadChats(){
         Constants.FirebaseDB.db.reference().child("users").observe(.childAdded) { (data) in
             guard let snapshot = data.value as? [String: Any] else { return }
@@ -63,6 +65,7 @@ extension ChatsVC: UITableViewDelegate, UITableViewDataSource {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh:mm a"
         let chat = chats[indexPath.row]
+        // Checks for recent messages for the right user.
         for i in 0..<rec.count{
             if rec[i].friend == chat.id || rec[i].sender == chat.id{
                 if rec[i].mediaUrl == nil{

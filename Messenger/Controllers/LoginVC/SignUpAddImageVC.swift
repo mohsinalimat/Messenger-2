@@ -23,6 +23,7 @@ class SignUpAddImageVC: UIViewController, UIImagePickerControllerDelegate, UINav
     @IBOutlet weak var continueButton: ButtonVC!
     @IBOutlet weak var animationView: AnimationView!
     
+    // This method starts/stops loading animation
     func animation(_ status: Bool){
         animationView.isHidden = !status
         addButton.isEnabled = !status
@@ -95,6 +96,8 @@ class SignUpAddImageVC: UIViewController, UIImagePickerControllerDelegate, UINav
             self.animation(true)
         }
     }
+    
+    // Final Registration process.
     
     func registerUserHandler(uid: String, values: [String: Any]){
         
