@@ -1,7 +1,7 @@
 
 ## Installation
  1). Create an account at [Firebase](https://console.firebase.google.com/u/0/) and create a New project for your application.\
- 2). Go to Sign-In method tab and choose `Email`
+ 2). Go to Sign-In method tab and choose `Email`\
  3). Set up your Firebase Authentication sign-in methods. ---> [Firebase Auth](https://firebase.google.com/docs/auth)\
  4). Enable your Firebase Database. ---> [Database](https://firebase.google.com/docs/database)\
  5). Configure your Database Settings.
