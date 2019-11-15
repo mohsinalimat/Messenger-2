@@ -13,9 +13,9 @@
  ```
  4). Enable your Firebase Database. ---> [Database](https://firebase.google.com/docs/database)\
  5). Enable your Firebase Storage. ---> [Storage](https://firebase.google.com/docs/storage)\
- 6). Download `GoogleService-Info.plist` from your Firebase project.
+ 6). Download `GoogleService-Info.plist` from your Firebase project and replace the existing file in your Xcode project.
  
-## _License_
+ ## _License_
 ```
 MIT License
 
