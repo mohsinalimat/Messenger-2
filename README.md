@@ -23,8 +23,7 @@ This is the open source instant messaging app for iOS. This app allows users to 
  **Swift version**: 5
  
  ## _Demo_
- <img src="Images/Contacts.png" height="444"> <img src="Images/chats.png" height="444"> <img src="Images/settings1.png" height="444">
-  <img src="Images/chatView.png" height="444"> <img src="Images/addFriend.png" height="444"> <img src="Images/settings2.png" height="444">
+ 
   ### _Overview_
  - Contacts - this is the place where you can see all your friends.
  - Messages - recent messages from your friends.
